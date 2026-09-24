@@ -26,7 +26,7 @@
     nav a{opacity:.72}nav a:hover{opacity:1}
     .langs{display:flex;gap:7px}.lang{border:1px solid #444;background:transparent;color:#aaa;padding:7px 9px;cursor:pointer;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.lang.active{background:#fff;color:#000;border-color:#fff}
     .hero{min-height:calc(100vh - 82px);display:grid;align-items:center;border-bottom:1px solid var(--line);position:relative;overflow:hidden;background:#050505}
-    .hero:before{content:"";position:absolute;inset:0;background-image:var(--hero-image);background-repeat:no-repeat;background-position:right bottom;background-size:cover;filter:grayscale(1);z-index:0}
+    .hero:before{content:"";position:absolute;inset:0;background-image:url("assets/hero.webp");background-repeat:no-repeat;background-position:right bottom;background-size:cover;filter:grayscale(1);z-index:0}
     .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,5,5,.78) 0%,rgba(5,5,5,.54) 38%,rgba(5,5,5,.12) 68%,rgba(5,5,5,0) 100%);z-index:1}
     .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr;gap:32px;padding:85px 0;max-width:780px;margin-left:0}
     .eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:25px}
@@ -172,14 +172,6 @@
   buttons.forEach(b=>b.addEventListener("click",()=>setLanguage(b.dataset.setLang)));
   const saved=localStorage.getItem("carlyYeahLanguage");
   if(saved==="en"||saved==="es") setLanguage(saved);
-
-  Promise.all([0,1,2,3].map(i=>fetch(`assets/hero-${i}.txt`).then(r=>r.text())))
-    .then(parts=>{
-      const hero=document.querySelector(".hero");
-      const image=`url("data:image/webp;base64,${parts.join("")}")`;
-      hero.style.setProperty("--hero-image",image);
-    })
-    .catch(()=>{});
 </script>
 </body>
 </html>
