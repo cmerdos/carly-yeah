@@ -236,8 +236,8 @@
     .info-card h3{margin:14px 0 7px;font-family:"Space Grotesk",sans-serif;font-size:25px}
     .info-card p{margin:0;color:#aaa}
     footer{padding:45px 0}
-    .foot{display:flex;align-items:flex-end;justify-content:flex-start;gap:30px}
-    .foot-brand{font-family:"Space Grotesk",sans-serif;font-size:28px;font-weight:700;letter-spacing:-.05em}
+    .foot{display:flex;align-items:flex-end;justify-content:center;gap:30px;text-align:center}
+    .footer-logos{display:flex;align-items:center;justify-content:center;gap:18px}.footer-logo-main{width:61px;height:61px;display:block;border-radius:50%;object-fit:cover}.footer-logo-records{height:61px;width:auto;display:block}
     .foot p{margin:7px 0 0;color:#777;font-size:12px;letter-spacing:.11em;text-transform:uppercase}
     .social{padding-bottom:3px;border-bottom:1px solid #777;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
 
@@ -333,7 +333,7 @@
       .track{grid-template-columns:42px minmax(0,1fr);gap:14px}
       .track-state{display:none}
       .info-grid{grid-template-columns:1fr}
-      .foot{align-items:flex-start;flex-direction:column;padding-inline:28px}
+      .foot{align-items:center;flex-direction:column;padding-inline:28px}.footer-logos{gap:14px}.footer-logo-main{width:50px;height:50px}.footer-logo-records{height:50px}
     }
 
     @media(max-width:430px){
@@ -455,7 +455,7 @@
 <footer>
   <div class="wrap foot">
     <div>
-      <div class="foot-brand">CARLY YEAH</div>
+      <div class="footer-logos"><img class="footer-logo-main" src="assets/carly-yeah-logo.webp" alt="Carly Yeah"><img class="footer-logo-records" src="assets/carly-road-records.webp" alt="Carly Road Records"></div>
       <p>© 2026 Carly Yeah · Still looking up.</p>
     </div>
   </div>
