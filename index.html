@@ -51,6 +51,7 @@
       align-items:center;
       justify-content:space-between;
       gap:30px;
+      position:relative;
     }
     .brand{
       display:inline-flex;
@@ -67,7 +68,26 @@
       object-fit:cover;
     }
     .nav-right{display:flex;align-items:center;gap:22px}
-    .nav-stack{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+    .nav-stack{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:2px;
+    }
+    @media(min-width:851px){
+      .nav-right{margin-left:auto}
+      .nav-stack{
+        position:absolute;
+        left:50%;
+        top:50%;
+        transform:translate(-50%,-50%);
+        width:max-content;
+        max-width:calc(100% - 360px);
+      }
+      .nav-stack nav,
+      .nav-stack .social-links{justify-content:center}
+    }
     nav{
       display:flex;
       align-items:center;
