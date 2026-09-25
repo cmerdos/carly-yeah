@@ -102,6 +102,7 @@
     }
     nav a:hover{border-bottom-color:#111}
     .nav-separator{color:#777;opacity:.75;user-select:none}
+    .nav-disabled{opacity:.32;pointer-events:none;cursor:default}
     .langs{
       display:flex;
       align-items:stretch;
@@ -790,7 +791,7 @@
         <span class="nav-separator" aria-hidden="true">|</span>
         <a href="#videos"><span data-lang="es">Vídeos</span><span data-lang="en">Videos</span></a>
         <span class="nav-separator" aria-hidden="true">|</span>
-        <a href="#info"><span data-lang="es">Información</span><span data-lang="en">Info</span></a>
+        <a class="nav-disabled" href="#info" aria-disabled="true" tabindex="-1"><span data-lang="es">Información</span><span data-lang="en">Info</span></a>
       </nav>
       <div class="social-links" aria-label="Redes y plataformas">
         <a class="top-social" href="https://www.instagram.com/carly__yeah/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
@@ -941,7 +942,7 @@
     </div>
   </section>
 
-  <section id="info">
+  <section id="info" hidden>
     <div class="wrap section-grid">
       <div class="num">04 / <span data-lang="es">Información</span><span data-lang="en">Information</span></div>
       <div></div>
@@ -1030,8 +1031,7 @@
     document.getElementById("top"),
     document.getElementById("bio"),
     document.getElementById("music"),
-    document.getElementById("videos"),
-    document.getElementById("info")
+    document.getElementById("videos")
   ].filter(Boolean);
 
   function updateHeaderSize(){
