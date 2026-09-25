@@ -98,6 +98,81 @@
       font-size:15px;
     }
     .lang.active{background:#111;color:#fff}
+    .a11y-controls{
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .a11y-btn{
+      width:42px;
+      height:42px;
+      display:inline-grid;
+      place-items:center;
+      padding:0;
+      border:1px solid #bbb;
+      background:#fff;
+      color:#111;
+      cursor:pointer;
+      font-size:20px;
+      font-weight:700;
+      line-height:1;
+      transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease;
+    }
+    .a11y-btn:hover{transform:translateY(-1px);border-color:#111}
+    .a11y-btn[aria-pressed="true"]{background:#111;color:#fff;border-color:#111}
+    .a11y-text{font-size:15px;letter-spacing:-.03em}
+
+    /* Light high-contrast mode */
+    body.light-theme{background:#fff;color:#000}
+    body.light-theme section,
+    body.light-theme footer{background:#fff;border-color:#111}
+    body.light-theme .hero{background:#fff;border-color:#111}
+    body.light-theme .hero::before{opacity:.12;filter:grayscale(1) contrast(1.15)}
+    body.light-theme .hero::after{
+      background:linear-gradient(90deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.94) 48%,rgba(255,255,255,.74) 76%,rgba(255,255,255,.45) 100%)
+    }
+    body.light-theme .hero-copy .kicker,
+    body.light-theme .hero-copy h2,
+    body.light-theme .hero-copy p,
+    body.light-theme .section-title,
+    body.light-theme .bio p,
+    body.light-theme .bio p:first-of-type,
+    body.light-theme .track-name,
+    body.light-theme .info-card h3{color:#000}
+    body.light-theme .num,
+    body.light-theme .release,
+    body.light-theme .track-no,
+    body.light-theme .track-state,
+    body.light-theme .info-card small,
+    body.light-theme .info-card p,
+    body.light-theme .foot p{color:#222}
+    body.light-theme .tracklist,
+    body.light-theme .track{border-color:#111}
+    body.light-theme .info-grid{background:#111;border-color:#111}
+    body.light-theme .info-card{background:#fff}
+    body.light-theme .footer-logo-records{filter:invert(1)}
+    body.light-theme .a11y-btn[aria-pressed="true"]{background:#111;color:#fff}
+    
+    /* Enlarged/readable mode */
+    body.readable-mode{line-height:1.75}
+    body.readable-mode nav{font-size:18px}
+    body.readable-mode .hero-copy .kicker{font-size:17px;letter-spacing:.13em}
+    body.readable-mode .hero-copy h2{font-size:clamp(76px,8vw,122px);line-height:1.02;letter-spacing:-.035em}
+    body.readable-mode .hero-copy p{font-size:29px;line-height:1.6;max-width:680px}
+    body.readable-mode .num{font-size:15px;letter-spacing:.10em}
+    body.readable-mode .section-title{font-size:clamp(44px,5.4vw,74px);line-height:1.08}
+    body.readable-mode .bio p{font-size:21px;line-height:1.75}
+    body.readable-mode .bio p:first-of-type{font-size:27px;line-height:1.65}
+    body.readable-mode .track-name{font-size:clamp(23px,2.8vw,33px)}
+    body.readable-mode .track-no,
+    body.readable-mode .track-state,
+    body.readable-mode .release,
+    body.readable-mode .info-card small{font-size:14px}
+    body.readable-mode .info-card h3{font-size:29px}
+    body.readable-mode .info-card p{font-size:18px;line-height:1.7}
+    body.readable-mode .foot p{font-size:14px;letter-spacing:.06em}
+    body.readable-mode a:focus-visible,
+    body.readable-mode button:focus-visible{outline:3px solid currentColor;outline-offset:4px}
     .top-social{
       display:inline-flex;
       align-items:center;
@@ -256,7 +331,7 @@
       .nav{
         min-height:0;
         display:grid;
-        grid-template-columns:minmax(0,1fr) auto auto;
+        grid-template-columns:minmax(0,1fr) auto auto auto;
         grid-template-rows:auto auto;
         gap:20px 16px;
         padding:18px 28px 17px;
@@ -267,14 +342,22 @@
         flex-basis:57.2px;
       }
       .nav-right{display:contents}
-      .langs{
+      .a11y-controls{
         grid-column:2;
+        grid-row:1;
+        align-self:center;
+        gap:4px;
+      }
+      .a11y-btn{width:34px;height:34px;font-size:17px}
+      .a11y-text{font-size:13px}
+      .langs{
+        grid-column:3;
         grid-row:1;
         align-self:center;
         padding:3px;
       }
       .top-social{
-        grid-column:3;
+        grid-column:4;
         grid-row:1;
         align-self:center;
         width:38px;
@@ -339,13 +422,21 @@
     @media(max-width:430px){
       .nav{padding-inline:20px}
 
+      .a11y-controls{gap:3px}
+      .a11y-btn{width:31px;height:31px;font-size:16px}
+      .a11y-text{font-size:12px}
       .langs{padding:2px}
-      .lang{padding:7px 9px;font-size:13px}
+      .lang{padding:7px 8px;font-size:12px}
       nav{gap:25px;font-size:16px}
       .hero-grid{padding-inline:22px}
       .hero-copy h2{font-size:clamp(48px,14.5vw,64px)}
       .hero-copy p{max-width:82%;font-size:20px}
       .section-grid{padding-inline:22px}
+      body.readable-mode .hero-copy .kicker{font-size:14px}
+      body.readable-mode .hero-copy h2{font-size:clamp(54px,15vw,70px)}
+      body.readable-mode .hero-copy p{font-size:23px;max-width:88%}
+      body.readable-mode .bio p{font-size:20px}
+      body.readable-mode .bio p:first-of-type{font-size:24px}
     }
 
   </style>
@@ -360,6 +451,10 @@
         <a href="#music"><span data-lang="es">Música</span><span data-lang="en">Music</span></a>
         <a href="#info"><span data-lang="es">Información</span><span data-lang="en">Info</span></a>
       </nav>
+      <div class="a11y-controls" aria-label="Accesibilidad">
+        <button class="a11y-btn" id="contrast-toggle" type="button" aria-pressed="false" title="Cambiar contraste" aria-label="Cambiar entre fondo oscuro y fondo blanco">◐</button>
+        <button class="a11y-btn a11y-text" id="vision-toggle" type="button" aria-pressed="false" title="Mejorar legibilidad" aria-label="Activar texto ampliado y mayor legibilidad">A+</button>
+      </div>
       <div class="langs"><button class="lang active" data-set-lang="es">ES</button><button class="lang" data-set-lang="en">EN</button></div>
       <a class="top-social" href="https://www.instagram.com/carly__yeah/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.25"></circle><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle></svg></a>
     </div>
@@ -472,6 +567,27 @@
   buttons.forEach(b=>b.addEventListener("click",()=>setLanguage(b.dataset.setLang)));
   const saved=localStorage.getItem("carlyYeahLanguage");
   if(saved==="en"||saved==="es") setLanguage(saved);
+
+  const contrastToggle=document.getElementById("contrast-toggle");
+  const visionToggle=document.getElementById("vision-toggle");
+
+  function setContrast(enabled){
+    document.body.classList.toggle("light-theme",enabled);
+    contrastToggle.setAttribute("aria-pressed",String(enabled));
+    localStorage.setItem("carlyYeahLightTheme",enabled ? "1" : "0");
+  }
+
+  function setReadable(enabled){
+    document.body.classList.toggle("readable-mode",enabled);
+    visionToggle.setAttribute("aria-pressed",String(enabled));
+    localStorage.setItem("carlyYeahReadableMode",enabled ? "1" : "0");
+  }
+
+  contrastToggle.addEventListener("click",()=>setContrast(!document.body.classList.contains("light-theme")));
+  visionToggle.addEventListener("click",()=>setReadable(!document.body.classList.contains("readable-mode")));
+
+  setContrast(localStorage.getItem("carlyYeahLightTheme")==="1");
+  setReadable(localStorage.getItem("carlyYeahReadableMode")==="1");
 </script>
 </body>
 </html>
