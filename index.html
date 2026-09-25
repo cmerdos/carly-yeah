@@ -67,6 +67,7 @@
       object-fit:cover;
     }
     .nav-right{display:flex;align-items:center;gap:22px}
+    .nav-stack{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
     nav{
       display:flex;
       align-items:center;
@@ -176,14 +177,16 @@
     .social-links{
       display:flex;
       align-items:center;
+      justify-content:center;
       gap:4px;
+      min-height:30px;
     }
     .top-social{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      width:42px;
-      height:42px;
+      width:30px;
+      height:30px;
       color:#111;
       opacity:.88;
       transition:opacity .2s ease,transform .2s ease;
@@ -193,8 +196,8 @@
     .social-pending:hover{opacity:.32;transform:none}
     .tidal-icon svg{fill:currentColor;stroke:none}
     .top-social svg{
-      width:25px;
-      height:25px;
+      width:20px;
+      height:20px;
       display:block;
       fill:none;
       stroke:currentColor;
@@ -392,7 +395,7 @@
         min-height:0;
         display:grid;
         grid-template-columns:minmax(0,1fr) auto auto;
-        grid-template-rows:auto auto auto;
+        grid-template-rows:auto auto;
         gap:20px 16px;
         padding:18px 28px 17px;
       }
@@ -402,6 +405,14 @@
         flex-basis:57.2px;
       }
       .nav-right{display:contents}
+      .nav-stack{
+        grid-column:1 / -1;
+        grid-row:2;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:2px;
+      }
       .a11y-controls{
         grid-column:2;
         grid-row:1;
@@ -417,20 +428,16 @@
         padding:3px;
       }
       .social-links{
-        grid-column:1 / -1;
-        grid-row:3;
         justify-content:center;
         gap:8px;
       }
       .top-social{
-        width:34px;
-        height:34px;
+        width:30px;
+        height:30px;
       }
-      .top-social svg{width:22px;height:22px}
+      .top-social svg{width:20px;height:20px}
       .lang{padding:8px 11px;font-size:14px}
       nav{
-        grid-column:1 / -1;
-        grid-row:2;
         display:flex;
         justify-content:center;
         gap:34px;
@@ -491,8 +498,8 @@
       .langs{padding:2px}
       .lang{padding:7px 8px;font-size:12px}
       .social-links{gap:6px}
-      .top-social{width:30px;height:30px}
-      .top-social svg{width:20px;height:20px}
+      .top-social{width:28px;height:28px}
+      .top-social svg{width:19px;height:19px}
       nav{gap:25px;font-size:16px}
       .hero-grid{padding-inline:22px}
       .hero-copy h2{font-size:clamp(48px,14.5vw,64px)}
@@ -513,16 +520,12 @@
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="Carly Yeah"><img src="assets/carly-yeah-logo.webp" alt="Logo oficial de Carly Yeah"></a>
     <div class="nav-right">
+<div class="nav-stack">
       <nav>
         <a href="#bio"><span data-lang="es">Biografía</span><span data-lang="en">Biography</span></a>
         <a href="#music"><span data-lang="es">Música</span><span data-lang="en">Music</span></a>
         <a href="#info"><span data-lang="es">Información</span><span data-lang="en">Info</span></a>
       </nav>
-      <div class="a11y-controls" aria-label="Accesibilidad">
-        <button class="a11y-btn" id="contrast-toggle" type="button" aria-pressed="false" title="Cambiar contraste" aria-label="Cambiar entre fondo oscuro y fondo blanco">◐</button>
-        <button class="a11y-btn a11y-text" id="vision-toggle" type="button" aria-pressed="false" title="Mejorar legibilidad" aria-label="Activar texto ampliado y mayor legibilidad">A+</button>
-      </div>
-      <div class="langs"><button class="lang active" data-set-lang="es">ES</button><button class="lang" data-set-lang="en">EN</button></div>
       <div class="social-links" aria-label="Redes y plataformas">
         <a class="top-social" href="https://www.instagram.com/carly__yeah/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.25"></circle><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle></svg>
@@ -540,6 +543,13 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 5 3 3-3 3-3-3 3-3Zm-6 3 3 3-3 3-3-3 3-3Zm12 0 3 3-3 3-3-3 3-3Zm-6 6 3 3-3 3-3-3 3-3Z"></path></svg>
         </span>
       </div>
+      </div>
+      <div class="a11y-controls" aria-label="Accesibilidad">
+        <button class="a11y-btn" id="contrast-toggle" type="button" aria-pressed="false" title="Cambiar contraste" aria-label="Cambiar entre fondo oscuro y fondo blanco">◐</button>
+        <button class="a11y-btn a11y-text" id="vision-toggle" type="button" aria-pressed="false" title="Mejorar legibilidad" aria-label="Activar texto ampliado y mayor legibilidad">A+</button>
+      </div>
+      <div class="langs"><button class="lang active" data-set-lang="es">ES</button><button class="lang" data-set-lang="en">EN</button></div>
+
     </div>
   </div>
 </header>
