@@ -297,7 +297,10 @@
       border-bottom:1px solid #292929;
     }
     .track-no{color:#777;font-size:12px}
-    .track-name{font-family:"Space Grotesk",sans-serif;font-size:clamp(20px,2.5vw,29px);letter-spacing:-.03em}
+    .track-name{font-family:"Space Grotesk",sans-serif;font-size:clamp(20px,2.5vw,29px);letter-spacing:-.03em;transition:opacity .35s ease,filter .35s ease}
+    .track.is-unreleased .track-name{opacity:.32;filter:grayscale(1)}
+    .track.is-released .track-name{opacity:1;filter:none}
+    body.light-theme .track.is-unreleased .track-name{opacity:.38}
     .track-state{color:#777;font-size:11px;letter-spacing:.08em;text-transform:uppercase;text-align:right;line-height:1.45}
     .track.spotify-ready{cursor:pointer;transition:background .2s ease,padding .2s ease}
     .track.spotify-ready:hover{background:rgba(255,255,255,.045);padding-left:12px;padding-right:12px}
@@ -514,12 +517,12 @@
           <div class="release">EP · 6 tracks</div>
         </div>
         <div class="tracklist">
-          <div class="track" data-spotify-url=""><span class="track-no">01</span><span class="track-name">Boreal</span><span class="track-state">Disponible 9 de octubre de 2026</span></div>
-          <div class="track" data-spotify-url=""><span class="track-no">02</span><span class="track-name">This Is My Stop</span><span class="track-state">Disponible el 20 de noviembre de 2026</span></div>
-          <div class="track" data-spotify-url=""><span class="track-no">03</span><span class="track-name">No Reason Why</span><span class="track-state">Disponible el 30 de octubre de 2026</span></div>
-          <div class="track" data-spotify-url=""><span class="track-no">04</span><span class="track-name">When We Let Go</span><span class="track-state">Disponible el 11 de diciembre de 2026</span></div>
-          <div class="track" data-spotify-url=""><span class="track-no">05</span><span class="track-name">Let Me Be</span><span class="track-state">Disponible el 11 de diciembre de 2026</span></div>
-          <div class="track" data-spotify-url=""><span class="track-no">06</span><span class="track-name">What the Hell I Can Do (After Summer)</span><span class="track-state">Disponible el 11 de diciembre de 2026</span></div>
+          <div class="track" data-spotify-url="" data-release-date="2026-10-09"><span class="track-no">01</span><span class="track-name">Boreal</span><span class="track-state">Disponible 9 de octubre de 2026</span></div>
+          <div class="track" data-spotify-url="" data-release-date="2026-11-20"><span class="track-no">02</span><span class="track-name">This Is My Stop</span><span class="track-state">Disponible el 20 de noviembre de 2026</span></div>
+          <div class="track" data-spotify-url="" data-release-date="2026-10-30"><span class="track-no">03</span><span class="track-name">No Reason Why</span><span class="track-state">Disponible el 30 de octubre de 2026</span></div>
+          <div class="track" data-spotify-url="" data-release-date="2026-12-11"><span class="track-no">04</span><span class="track-name">When We Let Go</span><span class="track-state">Disponible el 11 de diciembre de 2026</span></div>
+          <div class="track" data-spotify-url="" data-release-date="2026-12-11"><span class="track-no">05</span><span class="track-name">Let Me Be</span><span class="track-state">Disponible el 11 de diciembre de 2026</span></div>
+          <div class="track" data-spotify-url="" data-release-date="2026-12-11"><span class="track-no">06</span><span class="track-name">What the Hell I Can Do (After Summer)</span><span class="track-state">Disponible el 11 de diciembre de 2026</span></div>
         </div>
         <div class="spotify-player" id="spotify-player" aria-live="polite">
           <iframe id="spotify-embed"
@@ -603,6 +606,27 @@
 
   setContrast(localStorage.getItem("carlyYeahLightTheme")==="1");
   setReadable(localStorage.getItem("carlyYeahReadableMode")==="1");
+
+  const releaseRows=[...document.querySelectorAll(".track[data-release-date]")];
+
+  function localDateKey(date=new Date()){
+    const year=date.getFullYear();
+    const month=String(date.getMonth()+1).padStart(2,"0");
+    const day=String(date.getDate()).padStart(2,"0");
+    return `${year}-${month}-${day}`;
+  }
+
+  function updateReleaseStates(){
+    const today=localDateKey();
+    releaseRows.forEach(row=>{
+      const releaseDate=row.dataset.releaseDate;
+      const released=today>=releaseDate;
+      row.classList.toggle("is-released",released);
+      row.classList.toggle("is-unreleased",!released);
+    });
+  }
+
+  updateReleaseStates();
 
   const spotifyRows=[...document.querySelectorAll(".track[data-spotify-url]")];
   const spotifyPlayer=document.getElementById("spotify-player");
