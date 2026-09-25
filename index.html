@@ -81,6 +81,7 @@
       border-bottom:2px solid transparent;
     }
     nav a:hover{border-bottom-color:#111}
+    .nav-separator{color:#777;opacity:.75;user-select:none}
     .langs{
       display:flex;
       align-items:stretch;
@@ -628,8 +629,11 @@
 <div class="nav-stack">
       <nav>
         <a href="#bio"><span data-lang="es">Biografía</span><span data-lang="en">Biography</span></a>
+        <span class="nav-separator" aria-hidden="true">|</span>
         <a href="#music"><span data-lang="es">Música</span><span data-lang="en">Music</span></a>
+        <span class="nav-separator" aria-hidden="true">|</span>
         <a href="#videos"><span data-lang="es">Vídeos</span><span data-lang="en">Videos</span></a>
+        <span class="nav-separator" aria-hidden="true">|</span>
         <a href="#info"><span data-lang="es">Información</span><span data-lang="en">Info</span></a>
       </nav>
       <div class="social-links" aria-label="Redes y plataformas">
