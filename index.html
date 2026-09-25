@@ -127,8 +127,10 @@
     .hero-grid{
       position:relative;
       z-index:2;
-      display:block;
-      padding:88px 0;
+      display:flex;
+      align-items:center;
+      min-height:calc(100vh - 94px);
+      padding:70px 0;
     }
     .hero-copy{max-width:760px}
     .hero-copy .kicker{
@@ -154,33 +156,6 @@
       color:#f2f2f2;
       font-size:25px;
       line-height:1.45;
-    }
-    .cta{
-      display:inline-flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:42px;
-      width:min(560px,100%);
-      padding:25px 38px;
-      border:0;
-      background:#fff;
-      color:#111;
-      font-size:21px;
-      font-weight:700;
-      transition:background .2s ease;
-    }
-    .cta:hover{background:#ececec}
-    .cta-arrow{
-      display:inline-grid;
-      place-items:center;
-      width:40px;
-      height:40px;
-      flex:0 0 40px;
-      border-radius:8px;
-      background:#8fa8bf;
-      color:#fff;
-      font-size:27px;
-      line-height:1;
     }
 
     /* Content sections */
@@ -300,7 +275,10 @@
       .hero::after{
         background:linear-gradient(90deg,rgba(5,5,5,.88) 0%,rgba(5,5,5,.72) 44%,rgba(5,5,5,.28) 72%,rgba(5,5,5,.03) 100%);
       }
-      .hero-grid{padding:54px 28px 52px}
+      .hero-grid{
+        min-height:calc(100svh - 118px);
+        padding:48px 28px;
+      }
       .hero-copy{max-width:100%}
       .hero-copy .kicker{margin-bottom:34px;font-size:13px;letter-spacing:.19em}
       .hero-copy h2{
@@ -315,13 +293,6 @@
         font-size:21px;
         line-height:1.45;
       }
-      .cta{
-        width:min(100%,320px);
-        gap:25px;
-        padding:20px 24px;
-        font-size:18px;
-      }
-      .cta-arrow{width:35px;height:35px;flex-basis:35px;font-size:23px}
 
       .section-grid{
         grid-template-columns:1fr;
@@ -373,7 +344,6 @@
         <h2>Still<br>Looking Up.</h2>
         <p data-lang="es">Seis canciones. Una historia que empieza.</p>
         <p data-lang="en">Six songs. A story just beginning.</p>
-        <a class="cta" href="#music"><span data-lang="es">Descubre la música</span><span data-lang="en">Discover the music</span><span class="cta-arrow">↗</span></a>
       </div>
     </div>
   </section>
