@@ -66,7 +66,7 @@
       border-radius:50%;
       object-fit:cover;
     }
-    .nav-right{display:flex;align-items:center;gap:34px}
+    .nav-right{display:flex;align-items:center;gap:22px}
     nav{
       display:flex;
       align-items:center;
@@ -173,6 +173,11 @@
     body.readable-mode .foot p{font-size:14px;letter-spacing:.06em}
     body.readable-mode a:focus-visible,
     body.readable-mode button:focus-visible{outline:3px solid currentColor;outline-offset:4px}
+    .social-links{
+      display:flex;
+      align-items:center;
+      gap:4px;
+    }
     .top-social{
       display:inline-flex;
       align-items:center;
@@ -184,6 +189,9 @@
       transition:opacity .2s ease,transform .2s ease;
     }
     .top-social:hover{opacity:1;transform:translateY(-1px)}
+    .social-pending{opacity:.32;cursor:default}
+    .social-pending:hover{opacity:.32;transform:none}
+    .tidal-icon svg{fill:currentColor;stroke:none}
     .top-social svg{
       width:25px;
       height:25px;
@@ -383,8 +391,8 @@
       .nav{
         min-height:0;
         display:grid;
-        grid-template-columns:minmax(0,1fr) auto auto auto;
-        grid-template-rows:auto auto;
+        grid-template-columns:minmax(0,1fr) auto auto;
+        grid-template-rows:auto auto auto;
         gap:20px 16px;
         padding:18px 28px 17px;
       }
@@ -408,14 +416,17 @@
         align-self:center;
         padding:3px;
       }
-      .top-social{
-        grid-column:4;
-        grid-row:1;
-        align-self:center;
-        width:38px;
-        height:38px;
+      .social-links{
+        grid-column:1 / -1;
+        grid-row:3;
+        justify-content:center;
+        gap:8px;
       }
-      .top-social svg{width:23px;height:23px}
+      .top-social{
+        width:34px;
+        height:34px;
+      }
+      .top-social svg{width:22px;height:22px}
       .lang{padding:8px 11px;font-size:14px}
       nav{
         grid-column:1 / -1;
@@ -479,6 +490,9 @@
       .a11y-text{font-size:12px}
       .langs{padding:2px}
       .lang{padding:7px 8px;font-size:12px}
+      .social-links{gap:6px}
+      .top-social{width:30px;height:30px}
+      .top-social svg{width:20px;height:20px}
       nav{gap:25px;font-size:16px}
       .hero-grid{padding-inline:22px}
       .hero-copy h2{font-size:clamp(48px,14.5vw,64px)}
@@ -509,7 +523,23 @@
         <button class="a11y-btn a11y-text" id="vision-toggle" type="button" aria-pressed="false" title="Mejorar legibilidad" aria-label="Activar texto ampliado y mayor legibilidad">A+</button>
       </div>
       <div class="langs"><button class="lang active" data-set-lang="es">ES</button><button class="lang" data-set-lang="en">EN</button></div>
-      <a class="top-social" href="https://www.instagram.com/carly__yeah/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.25"></circle><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle></svg></a>
+      <div class="social-links" aria-label="Redes y plataformas">
+        <a class="top-social" href="https://www.instagram.com/carly__yeah/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.25"></circle><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+        </a>
+        <span class="top-social social-pending" aria-label="Facebook, próximamente" title="Facebook · Próximamente">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M13.2 20v-6h2.2l.4-2.7h-2.6V9.6c0-.8.2-1.3 1.4-1.3H16V5.9c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v1.7H8V14h2.1v6"></path></svg>
+        </span>
+        <span class="top-social social-pending" aria-label="Spotify, próximamente" title="Spotify · Próximamente">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M7 10.2c3.7-1.1 7.8-.8 10.7.7"></path><path d="M7.8 13.3c3-.8 6.4-.6 8.9.7"></path><path d="M8.6 16.2c2.4-.6 5-.4 7 .6"></path></svg>
+        </span>
+        <span class="top-social social-pending" aria-label="Apple Music, próximamente" title="Apple Music · Próximamente">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3.5" width="16" height="17" rx="4"></rect><path d="M14.8 8.2v7.2"></path><path d="M14.8 8.2 10 9.3v7"></path><circle cx="8.7" cy="16.6" r="1.8"></circle><circle cx="13.5" cy="15.6" r="1.8"></circle></svg>
+        </span>
+        <span class="top-social social-pending tidal-icon" aria-label="TIDAL, próximamente" title="TIDAL · Próximamente">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 5 3 3-3 3-3-3 3-3Zm-6 3 3 3-3 3-3-3 3-3Zm12 0 3 3-3 3-3-3 3-3Zm-6 6 3 3-3 3-3-3 3-3Z"></path></svg>
+        </span>
+      </div>
     </div>
   </div>
 </header>
