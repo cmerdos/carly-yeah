@@ -623,6 +623,8 @@
       const released=today>=releaseDate;
       row.classList.toggle("is-released",released);
       row.classList.toggle("is-unreleased",!released);
+      const state=row.querySelector(".track-state");
+      if(state) state.style.display=released ? "none" : "";
     });
   }
 
