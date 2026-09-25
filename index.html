@@ -415,13 +415,13 @@
         display:grid;
         grid-template-columns:minmax(0,1fr) auto auto;
         grid-template-rows:auto auto;
-        gap:18px 14.4px;
-        padding:16.2px 25.2px 15.3px;
+        gap:8px 10px;
+        padding:8px 18px 8px;
       }
       .brand img{
-        width:51.5px;
-        height:51.5px;
-        flex-basis:51.5px;
+        width:42px;
+        height:42px;
+        flex-basis:42px;
       }
       .nav-right{display:contents}
       .nav-stack{
@@ -430,46 +430,48 @@
         display:flex;
         flex-direction:column;
         align-items:center;
-        gap:2px;
+        gap:0;
       }
       .a11y-controls{
         grid-column:2;
         grid-row:1;
         align-self:center;
-        gap:4px;
+        gap:3px;
       }
-      .a11y-btn{width:30.6px;height:30.6px;font-size:15.3px}
-      .a11y-text{font-size:11.7px}
+      .a11y-btn{width:27px;height:27px;font-size:13.5px}
+      .a11y-text{font-size:10.5px}
       .langs{
         grid-column:3;
         grid-row:1;
         align-self:center;
-        padding:2.7px;
+        padding:2px;
       }
       .social-links{
         width:100%;
         justify-content:space-between;
         gap:0;
-        padding:2px 4px 0;
+        padding:0;
       }
       .top-social{
         flex:1 1 0;
         width:auto;
-        height:42.77px;
+        height:31px;
       }
-      .top-social svg{width:28.51px;height:28.51px}
-      .lang{padding:7.2px 9.9px;font-size:12.6px}
+      .top-social svg{width:22px;height:22px}
+      .lang{padding:5px 7px;font-size:11px}
       nav{
         display:flex;
         justify-content:center;
-        gap:21.6px;
-        font-size:14.4px;
+        gap:18px;
+        font-size:12.5px;
+        line-height:1.15;
       }
-      nav a{padding:2.7px 0 6.3px}
+      nav a{padding:1px 0 3px}
       nav a:first-child{border-bottom-color:#111}
 
+      #bio,#music,#videos,#info{scroll-margin-top:112px}
       .hero{
-        min-height:calc(100svh - 118px);
+        min-height:calc(100svh - 106px);
         align-items:stretch;
       }
       .hero::before{
@@ -480,7 +482,7 @@
         background:linear-gradient(90deg,rgba(5,5,5,.88) 0%,rgba(5,5,5,.72) 44%,rgba(5,5,5,.28) 72%,rgba(5,5,5,.03) 100%);
       }
       .hero-grid{
-        min-height:calc(100svh - 118px);
+        min-height:calc(100svh - 106px);
         padding:48px 28px;
       }
       .hero-copy{max-width:100%}
@@ -512,17 +514,18 @@
     }
 
     @media(max-width:430px){
-      .nav{padding-inline:18px}
+      .nav{padding:7px 14px}
 
-      .a11y-controls{gap:2.7px}
-      .a11y-btn{width:27.9px;height:27.9px;font-size:14.4px}
-      .a11y-text{font-size:10.8px}
-      .langs{padding:1.8px}
-      .lang{padding:6.3px 7.2px;font-size:10.8px}
+      .brand img{width:38px;height:38px;flex-basis:38px}
+      .a11y-controls{gap:2px}
+      .a11y-btn{width:25px;height:25px;font-size:12.5px}
+      .a11y-text{font-size:10px}
+      .langs{padding:1px}
+      .lang{padding:4px 5px;font-size:10px}
       .social-links{width:100%;justify-content:space-between;gap:0;padding-inline:0}
-      .top-social{flex:1 1 0;width:auto;height:40.18px}
-      .top-social svg{width:27.22px;height:27.22px}
-      nav{gap:14.4px;font-size:12.6px}
+      .top-social{flex:1 1 0;width:auto;height:29px}
+      .top-social svg{width:21px;height:21px}
+      nav{gap:12px;font-size:11.5px}
       .hero-grid{padding-inline:22px}
       .hero-copy h2{font-size:clamp(48px,14.5vw,64px)}
       .hero-copy p{max-width:82%;font-size:20px}
