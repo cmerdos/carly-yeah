@@ -332,6 +332,41 @@
     body.readable-mode .legal-link{font-size:14px}
     .social{padding-bottom:3px;border-bottom:1px solid #777;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
 
+    /* Cookie consent */
+    .cookie-banner{
+      position:fixed;
+      left:20px;
+      right:20px;
+      bottom:20px;
+      z-index:1000;
+      display:none;
+      max-width:760px;
+      margin:0 auto;
+      padding:22px;
+      border:1px solid #3b3b3b;
+      background:#0b0b0b;
+      color:#fff;
+      box-shadow:0 12px 40px rgba(0,0,0,.35);
+    }
+    .cookie-banner.show{display:block}
+    .cookie-banner p{margin:0;color:#ddd;font-size:14px;line-height:1.6}
+    .cookie-banner a{text-decoration:underline;text-underline-offset:3px}
+    .cookie-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .cookie-btn{
+      appearance:none;
+      border:1px solid #fff;
+      background:#fff;
+      color:#111;
+      padding:10px 16px;
+      cursor:pointer;
+      font-weight:700;
+    }
+    .cookie-btn.secondary{background:transparent;color:#fff;border-color:#777}
+    body.light-theme .cookie-banner{background:#fff;color:#000;border-color:#111;box-shadow:0 12px 40px rgba(0,0,0,.16)}
+    body.light-theme .cookie-banner p{color:#111}
+    body.light-theme .cookie-btn{background:#111;color:#fff;border-color:#111}
+    body.light-theme .cookie-btn.secondary{background:#fff;color:#111;border-color:#555}
+
     /* Language switching */
     [data-lang]{display:none}
     body[data-language="es"] [data-lang="es"],
@@ -448,6 +483,7 @@
       .hero-copy h2{font-size:clamp(48px,14.5vw,64px)}
       .hero-copy p{max-width:82%;font-size:20px}
       .section-grid{padding-inline:22px}
+      .cookie-banner{left:12px;right:12px;bottom:12px;padding:18px}
       body.readable-mode .hero-copy .kicker{font-size:14px}
       body.readable-mode .hero-copy h2{font-size:clamp(54px,15vw,70px)}
       body.readable-mode .hero-copy p{font-size:23px;max-width:88%}
@@ -580,7 +616,34 @@
   </div>
 </footer>
 
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-title">
+  <p id="cookie-title"><strong>Cookies y contenido externo</strong></p>
+  <p>Utilizamos almacenamiento local para recordar tus preferencias. El contenido externo, como Spotify, solo se cargará si aceptas.</p>
+  <div class="cookie-actions">
+    <button class="cookie-btn" id="cookie-accept" type="button">Aceptar</button>
+    <button class="cookie-btn secondary" id="cookie-reject" type="button">Rechazar</button>
+    <a class="cookie-btn secondary" href="avisos-legales.html">Avisos Legales</a>
+  </div>
+</div>
+
 <script>
+  const cookieBanner=document.getElementById("cookie-banner");
+  const cookieAccept=document.getElementById("cookie-accept");
+  const cookieReject=document.getElementById("cookie-reject");
+
+  function getCookieConsent(){
+    return localStorage.getItem("carlyYeahCookieConsent");
+  }
+
+  function setCookieConsent(value){
+    localStorage.setItem("carlyYeahCookieConsent",value);
+    cookieBanner.classList.remove("show");
+  }
+
+  if(!getCookieConsent()) cookieBanner.classList.add("show");
+  cookieAccept.addEventListener("click",()=>setCookieConsent("accepted"));
+  cookieReject.addEventListener("click",()=>setCookieConsent("rejected"));
+
   const buttons=[...document.querySelectorAll("[data-set-lang]")];
   function setLanguage(lang){
     document.body.dataset.language=lang;
@@ -662,6 +725,10 @@
   function loadSpotify(row){
     const embedUrl=getSpotifyEmbedUrl(row.dataset.spotifyUrl);
     if(!embedUrl) return;
+    if(getCookieConsent()!=="accepted"){
+      cookieBanner.classList.add("show");
+      return;
+    }
     spotifyEmbed.src=embedUrl;
     spotifyEmbed.title=`Spotify — ${row.querySelector(".track-name").textContent}`;
     spotifyPlayer.classList.add("active");
