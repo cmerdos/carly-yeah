@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contacto de Carly Yeah y Carly Road Records.">
+  <meta name="theme-color" content="#050505">
+  <link rel="icon" href="assets/carly-yeah-logo.webp" type="image/webp">
+  <title>Contacto — Carly Yeah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--black:#050505;--white:#fff;--offwhite:#f7f7f5;--muted:#9b9b98;--line:#292929;--max:980px}
+    *{box-sizing:border-box}
+    html{background:var(--black)}
+    body{margin:0;background:var(--black);color:var(--offwhite);font-family:Inter,Arial,sans-serif;line-height:1.7}
+    a{color:inherit}
+    button{font:inherit}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+    header{background:#fff;color:#111;border-bottom:1px solid #dedede}
+    .nav{min-height:94px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand img{width:70.4px;height:70.4px;display:block;border-radius:50%}
+    .header-tools{display:flex;align-items:center;gap:8px}
+    .back{color:#111;text-decoration:none;font-weight:600;border-bottom:2px solid #111;padding:6px 0}
+    .a11y-btn{width:42px;height:42px;display:inline-grid;place-items:center;padding:0;border:1px solid #bbb;background:#fff;color:#111;cursor:pointer;font-size:20px;font-weight:700}
+    .a11y-btn[aria-pressed="true"]{background:#111;color:#fff;border-color:#111}
+    main{min-height:calc(100vh - 94px)}
+    .contact{padding:90px 0 120px}
+    .eyebrow{margin-bottom:20px;color:var(--muted);font-size:13px;letter-spacing:.16em;text-transform:uppercase}
+    h1{margin:0 0 46px;font-family:"Space Grotesk",sans-serif;font-size:clamp(50px,8vw,92px);line-height:.95;letter-spacing:-.055em;text-transform:uppercase}
+    .contact-copy{max-width:800px;border-top:1px solid var(--line);padding-top:38px}
+    .contact-copy p{margin:0 0 22px;color:#d1d1cd;font-size:19px}
+    .contact-card{margin-top:30px;padding:28px;border:1px solid #333;background:#0b0b0b}
+    .contact-card small{display:block;margin-bottom:8px;color:#888;text-transform:uppercase;letter-spacing:.12em}
+    .contact-card a{font-family:"Space Grotesk",sans-serif;font-size:clamp(23px,4vw,34px);font-weight:600;text-decoration:none;word-break:break-word}
+    .contact-card a:hover{text-decoration:underline;text-underline-offset:5px}
+    .instagram{margin-top:18px}
+    .instagram a{font-size:18px}
+    footer{border-top:1px solid var(--line);padding:38px 0;text-align:center}
+    .footer-logos{display:flex;align-items:center;justify-content:center;gap:18px}
+    .footer-logo-main{width:61px;height:61px;border-radius:50%}
+    .footer-logo-records{height:61px;width:auto}
+    footer p{margin:10px 0 0;color:#777;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+    .footer-links{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;margin-top:12px}
+    .footer-links a{color:#aaa;font-size:12px;letter-spacing:.08em;text-underline-offset:4px}
+    body.light-theme{background:#fff;color:#000}
+    body.light-theme main,body.light-theme footer{background:#fff;border-color:#111}
+    body.light-theme .contact-copy{border-color:#111}
+    body.light-theme .contact-copy p{color:#111}
+    body.light-theme .contact-card{background:#fff;border-color:#111}
+    body.light-theme .footer-logo-records{filter:invert(1)}
+    body.light-theme .footer-links a{color:#222}
+    body.readable-mode{line-height:1.85}
+    body.readable-mode .contact-copy p{font-size:22px}
+    body.readable-mode h1{font-size:clamp(56px,8.5vw,100px)}
+    .cookie-banner{position:fixed;left:20px;right:20px;bottom:20px;z-index:1000;display:none;max-width:760px;margin:0 auto;padding:22px;border:1px solid #3b3b3b;background:#0b0b0b;color:#fff;box-shadow:0 12px 40px rgba(0,0,0,.35)}
+    .cookie-banner.show{display:block}
+    .cookie-banner p{margin:0;color:#ddd;font-size:14px;line-height:1.6}
+    .cookie-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .cookie-btn{appearance:none;border:1px solid #fff;background:#fff;color:#111;padding:10px 16px;cursor:pointer;font-weight:700;text-decoration:none}
+    .cookie-btn.secondary{background:transparent;color:#fff;border-color:#777}
+    body.light-theme .cookie-banner{background:#fff;color:#000;border-color:#111}
+    body.light-theme .cookie-banner p{color:#111}
+    body.light-theme .cookie-btn{background:#111;color:#fff;border-color:#111}
+    body.light-theme .cookie-btn.secondary{background:#fff;color:#111;border-color:#555}
+    @media(max-width:650px){
+      .wrap{width:100%;padding-inline:22px}
+      .nav{min-height:82px}
+      .brand img{width:57px;height:57px}
+      .back{font-size:14px}
+      .a11y-btn{width:36px;height:36px;font-size:17px}
+      .contact{padding:65px 0 90px}
+      .contact-copy p{font-size:17px}
+      .footer-logo-main{width:50px;height:50px}
+      .footer-logo-records{height:50px}
+      .cookie-banner{left:12px;right:12px;bottom:12px;padding:18px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Volver a Carly Yeah"><img src="assets/carly-yeah-logo.webp" alt="Logo oficial de Carly Yeah"></a>
+    <div class="header-tools">
+      <button class="a11y-btn" id="contrast-toggle" type="button" aria-pressed="false" aria-label="Cambiar entre fondo oscuro y fondo blanco" title="Cambiar contraste">◐</button>
+      <button class="a11y-btn" id="vision-toggle" type="button" aria-pressed="false" aria-label="Activar texto ampliado y mayor legibilidad" title="Mejorar legibilidad">A+</button>
+      <a class="back" href="index.html">Volver a inicio</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap contact">
+    <div class="eyebrow">CARLY YEAH / CARLY ROAD RECORDS</div>
+    <h1>Contacto.</h1>
+    <div class="contact-copy">
+      <p>Para consultas relacionadas con Carly Yeah, Carly Road Records, prensa, colaboraciones, permisos de uso o cualquier otra cuestión profesional, puedes contactar a través de:</p>
+
+      <div class="contact-card">
+        <small>Email</small>
+        <a href="mailto:contacto@carlyyeah.es">contacto@carlyyeah.es</a>
+      </div>
+
+      <div class="contact-card instagram">
+        <small>Instagram</small>
+        <a href="https://www.instagram.com/carly__yeah/" target="_blank" rel="noopener">@carly__yeah</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-logos">
+      <img class="footer-logo-main" src="assets/carly-yeah-logo.webp" alt="Carly Yeah">
+      <img class="footer-logo-records" src="assets/carly-road-records.webp" alt="Carly Road Records">
+    </div>
+    <p>© 2026 CARLY YEAH | CARLY ROAD Records</p>
+    <div class="footer-links"><a href="avisos-legales.html">Avisos Legales</a><span aria-hidden="true">|</span><a href="contacto.html">Contacto</a></div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-title">
+  <p id="cookie-title"><strong>Cookies y contenido externo</strong></p>
+  <p>Utilizamos almacenamiento local para recordar tus preferencias.</p>
+  <div class="cookie-actions">
+    <button class="cookie-btn" id="cookie-accept" type="button">Aceptar</button>
+    <button class="cookie-btn secondary" id="cookie-reject" type="button">Rechazar</button>
+  </div>
+</div>
+
+<script>
+  const cookieBanner=document.getElementById("cookie-banner");
+  const cookieAccept=document.getElementById("cookie-accept");
+  const cookieReject=document.getElementById("cookie-reject");
+  const consent=localStorage.getItem("carlyYeahCookieConsent");
+  if(!consent) cookieBanner.classList.add("show");
+  cookieAccept.addEventListener("click",()=>{localStorage.setItem("carlyYeahCookieConsent","accepted");cookieBanner.classList.remove("show")});
+  cookieReject.addEventListener("click",()=>{localStorage.setItem("carlyYeahCookieConsent","rejected");cookieBanner.classList.remove("show")});
+
+  const contrastToggle=document.getElementById("contrast-toggle");
+  const visionToggle=document.getElementById("vision-toggle");
+  function setContrast(enabled){
+    document.body.classList.toggle("light-theme",enabled);
+    contrastToggle.setAttribute("aria-pressed",String(enabled));
+    localStorage.setItem("carlyYeahLightTheme",enabled ? "1" : "0");
+  }
+  function setReadable(enabled){
+    document.body.classList.toggle("readable-mode",enabled);
+    visionToggle.setAttribute("aria-pressed",String(enabled));
+    localStorage.setItem("carlyYeahReadableMode",enabled ? "1" : "0");
+  }
+  contrastToggle.addEventListener("click",()=>setContrast(!document.body.classList.contains("light-theme")));
+  visionToggle.addEventListener("click",()=>setReadable(!document.body.classList.contains("readable-mode")));
+  setContrast(localStorage.getItem("carlyYeahLightTheme")==="1");
+  setReadable(localStorage.getItem("carlyYeahReadableMode")==="1");
+</script>
+</body>
+</html>
