@@ -857,8 +857,14 @@
     localStorage.setItem("carlyYeahReadableMode",enabled ? "1" : "0");
   }
 
-  contrastToggle.addEventListener("click",()=>setContrast(!document.body.classList.contains("light-theme")));
-  visionToggle.addEventListener("click",()=>setReadable(!document.body.classList.contains("readable-mode")));
+  contrastToggle.addEventListener("click",()=>{
+    setContrast(!document.body.classList.contains("light-theme"));
+    requestHeaderUpdate();
+  });
+  visionToggle.addEventListener("click",()=>{
+    setReadable(!document.body.classList.contains("readable-mode"));
+    requestHeaderUpdate();
+  });
 
   setContrast(localStorage.getItem("carlyYeahLightTheme")==="1");
   setReadable(localStorage.getItem("carlyYeahReadableMode")==="1");
@@ -873,7 +879,8 @@
   ].filter(Boolean);
 
   function updateHeaderSize(){
-    if(window.innerWidth>850){
+    const accessibilityActive=document.body.classList.contains("light-theme") || document.body.classList.contains("readable-mode");
+    if(window.innerWidth>850 || accessibilityActive){
       siteHeader.classList.remove("header-medium","header-compact","header-music");
       return;
     }
