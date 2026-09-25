@@ -325,7 +325,8 @@
     .foot{display:flex;align-items:flex-end;justify-content:center;gap:30px;text-align:center}
     .footer-logos{display:flex;align-items:center;justify-content:center;gap:18px}.footer-logo-main{width:61px;height:61px;display:block;border-radius:50%;object-fit:cover}.footer-logo-records{height:61px;width:auto;display:block}
     .foot p{margin:7px 0 0;color:#777;font-size:12px;letter-spacing:.11em;text-transform:uppercase}
-    .legal-link{display:inline-block;margin-top:12px;color:#aaa;font-size:12px;letter-spacing:.08em;text-decoration:underline;text-underline-offset:4px}
+    .footer-links{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;margin-top:12px}
+    .legal-link{display:inline-block;color:#aaa;font-size:12px;letter-spacing:.08em;text-decoration:underline;text-underline-offset:4px}
     .legal-link:hover{color:#fff}
     body.light-theme .legal-link{color:#222}
     body.light-theme .legal-link:hover{color:#000}
@@ -611,7 +612,7 @@
     <div>
       <div class="footer-logos"><img class="footer-logo-main" src="assets/carly-yeah-logo.webp" alt="Carly Yeah"><img class="footer-logo-records" src="assets/carly-road-records.webp" alt="Carly Road Records"></div>
       <p>© 2026 CARLY YEAH | CARLY ROAD Records</p>
-      <a class="legal-link" href="avisos-legales.html">Avisos Legales</a>
+      <div class="footer-links"><a class="legal-link" href="avisos-legales.html">Avisos Legales</a><span aria-hidden="true">|</span><a class="legal-link" href="contacto.html">Contacto</a></div>
     </div>
   </div>
 </footer>
