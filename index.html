@@ -299,6 +299,14 @@
     .track-no{color:#777;font-size:12px}
     .track-name{font-family:"Space Grotesk",sans-serif;font-size:clamp(20px,2.5vw,29px);letter-spacing:-.03em}
     .track-state{color:#777;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+    .track.spotify-ready{cursor:pointer;transition:background .2s ease,padding .2s ease}
+    .track.spotify-ready:hover{background:rgba(255,255,255,.045);padding-left:12px;padding-right:12px}
+    .track.spotify-ready:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+    .spotify-player{display:none;margin-top:30px}
+    .spotify-player.active{display:block}
+    .spotify-player iframe{display:block;width:100%;height:152px;border:0;border-radius:12px;background:#181818}
+    body.light-theme .track.spotify-ready:hover{background:rgba(0,0,0,.055)}
+    body.light-theme .spotify-player iframe{background:#f2f2f2}
     .info-grid{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
@@ -506,12 +514,19 @@
           <div class="release">EP · 6 tracks</div>
         </div>
         <div class="tracklist">
-          <div class="track"><span class="track-no">01</span><span class="track-name">Boreal</span><span class="track-state">Still Looking Up</span></div>
-          <div class="track"><span class="track-no">02</span><span class="track-name">This Is My Stop</span><span class="track-state">Still Looking Up</span></div>
-          <div class="track"><span class="track-no">03</span><span class="track-name">No Reason Why</span><span class="track-state">Still Looking Up</span></div>
-          <div class="track"><span class="track-no">04</span><span class="track-name">When We Let Go</span><span class="track-state">Still Looking Up</span></div>
-          <div class="track"><span class="track-no">05</span><span class="track-name">Let Me Be</span><span class="track-state">Still Looking Up</span></div>
-          <div class="track"><span class="track-no">06</span><span class="track-name">What the Hell I Can Do (After Summer)</span><span class="track-state">Still Looking Up</span></div>
+          <div class="track" data-spotify-url=""><span class="track-no">01</span><span class="track-name">Boreal</span><span class="track-state">Still Looking Up</span></div>
+          <div class="track" data-spotify-url=""><span class="track-no">02</span><span class="track-name">This Is My Stop</span><span class="track-state">Still Looking Up</span></div>
+          <div class="track" data-spotify-url=""><span class="track-no">03</span><span class="track-name">No Reason Why</span><span class="track-state">Still Looking Up</span></div>
+          <div class="track" data-spotify-url=""><span class="track-no">04</span><span class="track-name">When We Let Go</span><span class="track-state">Still Looking Up</span></div>
+          <div class="track" data-spotify-url=""><span class="track-no">05</span><span class="track-name">Let Me Be</span><span class="track-state">Still Looking Up</span></div>
+          <div class="track" data-spotify-url=""><span class="track-no">06</span><span class="track-name">What the Hell I Can Do (After Summer)</span><span class="track-state">Still Looking Up</span></div>
+        </div>
+        <div class="spotify-player" id="spotify-player" aria-live="polite">
+          <iframe id="spotify-embed"
+            title="Spotify player"
+            loading="lazy"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+          </iframe>
         </div>
       </div>
     </div>
@@ -588,6 +603,54 @@
 
   setContrast(localStorage.getItem("carlyYeahLightTheme")==="1");
   setReadable(localStorage.getItem("carlyYeahReadableMode")==="1");
+
+  const spotifyRows=[...document.querySelectorAll(".track[data-spotify-url]")];
+  const spotifyPlayer=document.getElementById("spotify-player");
+  const spotifyEmbed=document.getElementById("spotify-embed");
+
+  function getSpotifyEmbedUrl(value){
+    if(!value) return "";
+    const url=value.trim();
+    const uri=url.match(/^spotify:(track|album|playlist|artist):([A-Za-z0-9]+)$/i);
+    if(uri) return `https://open.spotify.com/embed/${uri[1].toLowerCase()}/${uri[2]}`;
+
+    try{
+      const parsed=new URL(url);
+      if(parsed.hostname!=="open.spotify.com" && parsed.hostname!=="www.open.spotify.com") return "";
+      const parts=parsed.pathname.split("/").filter(Boolean);
+      const type=parts[0];
+      const id=parts[1];
+      if(!["track","album","playlist","artist"].includes(type) || !id) return "";
+      return `https://open.spotify.com/embed/${type}/${id}`;
+    }catch{
+      return "";
+    }
+  }
+
+  function loadSpotify(row){
+    const embedUrl=getSpotifyEmbedUrl(row.dataset.spotifyUrl);
+    if(!embedUrl) return;
+    spotifyEmbed.src=embedUrl;
+    spotifyEmbed.title=`Spotify — ${row.querySelector(".track-name").textContent}`;
+    spotifyPlayer.classList.add("active");
+    spotifyRows.forEach(item=>item.removeAttribute("aria-current"));
+    row.setAttribute("aria-current","true");
+    spotifyPlayer.scrollIntoView({behavior:"smooth",block:"nearest"});
+  }
+
+  spotifyRows.forEach(row=>{
+    if(!getSpotifyEmbedUrl(row.dataset.spotifyUrl)) return;
+    row.classList.add("spotify-ready");
+    row.setAttribute("role","button");
+    row.setAttribute("tabindex","0");
+    row.addEventListener("click",()=>loadSpotify(row));
+    row.addEventListener("keydown",event=>{
+      if(event.key==="Enter" || event.key===" "){
+        event.preventDefault();
+        loadSpotify(row);
+      }
+    });
+  });
 </script>
 </body>
 </html>
