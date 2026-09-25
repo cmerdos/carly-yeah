@@ -298,7 +298,7 @@
     }
     .track-no{color:#777;font-size:12px}
     .track-name{font-family:"Space Grotesk",sans-serif;font-size:clamp(20px,2.5vw,29px);letter-spacing:-.03em}
-    .track-state{color:#777;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+    .track-state{color:#777;font-size:11px;letter-spacing:.08em;text-transform:uppercase;text-align:right;line-height:1.45}
     .track.spotify-ready{cursor:pointer;transition:background .2s ease,padding .2s ease}
     .track.spotify-ready:hover{background:rgba(255,255,255,.045);padding-left:12px;padding-right:12px}
     .track.spotify-ready:focus-visible{outline:2px solid currentColor;outline-offset:4px}
@@ -421,8 +421,8 @@
       }
       .music-head{display:block}
       .music-head .release{margin-top:14px}
-      .track{grid-template-columns:42px minmax(0,1fr);gap:14px}
-      .track-state{display:none}
+      .track{grid-template-columns:42px minmax(0,1fr);gap:8px 14px}
+      .track-state{display:block;grid-column:2;text-align:left;font-size:11px;letter-spacing:.06em}
       .info-grid{grid-template-columns:1fr}
       .foot{align-items:center;flex-direction:column;padding-inline:28px}.footer-logos{gap:14px}.footer-logo-main{width:50px;height:50px}.footer-logo-records{height:50px}
     }
@@ -514,12 +514,12 @@
           <div class="release">EP · 6 tracks</div>
         </div>
         <div class="tracklist">
-          <div class="track" data-spotify-url=""><span class="track-no">01</span><span class="track-name">Boreal</span><span class="track-state">Still Looking Up</span></div>
-          <div class="track" data-spotify-url=""><span class="track-no">02</span><span class="track-name">This Is My Stop</span><span class="track-state">Still Looking Up</span></div>
-          <div class="track" data-spotify-url=""><span class="track-no">03</span><span class="track-name">No Reason Why</span><span class="track-state">Still Looking Up</span></div>
-          <div class="track" data-spotify-url=""><span class="track-no">04</span><span class="track-name">When We Let Go</span><span class="track-state">Still Looking Up</span></div>
-          <div class="track" data-spotify-url=""><span class="track-no">05</span><span class="track-name">Let Me Be</span><span class="track-state">Still Looking Up</span></div>
-          <div class="track" data-spotify-url=""><span class="track-no">06</span><span class="track-name">What the Hell I Can Do (After Summer)</span><span class="track-state">Still Looking Up</span></div>
+          <div class="track" data-spotify-url=""><span class="track-no">01</span><span class="track-name">Boreal</span><span class="track-state">Disponible 9 de octubre de 2026</span></div>
+          <div class="track" data-spotify-url=""><span class="track-no">02</span><span class="track-name">This Is My Stop</span><span class="track-state">Disponible el 20 de noviembre de 2026</span></div>
+          <div class="track" data-spotify-url=""><span class="track-no">03</span><span class="track-name">No Reason Why</span><span class="track-state">Disponible el 30 de octubre de 2026</span></div>
+          <div class="track" data-spotify-url=""><span class="track-no">04</span><span class="track-name">When We Let Go</span><span class="track-state">Disponible el 11 de diciembre de 2026</span></div>
+          <div class="track" data-spotify-url=""><span class="track-no">05</span><span class="track-name">Let Me Be</span><span class="track-state">Disponible el 11 de diciembre de 2026</span></div>
+          <div class="track" data-spotify-url=""><span class="track-no">06</span><span class="track-name">What the Hell I Can Do (After Summer)</span><span class="track-state">Disponible el 11 de diciembre de 2026</span></div>
         </div>
         <div class="spotify-player" id="spotify-player" aria-live="polite">
           <iframe id="spotify-embed"
