@@ -503,6 +503,20 @@
       header.header-compact .top-social{height:31px}
       header.header-compact .top-social svg{width:22px;height:22px}
 
+      header.header-music .nav{gap:4px 7px;padding:4px 14px 4px}
+      header.header-music .brand img{width:34px;height:34px;flex-basis:34px}
+      header.header-music .nav-stack{gap:0}
+      header.header-music .a11y-controls{gap:2px}
+      header.header-music .a11y-btn{width:23px;height:23px;font-size:11.5px}
+      header.header-music .a11y-text{font-size:9px}
+      header.header-music .langs{padding:1px}
+      header.header-music .lang{padding:3px 5px;font-size:9.5px}
+      header.header-music nav{gap:14px;font-size:10.5px;line-height:1}
+      header.header-music nav a{padding:0 0 2px}
+      header.header-music .social-links{padding:0}
+      header.header-music .top-social{height:24px}
+      header.header-music .top-social svg{width:17.5px;height:17.5px}
+
       #bio,#music,#videos,#info{scroll-margin-top:175px}
       .hero{
         min-height:calc(100svh - 118px);
@@ -579,6 +593,19 @@
       header.header-compact nav{gap:12px;font-size:11.5px}
       header.header-compact .top-social{height:29px}
       header.header-compact .top-social svg{width:21px;height:21px}
+
+      header.header-music .nav{gap:3px 6px;padding:3px 10px}
+      header.header-music .brand img{width:31px;height:31px;flex-basis:31px}
+      header.header-music .a11y-controls{gap:1px}
+      header.header-music .a11y-btn{width:21px;height:21px;font-size:10.5px}
+      header.header-music .a11y-text{font-size:8.5px}
+      header.header-music .langs{padding:1px}
+      header.header-music .lang{padding:2px 4px;font-size:8.8px}
+      header.header-music nav{gap:9px;font-size:9.5px}
+      header.header-music nav a{padding:0 0 1px}
+      header.header-music .top-social{height:22px}
+      header.header-music .top-social svg{width:16px;height:16px}
+
       .hero-grid{padding-inline:22px}
       .hero-copy h2{font-size:clamp(48px,14.5vw,64px)}
       .hero-copy p{max-width:82%;font-size:20px}
@@ -843,7 +870,7 @@
 
   function updateHeaderSize(){
     if(window.innerWidth>850){
-      siteHeader.classList.remove("header-medium","header-compact");
+      siteHeader.classList.remove("header-medium","header-compact","header-music");
       return;
     }
 
@@ -853,7 +880,8 @@
       if(section.offsetTop<=marker) activeId=section.id;
     });
 
-    siteHeader.classList.toggle("header-compact",activeId==="music" || activeId==="videos");
+    siteHeader.classList.toggle("header-music",activeId==="music");
+    siteHeader.classList.toggle("header-compact",activeId==="videos");
     siteHeader.classList.toggle("header-medium",activeId==="bio" || activeId==="info");
   }
 
