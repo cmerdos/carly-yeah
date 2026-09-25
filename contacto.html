@@ -31,11 +31,33 @@
     h1{margin:0 0 46px;font-family:"Space Grotesk",sans-serif;font-size:clamp(50px,8vw,92px);line-height:.95;letter-spacing:-.055em;text-transform:uppercase}
     .contact-copy{max-width:800px;border-top:1px solid var(--line);padding-top:38px}
     .contact-copy p{margin:0 0 22px;color:#d1d1cd;font-size:19px}
-    .contact-card{margin-top:30px;padding:28px;border:1px solid #333;background:#0b0b0b}
-    .contact-card small{display:block;margin-bottom:8px;color:#888;text-transform:uppercase;letter-spacing:.12em}
-    .contact-card a{font-family:"Space Grotesk",sans-serif;font-size:clamp(23px,4vw,34px);font-weight:600;text-decoration:none;word-break:break-word}
-    .contact-card a:hover{text-decoration:underline;text-underline-offset:5px}
-    .instagram{margin-top:18px}
+    .contact-list{margin-top:30px;border-top:1px solid #333}
+    .contact-line{
+      display:flex;
+      align-items:center;
+      gap:22px;
+      padding:24px 0;
+      border-bottom:1px solid #333;
+    }
+    .contact-line-logo{
+      width:62px;
+      height:62px;
+      flex:0 0 62px;
+      display:block;
+      object-fit:contain;
+    }
+    .contact-line-logo.carly{border-radius:50%}
+    .contact-line-logo.records{width:96px;flex-basis:96px;height:62px}
+    .contact-line a{
+      font-family:"Space Grotesk",sans-serif;
+      font-size:clamp(22px,3.5vw,32px);
+      font-weight:600;
+      text-decoration:none;
+      word-break:break-word;
+    }
+    .contact-line a:hover{text-decoration:underline;text-underline-offset:5px}
+    .instagram{margin-top:28px}
+    .instagram small{display:block;margin-bottom:8px;color:#888;text-transform:uppercase;letter-spacing:.12em}
     .instagram a{font-size:18px}
     footer{border-top:1px solid var(--line);padding:38px 0;text-align:center}
     .footer-logos{display:flex;align-items:center;justify-content:center;gap:18px}
@@ -48,7 +70,7 @@
     body.light-theme main,body.light-theme footer{background:#fff;border-color:#111}
     body.light-theme .contact-copy{border-color:#111}
     body.light-theme .contact-copy p{color:#111}
-    body.light-theme .contact-card{background:#fff;border-color:#111}
+    body.light-theme .contact-list,body.light-theme .contact-line{border-color:#111}
     body.light-theme .footer-logo-records{filter:invert(1)}
     body.light-theme .footer-links a{color:#222}
     body.readable-mode{line-height:1.85}
@@ -72,6 +94,10 @@
       .a11y-btn{width:36px;height:36px;font-size:17px}
       .contact{padding:65px 0 90px}
       .contact-copy p{font-size:17px}
+      .contact-line{gap:14px;padding:20px 0}
+      .contact-line-logo{width:52px;height:52px;flex-basis:52px}
+      .contact-line-logo.records{width:78px;height:52px;flex-basis:78px}
+      .contact-line a{font-size:clamp(17px,5vw,23px)}
       .footer-logo-main{width:50px;height:50px}
       .footer-logo-records{height:50px}
       .cookie-banner{left:12px;right:12px;bottom:12px;padding:18px}
@@ -97,12 +123,18 @@
     <div class="contact-copy">
       <p>Para consultas relacionadas con Carly Yeah, Carly Road Records, prensa, colaboraciones, permisos de uso o cualquier otra cuestión profesional, puedes contactar a través de:</p>
 
-      <div class="contact-card">
-        <small>Email</small>
-        <a href="mailto:contacto@carlyyeah.es">contacto@carlyyeah.es</a>
+      <div class="contact-list" aria-label="Contactos por email">
+        <div class="contact-line">
+          <img class="contact-line-logo carly" src="assets/carly-yeah-logo.webp" alt="Carly Yeah">
+          <a href="mailto:contacto@carlyyeah.es">contacto@carlyyeah.es</a>
+        </div>
+        <div class="contact-line">
+          <img class="contact-line-logo records" src="assets/carly-road-records.webp" alt="Carly Road Records">
+          <a href="mailto:records@carlyyeah.es">records@carlyyeah.es</a>
+        </div>
       </div>
 
-      <div class="contact-card instagram">
+      <div class="instagram">
         <small>Instagram</small>
         <a href="https://www.instagram.com/carly__yeah/" target="_blank" rel="noopener">@carly__yeah</a>
       </div>
