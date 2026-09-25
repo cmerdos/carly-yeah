@@ -4,53 +4,364 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Carly Yeah — proyecto musical independiente. Rock, folk, pop y sonidos alternativos.">
-  <meta name="theme-color" content="#050505">\n  <link rel="icon" href="assets/carly-yeah-logo.webp" type="image/webp">
+  <meta name="theme-color" content="#050505">
+  <link rel="icon" href="assets/carly-yeah-logo.webp" type="image/webp">
   <title>Carly Yeah — Still Looking Up</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--black:#050505;--white:#f7f7f5;--muted:#a7a7a3;--line:#292929;--max:1220px}
+
+    :root{
+      --black:#050505;
+      --white:#fff;
+      --offwhite:#f7f7f5;
+      --muted:#9b9b98;
+      --line:#292929;
+      --max:1220px;
+    }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;background:var(--black)}
-    body{margin:0;background:var(--black);color:var(--white);font-family:Inter,Arial,sans-serif;line-height:1.6}
+    body{
+      margin:0;
+      background:var(--black);
+      color:var(--offwhite);
+      font-family:Inter,Arial,sans-serif;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
     a{color:inherit;text-decoration:none}
     button{font:inherit}
-    .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
-    header{position:sticky;top:0;z-index:50;background:rgba(5,5,5,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
-    .nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:22px}
-    .brand{display:inline-flex;align-items:stretch;font-family:"Space Grotesk",sans-serif;font-weight:700;letter-spacing:-.07em;font-size:24px;line-height:1}
-    .brand span{background:#fff;color:#000;padding:10px 11px}.brand span+span{border-left:5px solid #050505}
-    .nav-right{display:flex;align-items:center;gap:25px}
-    nav{display:flex;gap:25px;font-size:13px;text-transform:uppercase;letter-spacing:.09em}
-    nav a{opacity:.72}nav a:hover{opacity:1}
-    .langs{display:flex;gap:7px}.lang{border:1px solid #444;background:transparent;color:#aaa;padding:7px 9px;cursor:pointer;font-size:11px;letter-spacing:.08em;text-transform:uppercase}.lang.active{background:#fff;color:#000;border-color:#fff}
-    .hero{min-height:calc(100vh - 82px);display:grid;align-items:center;border-bottom:1px solid var(--line);position:relative;overflow:hidden;background:#050505}
-    .hero:before{content:"";position:absolute;inset:0;background-image:url("assets/hero.webp");background-repeat:no-repeat;background-position:right bottom;background-size:cover;filter:grayscale(1);z-index:0}
-    .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,5,5,.78) 0%,rgba(5,5,5,.54) 38%,rgba(5,5,5,.12) 68%,rgba(5,5,5,0) 100%);z-index:1}
-    .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr;gap:32px;padding:85px 0;max-width:780px;margin-left:0}
-    .eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:25px}
-    h1{font-family:"Space Grotesk",sans-serif;font-size:clamp(58px,10vw,142px);line-height:.82;letter-spacing:-.075em;margin:0;text-transform:uppercase}
-    .hero-copy{display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:12px;max-width:470px}
-    .hero-copy .kicker{font-size:15px;text-transform:uppercase;letter-spacing:.20em;color:#fff;margin-bottom:36px;font-weight:700}
-    .hero-copy h2{font-family:Inter,Arial,sans-serif;font-size:clamp(62px,7.4vw,112px);font-weight:700;line-height:.95;letter-spacing:-.055em;margin:0 0 42px;text-transform:uppercase}
-    .hero-copy p{font-size:26px;line-height:1.45;max-width:610px;color:#f1f1f1;margin:0 0 48px}
-    .cta{display:inline-flex;align-items:center;justify-content:space-between;gap:48px;width:min(560px,100%);background:#fff;color:#111;border:0;padding:27px 42px;text-transform:none;font-size:22px;font-weight:700;letter-spacing:0;transition:.2s}.cta:hover{background:#f0f0f0;color:#000}.cta-arrow{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:8px;background:#8fa8bf;color:#fff;font-size:29px;line-height:1}
+    img{max-width:100%}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+
+    /* Header */
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:#fff;
+      color:#111;
+      border-bottom:1px solid #dedede;
+    }
+    .nav{
+      min-height:94px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+    }
+    .brand{
+      display:inline-flex;
+      align-items:center;
+      gap:18px;
+      min-width:0;
+      color:#111;
+    }
+    .brand img{
+      width:23px;
+      height:23px;
+      flex:0 0 23px;
+      display:block;
+      border-radius:50%;
+      object-fit:cover;
+    }
+    .brand-word{
+      font-weight:700;
+      font-size:19px;
+      letter-spacing:.23em;
+      white-space:nowrap;
+    }
+    .nav-right{display:flex;align-items:center;gap:34px}
+    nav{
+      display:flex;
+      align-items:center;
+      gap:30px;
+      font-size:16px;
+    }
+    nav a{
+      color:#111;
+      opacity:1;
+      padding:8px 0;
+      border-bottom:2px solid transparent;
+    }
+    nav a:hover{border-bottom-color:#111}
+    .langs{
+      display:flex;
+      align-items:stretch;
+      padding:4px;
+      border:1px solid #bbb;
+      gap:0;
+      background:#fff;
+    }
+    .lang{
+      appearance:none;
+      border:0;
+      background:#fff;
+      color:#111;
+      padding:10px 15px;
+      cursor:pointer;
+      font-size:15px;
+    }
+    .lang.active{background:#111;color:#fff}
+
+    /* Hero */
+    .hero{
+      min-height:calc(100vh - 94px);
+      position:relative;
+      display:grid;
+      align-items:center;
+      overflow:hidden;
+      background:#050505;
+      border-bottom:1px solid var(--line);
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:0;
+      background:url("assets/hero.webp") right bottom / cover no-repeat;
+      filter:grayscale(1);
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:1;
+      background:linear-gradient(90deg,rgba(5,5,5,.84) 0%,rgba(5,5,5,.62) 40%,rgba(5,5,5,.16) 72%,rgba(5,5,5,0) 100%);
+    }
+    .hero-grid{
+      position:relative;
+      z-index:2;
+      display:block;
+      padding:88px 0;
+    }
+    .hero-copy{max-width:760px}
+    .hero-copy .kicker{
+      margin-bottom:34px;
+      color:#fff;
+      font-size:15px;
+      font-weight:700;
+      letter-spacing:.20em;
+      text-transform:uppercase;
+    }
+    .hero-copy h2{
+      margin:0 0 40px;
+      color:#fff;
+      font-size:clamp(68px,7.4vw,112px);
+      font-weight:700;
+      line-height:.96;
+      letter-spacing:-.055em;
+      text-transform:uppercase;
+    }
+    .hero-copy p{
+      max-width:610px;
+      margin:0 0 44px;
+      color:#f2f2f2;
+      font-size:25px;
+      line-height:1.45;
+    }
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:42px;
+      width:min(560px,100%);
+      padding:25px 38px;
+      border:0;
+      background:#fff;
+      color:#111;
+      font-size:21px;
+      font-weight:700;
+      transition:background .2s ease;
+    }
+    .cta:hover{background:#ececec}
+    .cta-arrow{
+      display:inline-grid;
+      place-items:center;
+      width:40px;
+      height:40px;
+      flex:0 0 40px;
+      border-radius:8px;
+      background:#8fa8bf;
+      color:#fff;
+      font-size:27px;
+      line-height:1;
+    }
+
+    /* Content sections */
     section{border-bottom:1px solid var(--line)}
-    .section-grid{display:grid;grid-template-columns:240px 1fr;gap:75px;padding:105px 0}
-    .num{font-family:"Space Grotesk",sans-serif;font-size:13px;letter-spacing:.14em;color:#898985;text-transform:uppercase}
-    .section-title{font-family:"Space Grotesk",sans-serif;font-size:clamp(38px,5vw,68px);line-height:1;letter-spacing:-.05em;margin:0 0 42px;text-transform:uppercase}
-    .bio p{font-size:18px;color:#d1d1cd;max-width:850px;margin:0 0 23px}.bio p:first-of-type{font-size:24px;color:#fff;line-height:1.45}
-    .music-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:38px}.release{font-size:13px;color:#999;text-transform:uppercase;letter-spacing:.12em}
-    .tracklist{border-top:1px solid #333}.track{display:grid;grid-template-columns:60px 1fr auto;gap:20px;align-items:center;padding:21px 0;border-bottom:1px solid #292929}.track-no{color:#777;font-size:12px}.track-name{font-family:"Space Grotesk",sans-serif;font-size:clamp(20px,2.5vw,29px);letter-spacing:-.03em}.track-state{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#777}
-    .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#262626;border:1px solid #262626}.info-card{background:#070707;padding:30px;min-height:195px}.info-card small{color:#777;text-transform:uppercase;letter-spacing:.12em}.info-card h3{font-family:"Space Grotesk";font-size:25px;margin:14px 0 7px}.info-card p{color:#aaa;margin:0}
-    footer{padding:45px 0}.foot{display:flex;justify-content:space-between;align-items:flex-end;gap:30px}.foot-brand{font-family:"Space Grotesk";font-size:28px;font-weight:700;letter-spacing:-.05em}.foot p{margin:7px 0 0;color:#777;font-size:12px;text-transform:uppercase;letter-spacing:.11em}.social{font-size:13px;text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid #777;padding-bottom:3px}
-    [data-lang]{display:none}body[data-language="es"] [data-lang="es"],body[data-language="en"] [data-lang="en"]{display:block}span[data-lang]{display:none}body[data-language="es"] span[data-lang="es"],body[data-language="en"] span[data-lang="en"]{display:inline}
-    @media(max-width:850px){.wrap{width:min(100% - 28px,var(--max))}.nav{height:72px}.brand img{width:48px;height:48px}nav{display:none}.nav-right{gap:10px}.hero{min-height:calc(100vh - 72px);background-size:auto 100%;background-position:right bottom}.hero-grid{grid-template-columns:1fr;gap:32px;padding:68px 0 74px;max-width:72%}h1{font-size:clamp(62px,20vw,112px)}.section-grid{grid-template-columns:1fr;gap:25px;padding:75px 0}.info-grid{grid-template-columns:1fr}.foot{align-items:flex-start;flex-direction:column}}
-  
-    /* Logo oficial reducido */
-    .brand img{width:23px!important;height:23px!important;display:block;border-radius:50%}
-    @media(max-width:850px){.brand img{width:20px!important;height:20px!important}}
+    .section-grid{
+      display:grid;
+      grid-template-columns:240px minmax(0,1fr);
+      gap:75px;
+      padding:105px 0;
+    }
+    .num{
+      color:#898985;
+      font-family:"Space Grotesk",sans-serif;
+      font-size:13px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+    .section-title{
+      margin:0 0 42px;
+      font-family:"Space Grotesk",sans-serif;
+      font-size:clamp(38px,5vw,68px);
+      line-height:1;
+      letter-spacing:-.05em;
+      text-transform:uppercase;
+    }
+    .bio p{max-width:850px;margin:0 0 23px;color:#d1d1cd;font-size:18px}
+    .bio p:first-of-type{color:#fff;font-size:24px;line-height:1.45}
+    .music-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:30px;
+      margin-bottom:38px;
+    }
+    .release{color:#999;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+    .tracklist{border-top:1px solid #333}
+    .track{
+      display:grid;
+      grid-template-columns:60px minmax(0,1fr) auto;
+      gap:20px;
+      align-items:center;
+      padding:21px 0;
+      border-bottom:1px solid #292929;
+    }
+    .track-no{color:#777;font-size:12px}
+    .track-name{font-family:"Space Grotesk",sans-serif;font-size:clamp(20px,2.5vw,29px);letter-spacing:-.03em}
+    .track-state{color:#777;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:1px;
+      border:1px solid #262626;
+      background:#262626;
+    }
+    .info-card{min-height:195px;padding:30px;background:#070707}
+    .info-card small{color:#777;letter-spacing:.12em;text-transform:uppercase}
+    .info-card h3{margin:14px 0 7px;font-family:"Space Grotesk",sans-serif;font-size:25px}
+    .info-card p{margin:0;color:#aaa}
+    footer{padding:45px 0}
+    .foot{display:flex;align-items:flex-end;justify-content:space-between;gap:30px}
+    .foot-brand{font-family:"Space Grotesk",sans-serif;font-size:28px;font-weight:700;letter-spacing:-.05em}
+    .foot p{margin:7px 0 0;color:#777;font-size:12px;letter-spacing:.11em;text-transform:uppercase}
+    .social{padding-bottom:3px;border-bottom:1px solid #777;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+
+    /* Language switching */
+    [data-lang]{display:none}
+    body[data-language="es"] [data-lang="es"],
+    body[data-language="en"] [data-lang="en"]{display:block}
+    span[data-lang]{display:none}
+    body[data-language="es"] span[data-lang="es"],
+    body[data-language="en"] span[data-lang="en"]{display:inline}
+
+    @media(max-width:850px){
+      .wrap{width:100%}
+
+      header{position:relative}
+      .nav{
+        min-height:0;
+        display:grid;
+        grid-template-columns:minmax(0,1fr) auto;
+        grid-template-rows:auto auto;
+        gap:20px 16px;
+        padding:18px 28px 17px;
+      }
+      .brand{gap:14px}
+      .brand img{
+        width:20px;
+        height:20px;
+        flex-basis:20px;
+      }
+      .brand-word{
+        overflow:hidden;
+        font-size:15px;
+        letter-spacing:.20em;
+        text-overflow:ellipsis;
+      }
+      .nav-right{display:contents}
+      .langs{
+        grid-column:2;
+        grid-row:1;
+        align-self:center;
+        padding:3px;
+      }
+      .lang{padding:8px 11px;font-size:14px}
+      nav{
+        grid-column:1 / -1;
+        grid-row:2;
+        display:flex;
+        justify-content:center;
+        gap:34px;
+        font-size:17px;
+      }
+      nav a{padding:3px 0 7px}
+      nav a:first-child{border-bottom-color:#111}
+
+      .hero{
+        min-height:calc(100svh - 118px);
+        align-items:stretch;
+      }
+      .hero::before{
+        background-position:right bottom;
+        background-size:auto 100%;
+      }
+      .hero::after{
+        background:linear-gradient(90deg,rgba(5,5,5,.88) 0%,rgba(5,5,5,.72) 44%,rgba(5,5,5,.28) 72%,rgba(5,5,5,.03) 100%);
+      }
+      .hero-grid{padding:54px 28px 52px}
+      .hero-copy{max-width:100%}
+      .hero-copy .kicker{margin-bottom:34px;font-size:13px;letter-spacing:.19em}
+      .hero-copy h2{
+        max-width:94%;
+        margin-bottom:32px;
+        font-size:clamp(52px,15vw,72px);
+        line-height:.98;
+      }
+      .hero-copy p{
+        max-width:76%;
+        margin-bottom:42px;
+        font-size:21px;
+        line-height:1.45;
+      }
+      .cta{
+        width:min(100%,320px);
+        gap:25px;
+        padding:20px 24px;
+        font-size:18px;
+      }
+      .cta-arrow{width:35px;height:35px;flex-basis:35px;font-size:23px}
+
+      .section-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+        padding:72px 28px;
+      }
+      .music-head{display:block}
+      .music-head .release{margin-top:14px}
+      .track{grid-template-columns:42px minmax(0,1fr);gap:14px}
+      .track-state{display:none}
+      .info-grid{grid-template-columns:1fr}
+      .foot{align-items:flex-start;flex-direction:column;padding-inline:28px}
+    }
+
+    @media(max-width:430px){
+      .nav{padding-inline:20px}
+      .brand{gap:10px}
+      .brand-word{font-size:13px;letter-spacing:.17em}
+      .langs{padding:2px}
+      .lang{padding:7px 9px;font-size:13px}
+      nav{gap:25px;font-size:16px}
+      .hero-grid{padding-inline:22px}
+      .hero-copy h2{font-size:clamp(48px,14.5vw,64px)}
+      .hero-copy p{max-width:82%;font-size:20px}
+      .section-grid{padding-inline:22px}
+    }
 
   </style>
 </head>
