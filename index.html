@@ -350,10 +350,24 @@
       border-bottom:1px solid #292929;
     }
     .track-no{color:#777;font-size:12px}
-    .track-name{font-family:"Space Grotesk",sans-serif;font-size:clamp(20px,2.5vw,29px);letter-spacing:-.03em;transition:opacity .35s ease,filter .35s ease}
-    .track.is-unreleased .track-name{opacity:.32;filter:grayscale(1)}
-    .track.is-released .track-name{opacity:1;filter:none}
-    body.light-theme .track.is-unreleased .track-name{opacity:.38}
+    .track-main{display:flex;align-items:center;gap:14px;min-width:0}
+    .track-cover{
+      width:48px;
+      height:48px;
+      flex:0 0 48px;
+      display:block;
+      object-fit:cover;
+      border-radius:3px;
+      border:1px solid #292929;
+      transition:opacity .35s ease,filter .35s ease;
+    }
+    .track-name{min-width:0;font-family:"Space Grotesk",sans-serif;font-size:clamp(20px,2.5vw,29px);letter-spacing:-.03em;transition:opacity .35s ease,filter .35s ease}
+    .track.is-unreleased .track-name,
+    .track.is-unreleased .track-cover{opacity:.32;filter:grayscale(1)}
+    .track.is-released .track-name,
+    .track.is-released .track-cover{opacity:1;filter:none}
+    body.light-theme .track.is-unreleased .track-name,
+    body.light-theme .track.is-unreleased .track-cover{opacity:.38}
     .track-state{color:#777;font-size:11px;letter-spacing:.08em;text-transform:uppercase;text-align:right;line-height:1.45}
     .track.spotify-ready{cursor:pointer;transition:background .2s ease,padding .2s ease}
     .track.spotify-ready:hover{background:rgba(255,255,255,.045);padding-left:12px;padding-right:12px}
@@ -698,6 +712,8 @@
         line-height:1.25;
         overflow-wrap:anywhere;
       }
+      body.readable-mode .track-cover{opacity:1}
+      body.readable-mode .track.is-unreleased .track-cover{opacity:.66}
       body.readable-mode .track-no,
       body.readable-mode .track-state,
       body.readable-mode .release{font-size:13px}
@@ -709,6 +725,8 @@
       .music-head{display:block}
       .music-head .release{margin-top:14px}
       .track{grid-template-columns:42px minmax(0,1fr);gap:8px 14px}
+      .track-main{gap:10px}
+      .track-cover{width:42px;height:42px;flex-basis:42px}
       .track-state{display:block;grid-column:2;text-align:left;font-size:11px;letter-spacing:.06em}
       .info-grid{grid-template-columns:1fr}
       .foot{align-items:center;flex-direction:column;padding-inline:28px}.footer-logos{gap:14px}.footer-logo-main{width:50px;height:50px}.footer-logo-records{height:50px}
@@ -888,12 +906,12 @@
           <div class="release">EP · 6 tracks</div>
         </div>
         <div class="tracklist">
-          <div class="track" data-spotify-url="" data-release-date="2026-12-11"><span class="track-no">01</span><span class="track-name">What the Hell I Can Do (After Summer)</span><span class="track-state">Disponible el 11 de diciembre de 2026</span></div>
-          <div class="track" data-spotify-url="" data-release-date="2026-10-09"><span class="track-no">02</span><span class="track-name">Boreal</span><span class="track-state">Disponible 9 de octubre de 2026</span></div>
-          <div class="track" data-spotify-url="" data-release-date="2026-10-30"><span class="track-no">03</span><span class="track-name">No Reason Why</span><span class="track-state">Disponible el 30 de octubre de 2026</span></div>
-          <div class="track" data-spotify-url="" data-release-date="2026-12-11"><span class="track-no">04</span><span class="track-name">Let Me Be</span><span class="track-state">Disponible el 11 de diciembre de 2026</span></div>
-          <div class="track" data-spotify-url="" data-release-date="2026-11-20"><span class="track-no">05</span><span class="track-name">This Is My Stop</span><span class="track-state">Disponible el 20 de noviembre de 2026</span></div>
-          <div class="track" data-spotify-url="" data-release-date="2026-12-11"><span class="track-no">06</span><span class="track-name">When We Let Go</span><span class="track-state">Disponible el 11 de diciembre de 2026</span></div>
+          <div class="track" data-spotify-url="" data-release-date="2026-12-11"><span class="track-no">01</span><span class="track-main"><img class="track-cover" src="assets/covers/what-the-hell.webp" alt="" width="96" height="96" loading="lazy"><span class="track-name">What the Hell I Can Do (After Summer)</span></span><span class="track-state">Disponible el 11 de diciembre de 2026</span></div>
+          <div class="track" data-spotify-url="" data-release-date="2026-10-09"><span class="track-no">02</span><span class="track-main"><img class="track-cover" src="assets/covers/boreal.webp" alt="" width="96" height="96" loading="lazy"><span class="track-name">Boreal</span></span><span class="track-state">Disponible 9 de octubre de 2026</span></div>
+          <div class="track" data-spotify-url="" data-release-date="2026-10-30"><span class="track-no">03</span><span class="track-main"><img class="track-cover" src="assets/covers/no-reason-why.webp" alt="" width="96" height="96" loading="lazy"><span class="track-name">No Reason Why</span></span><span class="track-state">Disponible el 30 de octubre de 2026</span></div>
+          <div class="track" data-spotify-url="" data-release-date="2026-12-11"><span class="track-no">04</span><span class="track-main"><img class="track-cover" src="assets/covers/let-me-be.webp" alt="" width="96" height="96" loading="lazy"><span class="track-name">Let Me Be</span></span><span class="track-state">Disponible el 11 de diciembre de 2026</span></div>
+          <div class="track" data-spotify-url="" data-release-date="2026-11-20"><span class="track-no">05</span><span class="track-main"><img class="track-cover" src="assets/covers/this-is-my-stop.webp" alt="" width="96" height="96" loading="lazy"><span class="track-name">This Is My Stop</span></span><span class="track-state">Disponible el 20 de noviembre de 2026</span></div>
+          <div class="track" data-spotify-url="" data-release-date="2026-12-11"><span class="track-no">06</span><span class="track-main"><img class="track-cover" src="assets/covers/when-we-let-go.webp" alt="" width="96" height="96" loading="lazy"><span class="track-name">When We Let Go</span></span><span class="track-state">Disponible el 11 de diciembre de 2026</span></div>
         </div>
         <div class="spotify-player" id="spotify-player" aria-live="polite">
           <iframe id="spotify-embed"
