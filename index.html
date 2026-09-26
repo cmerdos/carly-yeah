@@ -390,8 +390,16 @@
     /* Scheduled music videos */
     .video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
     .video-card{min-width:0}
-    .video-card h3{margin:18px 0 8px;font-family:"Space Grotesk",sans-serif;font-size:26px;line-height:1.2}
-    .video-screen{aspect-ratio:16/9;background:#111;border:1px solid #333;display:grid;place-items:center;overflow:hidden}
+    .video-card h3{margin:18px 0 8px;font-family:"Space Grotesk",sans-serif;font-size:26px;line-height:1.2;transition:opacity .35s ease,filter .35s ease}
+    .video-screen{aspect-ratio:16/9;background:#111;border:1px solid #333;display:grid;place-items:center;overflow:hidden;transition:opacity .35s ease,filter .35s ease}
+    .video-card.is-unreleased .video-screen,
+    .video-card.is-unreleased h3{opacity:.32;filter:grayscale(1)}
+    .video-card.is-released .video-screen,
+    .video-card.is-released h3{opacity:1;filter:none}
+    body.light-theme .video-card.is-unreleased .video-screen,
+    body.light-theme .video-card.is-unreleased h3{opacity:.38}
+    body.readable-mode .video-card.is-unreleased .video-screen,
+    body.readable-mode .video-card.is-unreleased h3{opacity:.66}
     .video-placeholder{width:100%;height:100%;background:#fff}
     .video-placeholder img{display:block;width:100%;height:100%;object-fit:contain}
     .video-placeholder span{font-size:12px;letter-spacing:.12em;text-transform:uppercase}
@@ -1147,6 +1155,8 @@
     const now=Date.now();
     videoCards.forEach(card=>{
       const released=now>=Date.parse(card.dataset.videoRelease);
+      card.classList.toggle("is-released",released);
+      card.classList.toggle("is-unreleased",!released);
       const accepted=getCookieConsent()==="accepted";
       card.querySelector("[data-video-upcoming]").hidden=released;
       card.querySelector("[data-video-available]").hidden=!released;
