@@ -908,6 +908,16 @@
       header .nav-stack .nav-separator{flex:0 0 auto}
       body.readable-mode header .nav-stack nav{font-size:clamp(15px,4vw,17px)}
     }
+  
+    /* Keep biography paragraphs justified without splitting words. */
+    #bio .bio p{
+      text-align:justify;
+      text-align-last:left;
+      -webkit-hyphens:none;
+      hyphens:none;
+      word-break:normal;
+      overflow-wrap:normal;
+    }
   </style>
 </head>
 <body data-language="es">
