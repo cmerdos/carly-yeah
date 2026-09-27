@@ -1171,6 +1171,22 @@
   window.addEventListener("scroll",requestHeaderUpdate,{passive:true});
   window.addEventListener("resize",requestHeaderUpdate);
 
+  // Home always returns to the document top, including repeated clicks.
+  document.querySelectorAll('a[href="#top"]').forEach(link=>{
+    link.addEventListener("click",event=>{
+      if(event.button!==0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      if(window.location.hash!=="#top") history.pushState(null,"","#top");
+      window.scrollTo({
+        top:0,
+        left:0,
+        behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth"
+      });
+      requestHeaderUpdate();
+    });
+  });
+
+
   const releaseRows=[...document.querySelectorAll(".track[data-release-date]")];
 
   function localDateKey(date=new Date()){
