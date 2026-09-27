@@ -342,6 +342,8 @@
       gap:30px;
       margin-bottom:38px;
     }
+    .album-title-row{display:flex;align-items:center;gap:14px;min-width:0}
+    .album-cover{width:48px;height:48px;flex:0 0 48px;display:block;object-fit:cover;border-radius:3px;border:1px solid #292929}
     .release{color:#999;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
     .tracklist{border-top:1px solid #333}
     .track{
@@ -725,6 +727,8 @@
         overflow-wrap:anywhere;
       }
       .music-head{display:block}
+      .album-title-row{gap:10px}
+      .album-cover{width:42px;height:42px;flex-basis:42px}
       .music-head .release{margin-top:14px}
       .track{grid-template-columns:42px minmax(0,1fr);gap:8px 14px}
       .track-main{gap:10px}
@@ -906,7 +910,7 @@
       <div class="num">02 / <span data-lang="es">Música</span><span data-lang="en">Music</span></div>
       <div>
         <div class="music-head">
-          <h2 class="section-title" style="margin:0">Still Looking Up</h2>
+          <div class="album-title-row"><img class="album-cover" src="assets/covers/still-looking-up.webp" alt="Still Looking Up" width="96" height="96" loading="lazy"><h2 class="section-title" style="margin:0">Still Looking Up</h2></div>
           <div class="release">EP · 6 tracks</div>
         </div>
         <div class="tracklist">
