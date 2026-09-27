@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cmerdos.github.io/carly-yeah/sitemap.xml
