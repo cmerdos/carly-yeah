@@ -101,6 +101,7 @@
       border-bottom:2px solid transparent;
     }
     nav a:hover{border-bottom-color:#111}
+    nav a.active{border-bottom-color:#111}
     .nav-separator{color:#777;opacity:.75;user-select:none}
     .nav-disabled{opacity:.32;pointer-events:none;cursor:default}
     .langs{
@@ -538,7 +539,6 @@
         transition:gap .25s ease,font-size .25s ease;
       }
       nav a{padding:2.7px 0 6.3px;transition:padding .25s ease}
-      nav a:first-child{border-bottom-color:#111}
 
       header.header-medium .nav{gap:12px 12px;padding:11px 20px 10px}
       header.header-medium .brand img{width:46px;height:46px;flex-basis:46px}
@@ -1062,17 +1062,22 @@
   ].filter(Boolean);
 
   function updateHeaderSize(){
-    const accessibilityActive=document.body.classList.contains("light-theme") || document.body.classList.contains("readable-mode");
-    if(window.innerWidth>850 || accessibilityActive){
-      siteHeader.classList.remove("header-medium","header-compact","header-music");
-      return;
-    }
-
     const marker=window.scrollY + window.innerHeight*0.34;
     let activeId="top";
     headerSections.forEach(section=>{
       if(section.offsetTop<=marker) activeId=section.id;
     });
+
+    document.querySelectorAll("nav a[href^='#']").forEach(link=>{
+      const target=link.getAttribute("href").slice(1);
+      link.classList.toggle("active",target===activeId && !link.classList.contains("nav-disabled"));
+    });
+
+    const accessibilityActive=document.body.classList.contains("light-theme") || document.body.classList.contains("readable-mode");
+    if(window.innerWidth>850 || accessibilityActive){
+      siteHeader.classList.remove("header-medium","header-compact","header-music");
+      return;
+    }
 
     siteHeader.classList.toggle("header-music",activeId==="music");
     siteHeader.classList.toggle("header-compact",activeId==="videos");
