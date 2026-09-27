@@ -38,6 +38,13 @@
     .nav{min-height:94px;display:flex;align-items:center;justify-content:space-between;gap:24px}
     .brand img{width:70.4px;height:70.4px;display:block;border-radius:50%}
     .header-tools{display:flex;align-items:center;gap:8px}
+    .langs{display:inline-flex;align-items:stretch;border:1px solid #bbb;padding:3px;background:#fff}
+    .lang{appearance:none;border:0;background:#fff;color:#111;padding:8px 10px;cursor:pointer;font-size:13px}
+    .lang.active{background:#111;color:#fff}
+    .lang:focus-visible{outline:2px solid #111;outline-offset:2px}
+    [data-lang]{display:none}
+    body[data-language="es"] [data-lang="es"],body[data-language="en"] [data-lang="en"]{display:block}
+    body[data-language="es"] span[data-lang="es"],body[data-language="en"] span[data-lang="en"]{display:inline}
     .back{color:#111;text-decoration:none;font-weight:600;border-bottom:2px solid #111;padding:6px 0}
     .a11y-btn{width:42px;height:42px;display:inline-grid;place-items:center;padding:0;border:1px solid #bbb;background:#fff;color:#111;cursor:pointer;font-size:20px;font-weight:700}
     .a11y-btn[aria-pressed="true"]{background:#111;color:#fff;border-color:#111}
@@ -78,10 +85,12 @@
     body.light-theme .cookie-btn.secondary{background:#fff;color:#111;border-color:#555}
     @media(max-width:650px){
       .wrap{width:100%;padding-inline:22px}
-      .nav{min-height:82px}
+      .nav{min-height:82px;align-items:flex-start;padding-block:12px}
+      .header-tools{max-width:calc(100% - 70px);flex-wrap:wrap;justify-content:flex-end}
       .brand img{width:57px;height:57px}
       .back{font-size:14px}
       .a11y-btn{width:36px;height:36px;font-size:17px}
+      .lang{padding:6px 8px;font-size:12px}
       .legal{padding:65px 0 90px}
       .legal-copy p{font-size:17px}
       .footer-logo-main{width:50px;height:50px}
@@ -90,14 +99,15 @@
     }
   </style>
 </head>
-<body>
+<body data-language="es">
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="Volver a Carly Yeah"><img src="assets/carly-yeah-logo.webp" alt="Logo oficial de Carly Yeah"></a>
     <div class="header-tools">
       <button class="a11y-btn" id="contrast-toggle" type="button" aria-pressed="false" aria-label="Cambiar entre fondo oscuro y fondo blanco" title="Cambiar contraste">◐</button>
       <button class="a11y-btn" id="vision-toggle" type="button" aria-pressed="false" aria-label="Activar texto ampliado y mayor legibilidad" title="Mejorar legibilidad">A+</button>
-      <a class="back" href="index.html">Volver a inicio</a>
+      <div class="langs" role="group" aria-label="Idioma / Language"><button class="lang active" type="button" data-set-lang="es" aria-pressed="true">ES</button><button class="lang" type="button" data-set-lang="en" aria-pressed="false">EN</button></div>
+      <a class="back" href="index.html"><span data-lang="es">Volver a inicio</span><span data-lang="en">Back to home</span></a>
     </div>
   </div>
 </header>
@@ -105,8 +115,9 @@
 <main>
   <div class="wrap legal">
     <div class="eyebrow">CARLY YEAH / CARLY ROAD RECORDS</div>
-    <h1>Avisos<br>Legales.</h1>
+    <h1><span data-lang="es">Avisos<br>Legales.</span><span data-lang="en">Legal<br>Notices.</span></h1>
     <div class="legal-copy">
+      <div data-lang="es">
       <h2>AVISOS LEGALES · PROPIEDAD INTELECTUAL Y USO DE CONTENIDOS</h2>
 
       <p>Esta web presenta el proyecto musical Carly Yeah y su actividad artística, así como las publicaciones vinculadas al sello Carly Road Records.</p>
@@ -165,6 +176,71 @@
       <p>Puedes cambiar tu decisión eliminando los datos del sitio desde la configuración de tu navegador.</p>
 
       <p>© 2026 Carly Yeah | Carly Road Records. Todos los derechos reservados, sin perjuicio de las licencias aplicables y de las excepciones legalmente previstas.</p>
+      </div>
+
+      <div data-lang="en">
+        <h2>LEGAL NOTICES · INTELLECTUAL PROPERTY AND USE OF CONTENT</h2>
+
+        <p>This website presents the Carly Yeah music project and its artistic activity, as well as releases associated with the Carly Road Records label.</p>
+
+        <h2>INTELLECTUAL PROPERTY</h2>
+
+        <p>The original content on this site—including musical compositions, recordings, lyrics, videos, photographs, texts, designs, cover artwork and logos—is protected by applicable intellectual and industrial property laws. Rights belong to the respective authors, producers and other rights holders.</p>
+
+        <p>Visiting this website, or listening to or watching its content, does not transfer any rights or grant a licence to exploit that content.</p>
+
+        <p>Except with the rights holder’s prior express authorisation or where permitted by law, reproduction, distribution, adaptation or communication to the public of any content, in whole or in part, is prohibited. This includes reusing it in other publications, videos, advertising campaigns, products or services.</p>
+
+        <h2>RELEASES ON DIGITAL PLATFORMS AND SOCIAL MEDIA</h2>
+
+        <p>The protection of original content also extends to Carly Yeah and Carly Road Records releases on music platforms, video services and social media, such as Spotify, Apple Music, Amazon Music, TIDAL, YouTube, YouTube Music, SoundCloud, Instagram and Facebook, and any other platforms where their activity is officially shared.</p>
+
+        <p>This includes songs, music videos, previews, musical excerpts, posts, photographs, cover artwork, stories and short videos, insofar as they are protected and the rights belong to their respective holders.</p>
+
+        <p>Content being publicly available does not mean that it is free to use. The ability to listen to, watch or share it through a platform does not, by itself, authorise its download, extraction, modification or independent publication on other accounts, websites or services.</p>
+
+        <p>Uses made within each platform are governed by that platform’s terms and the applicable licences. This notice does not restrict uses validly authorised under those licences or exceptions provided by law.</p>
+
+        <h2>LINKS AND SHARING FEATURES</h2>
+
+        <p>You may share links to this website, songs, videos and official Carly Yeah and Carly Road Records posts.</p>
+
+        <p>You may also use the sharing, embedding or music integration features made available by platforms, provided that your use is permitted under their terms and the relevant licences. The availability of a feature does not necessarily mean that its use is authorised for advertising or any other commercial purpose.</p>
+
+        <p>Sharing a link or using an authorised feature does not give you rights over the content. Please respect any credits and rights notices accompanying it, and do not claim to have created it or suggest a collaboration or endorsement that does not exist.</p>
+
+        <h2>USE IN THIRD-PARTY PROJECTS AND PUBLICATIONS</h2>
+
+        <p>Where a use is not covered by a licence or a legal exception, permission from the rights holders is required before including music, recordings, images, videos or other materials in your own or a third party’s projects.</p>
+
+        <p>This may include use in advertisements, sponsored content, short films, podcasts, video games, products, promotional campaigns or other publications.</p>
+
+        <p>Crediting the artist or source does not, by itself, replace any permission that may be required. Similarly, the fact that a project is non-profit does not automatically mean that its content can be used freely.</p>
+
+        <h2>THIRD-PARTY CONTENT AND SERVICES</h2>
+
+        <p>Names, trademarks, images and other third-party content that may appear on this website or in official posts belong to their respective owners.</p>
+
+        <p>This website may include links to, or players from, external services. Their use is subject to each provider’s terms and privacy policies. The presence of these links does not imply ownership of or control over the content or practices of the linked platforms.</p>
+
+        <h2>CONTACT AND PERMISSION REQUESTS</h2>
+
+        <p>To request permission to use content or raise any matter concerning rights in the content, please write to <a href="mailto:contacto@carlyyeah.es">contacto@carlyyeah.es</a>.</p>
+
+        <p>When requesting permission, please identify the material you wish to use, the purpose, the publication medium and whether the use is commercial or promotional. Sending a request, or receiving no reply, does not constitute authorisation.</p>
+
+        <p>If you believe that content published on this website infringes rights you hold, you can report it to the same address. Please identify the material, where it appears and the reason for your claim so that it can be reviewed.</p>
+
+        <h2>COOKIES AND LOCAL STORAGE</h2>
+
+        <p>This site may use your browser’s local storage to remember your language, contrast and readability preferences, and your choice regarding cookies or external content.</p>
+
+        <p>Third-party content that may be embedded on the website, such as Spotify players, may use its own storage technologies or cookies in accordance with the relevant provider’s policies. Such content will not load until you have accepted it where necessary.</p>
+
+        <p>You can change your choice by deleting this site’s data in your browser settings.</p>
+
+        <p>© 2026 Carly Yeah | Carly Road Records. All rights reserved, subject to applicable licences and exceptions provided by law.</p>
+      </div>
     </div>
   </div>
 </main>
@@ -177,20 +253,41 @@
       <img class="footer-logo-slu" src="assets/still-looking-up.webp" alt="Still Looking Up">
     </div>
     <p>© 2026 CARLY YEAH | CARLY ROAD Records</p>
-    <div class="footer-links"><a href="avisos-legales.html">Avisos Legales</a><span aria-hidden="true">|</span><a href="contacto.html">Contacto</a></div>
+    <div class="footer-links"><a href="avisos-legales.html"><span data-lang="es">Avisos Legales</span><span data-lang="en">Legal Notices</span></a><span aria-hidden="true">|</span><a href="contacto.html"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a></div>
   </div>
 </footer>
 
 <div class="cookie-banner" id="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-title">
-  <p id="cookie-title"><strong>Cookies y contenido externo</strong></p>
-  <p>Utilizamos almacenamiento local para recordar tus preferencias. El contenido externo, como Spotify, solo se cargará si aceptas.</p>
+  <p id="cookie-title"><strong><span data-lang="es">Cookies y contenido externo</span><span data-lang="en">Cookies and external content</span></strong></p>
+  <p data-lang="es">Utilizamos almacenamiento local para recordar tus preferencias. El contenido externo, como Spotify, solo se cargará si aceptas.</p>
+  <p data-lang="en">We use local storage to remember your preferences. External content, such as Spotify, will only load if you accept it.</p>
   <div class="cookie-actions">
-    <button class="cookie-btn" id="cookie-accept" type="button">Aceptar</button>
-    <button class="cookie-btn secondary" id="cookie-reject" type="button">Rechazar</button>
+    <button class="cookie-btn" id="cookie-accept" type="button"><span data-lang="es">Aceptar</span><span data-lang="en">Accept</span></button>
+    <button class="cookie-btn secondary" id="cookie-reject" type="button"><span data-lang="es">Rechazar</span><span data-lang="en">Reject</span></button>
   </div>
 </div>
 
 <script>
+  const languageButtons=[...document.querySelectorAll("[data-set-lang]")];
+  function setLanguage(lang){
+    document.body.dataset.language=lang;
+    document.documentElement.lang=lang;
+    document.title=lang==="en" ? "Legal Notices — Carly Yeah" : "Avisos Legales — Carly Yeah";
+    document.querySelector('meta[name="description"]').content=lang==="en" ? "Legal notices, intellectual property and cookies for Carly Yeah and Carly Road Records." : "Avisos legales de Carly Yeah y Carly Road Records.";
+    languageButtons.forEach(button=>{
+      const active=button.dataset.setLang===lang;
+      button.classList.toggle("active",active);
+      button.setAttribute("aria-pressed",String(active));
+    });
+    const labels=lang==="en" ? ["Back to Carly Yeah","Change between dark and light backgrounds","Increase text size and readability"] : ["Volver a Carly Yeah","Cambiar entre fondo oscuro y fondo blanco","Activar texto ampliado y mayor legibilidad"];
+    document.querySelector(".brand").setAttribute("aria-label",labels[0]);
+    document.getElementById("contrast-toggle").setAttribute("aria-label",labels[1]);
+    document.getElementById("vision-toggle").setAttribute("aria-label",labels[2]);
+    localStorage.setItem("carlyYeahLanguage",lang);
+  }
+  languageButtons.forEach(button=>button.addEventListener("click",()=>setLanguage(button.dataset.setLang)));
+  setLanguage(localStorage.getItem("carlyYeahLanguage")==="en" ? "en" : "es");
+
   const cookieBanner=document.getElementById("cookie-banner");
   const cookieAccept=document.getElementById("cookie-accept");
   const cookieReject=document.getElementById("cookie-reject");

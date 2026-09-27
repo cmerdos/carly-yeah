@@ -38,6 +38,13 @@
     .nav{min-height:94px;display:flex;align-items:center;justify-content:space-between;gap:24px}
     .brand img{width:70.4px;height:70.4px;display:block;border-radius:50%}
     .header-tools{display:flex;align-items:center;gap:8px}
+    .langs{display:inline-flex;align-items:stretch;border:1px solid #bbb;padding:3px;background:#fff}
+    .lang{appearance:none;border:0;background:#fff;color:#111;padding:8px 10px;cursor:pointer;font-size:13px}
+    .lang.active{background:#111;color:#fff}
+    .lang:focus-visible{outline:2px solid #111;outline-offset:2px}
+    [data-lang]{display:none}
+    body[data-language="es"] [data-lang="es"],body[data-language="en"] [data-lang="en"]{display:block}
+    body[data-language="es"] span[data-lang="es"],body[data-language="en"] span[data-lang="en"]{display:inline}
     .back{color:#111;text-decoration:none;font-weight:600;border-bottom:2px solid #111;padding:6px 0}
     .a11y-btn{width:42px;height:42px;display:inline-grid;place-items:center;padding:0;border:1px solid #bbb;background:#fff;color:#111;cursor:pointer;font-size:20px;font-weight:700}
     .a11y-btn[aria-pressed="true"]{background:#111;color:#fff;border-color:#111}
@@ -103,10 +110,12 @@
     body.light-theme .cookie-btn.secondary{background:#fff;color:#111;border-color:#555}
     @media(max-width:650px){
       .wrap{width:100%;padding-inline:22px}
-      .nav{min-height:82px}
+      .nav{min-height:82px;align-items:flex-start;padding-block:12px}
+      .header-tools{max-width:calc(100% - 70px);flex-wrap:wrap;justify-content:flex-end}
       .brand img{width:57px;height:57px}
       .back{font-size:14px}
       .a11y-btn{width:36px;height:36px;font-size:17px}
+      .lang{padding:6px 8px;font-size:12px}
       .contact{padding:65px 0 90px}
       .contact-copy p{font-size:17px}
       .contact-line{gap:14px;padding:20px 0}
@@ -120,14 +129,15 @@
     }
   </style>
 </head>
-<body>
+<body data-language="es">
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="Volver a Carly Yeah"><img src="assets/carly-yeah-logo.webp" alt="Logo oficial de Carly Yeah"></a>
     <div class="header-tools">
       <button class="a11y-btn" id="contrast-toggle" type="button" aria-pressed="false" aria-label="Cambiar entre fondo oscuro y fondo blanco" title="Cambiar contraste">◐</button>
       <button class="a11y-btn" id="vision-toggle" type="button" aria-pressed="false" aria-label="Activar texto ampliado y mayor legibilidad" title="Mejorar legibilidad">A+</button>
-      <a class="back" href="index.html">Volver a inicio</a>
+      <div class="langs" role="group" aria-label="Idioma / Language"><button class="lang active" type="button" data-set-lang="es" aria-pressed="true">ES</button><button class="lang" type="button" data-set-lang="en" aria-pressed="false">EN</button></div>
+      <a class="back" href="index.html"><span data-lang="es">Volver a inicio</span><span data-lang="en">Back to home</span></a>
     </div>
   </div>
 </header>
@@ -135,9 +145,10 @@
 <main>
   <div class="wrap contact">
     <div class="eyebrow">CARLY YEAH / CARLY ROAD RECORDS</div>
-    <h1>Contacto.</h1>
+    <h1><span data-lang="es">Contacto.</span><span data-lang="en">Contact.</span></h1>
     <div class="contact-copy">
-      <p>Para consultas relacionadas con Carly Yeah, Carly Road Records, prensa, colaboraciones, permisos de uso o cualquier otra cuestión profesional, puedes contactar a través de:</p>
+      <p data-lang="es">Para consultas relacionadas con Carly Yeah, Carly Road Records, prensa, colaboraciones, permisos de uso o cualquier otra cuestión profesional, puedes contactar a través de:</p>
+      <p data-lang="en">For enquiries about Carly Yeah, Carly Road Records, press, collaborations, permission to use content or other professional matters, please contact:</p>
 
       <div class="contact-list" aria-label="Contactos por email">
         <div class="contact-line">
@@ -163,20 +174,41 @@
       <img class="footer-logo-slu" src="assets/still-looking-up.webp" alt="Still Looking Up">
     </div>
     <p>© 2026 CARLY YEAH | CARLY ROAD Records</p>
-    <div class="footer-links"><a href="avisos-legales.html">Avisos Legales</a><span aria-hidden="true">|</span><a href="contacto.html">Contacto</a></div>
+    <div class="footer-links"><a href="avisos-legales.html"><span data-lang="es">Avisos Legales</span><span data-lang="en">Legal Notices</span></a><span aria-hidden="true">|</span><a href="contacto.html"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a></div>
   </div>
 </footer>
 
 <div class="cookie-banner" id="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-title">
-  <p id="cookie-title"><strong>Cookies y contenido externo</strong></p>
-  <p>Utilizamos almacenamiento local para recordar tus preferencias.</p>
+  <p id="cookie-title"><strong><span data-lang="es">Cookies y contenido externo</span><span data-lang="en">Cookies and external content</span></strong></p>
+  <p data-lang="es">Utilizamos almacenamiento local para recordar tus preferencias.</p>
+  <p data-lang="en">We use local storage to remember your preferences.</p>
   <div class="cookie-actions">
-    <button class="cookie-btn" id="cookie-accept" type="button">Aceptar</button>
-    <button class="cookie-btn secondary" id="cookie-reject" type="button">Rechazar</button>
+    <button class="cookie-btn" id="cookie-accept" type="button"><span data-lang="es">Aceptar</span><span data-lang="en">Accept</span></button>
+    <button class="cookie-btn secondary" id="cookie-reject" type="button"><span data-lang="es">Rechazar</span><span data-lang="en">Reject</span></button>
   </div>
 </div>
 
 <script>
+  const languageButtons=[...document.querySelectorAll("[data-set-lang]")];
+  function setLanguage(lang){
+    document.body.dataset.language=lang;
+    document.documentElement.lang=lang;
+    document.title=lang==="en" ? "Contact — Carly Yeah" : "Contacto — Carly Yeah";
+    document.querySelector('meta[name="description"]').content=lang==="en" ? "Contact Carly Yeah and Carly Road Records about music, videos and Still Looking Up." : "Contacta con Carly Yeah y Carly Road Records para consultas sobre música, vídeos y el proyecto Still Looking Up.";
+    languageButtons.forEach(button=>{
+      const active=button.dataset.setLang===lang;
+      button.classList.toggle("active",active);
+      button.setAttribute("aria-pressed",String(active));
+    });
+    const labels=lang==="en" ? ["Back to Carly Yeah","Change between dark and light backgrounds","Increase text size and readability"] : ["Volver a Carly Yeah","Cambiar entre fondo oscuro y fondo blanco","Activar texto ampliado y mayor legibilidad"];
+    document.querySelector(".brand").setAttribute("aria-label",labels[0]);
+    document.getElementById("contrast-toggle").setAttribute("aria-label",labels[1]);
+    document.getElementById("vision-toggle").setAttribute("aria-label",labels[2]);
+    localStorage.setItem("carlyYeahLanguage",lang);
+  }
+  languageButtons.forEach(button=>button.addEventListener("click",()=>setLanguage(button.dataset.setLang)));
+  setLanguage(localStorage.getItem("carlyYeahLanguage")==="en" ? "en" : "es");
+
   const cookieBanner=document.getElementById("cookie-banner");
   const cookieAccept=document.getElementById("cookie-accept");
   const cookieReject=document.getElementById("cookie-reject");
