@@ -135,7 +135,7 @@
       padding:8px 0;
       border-bottom:2px solid transparent;
     }
-    nav a:hover{border-bottom-color:#111}
+    @media(hover:hover) and (pointer:fine){nav a:hover{opacity:.7}}
     nav a.active{border-bottom-color:#111}
     nav a,.nav-separator{white-space:nowrap}
     .nav-separator{color:#777;opacity:.75;user-select:none}
@@ -1179,7 +1179,10 @@
 
     document.querySelectorAll("nav a[href^='#']").forEach(link=>{
       const target=link.getAttribute("href").slice(1);
-      link.classList.toggle("active",target===activeId && !link.classList.contains("nav-disabled"));
+      const active=target===activeId && !link.classList.contains("nav-disabled");
+      link.classList.toggle("active",active);
+      if(active) link.setAttribute("aria-current","location");
+      else link.removeAttribute("aria-current");
     });
 
     const accessibilityActive=document.body.classList.contains("light-theme") || document.body.classList.contains("readable-mode");
