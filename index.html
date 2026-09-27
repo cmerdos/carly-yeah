@@ -424,6 +424,20 @@
     body.light-theme .hyperfollow{background:#000;color:#fff;border-color:#000}
     body.light-theme .hyperfollow[href]:focus-visible{outline-color:#000}
     body.readable-mode .hyperfollow{font-size:13.5px}
+    @keyframes presave-pulse{
+      0%,100%{opacity:1}
+      50%{opacity:.8}
+    }
+    @media(prefers-reduced-motion:no-preference){
+      .track.is-unreleased .hyperfollow[href]:not([aria-disabled="true"]){
+        animation:presave-pulse 3s ease-in-out infinite;
+      }
+      .track.is-unreleased .hyperfollow[href]:hover,
+      .track.is-unreleased .hyperfollow[href]:focus-visible{
+        animation:none;
+        opacity:1;
+      }
+    }
     .track.is-unreleased .track-name,
     .track.is-unreleased .track-cover{opacity:.32;filter:grayscale(1)}
     .track.is-released .track-name,
