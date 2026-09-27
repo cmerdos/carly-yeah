@@ -417,13 +417,14 @@
       transition:opacity .35s ease,filter .35s ease;
     }
     .track-name{display:block;min-width:0;font-family:"Space Grotesk",sans-serif;font-size:clamp(20px,2.5vw,29px);letter-spacing:-.03em;transition:opacity .35s ease,filter .35s ease}
-    .hyperfollow{display:inline-block;width:fit-content;max-width:100%;margin-top:8px;padding:7.2px 10.8px;border:1px solid #fff;background:#fff;color:#000;font-size:12.6px;font-weight:600;line-height:1.4;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
-    .hyperfollow[aria-disabled="true"]{opacity:.35;cursor:default}
-    .hyperfollow[href]:hover{text-decoration:underline;text-underline-offset:3px}
-    .hyperfollow[href]:focus-visible{outline:2px solid #fff;outline-offset:4px}
-    body.light-theme .hyperfollow{background:#000;color:#fff;border-color:#000}
-    body.light-theme .hyperfollow[href]:focus-visible{outline-color:#000}
-    body.readable-mode .hyperfollow{font-size:13.5px}
+    .track-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+    .track-action{display:inline-block;width:fit-content;max-width:100%;margin-top:8px;padding:7.2px 10.8px;border:1px solid #fff;background:#fff;color:#000;font-size:12.6px;font-weight:600;line-height:1.4;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+    .track-action[aria-disabled="true"]{opacity:.35;cursor:default}
+    .track-action[href]:hover{text-decoration:underline;text-underline-offset:3px}
+    .track-action[href]:focus-visible{outline:2px solid #fff;outline-offset:4px}
+    body.light-theme .track-action{background:#000;color:#fff;border-color:#000}
+    body.light-theme .track-action[href]:focus-visible{outline-color:#000}
+    body.readable-mode .track-action{font-size:13.5px}
     @keyframes presave-pulse{
       0%,100%{opacity:1}
       50%{opacity:.8}
@@ -985,12 +986,12 @@
           <div class="release">EP · 6 tracks</div>
         </div>
         <div class="tracklist">
-          <div class="track" data-spotify-url="" data-release-date="2026-12-11"><span class="track-no">01</span><span class="track-main"><img class="track-cover" src="assets/covers/what-the-hell.webp" alt="" width="96" height="96" loading="lazy"><span class="track-copy"><span class="track-name">What the Hell I Can Do (After Summer)</span><a class="hyperfollow" data-hyperfollow-url="https://distrokid.com/hyperfollow/carlyyeah/still-looking-up" aria-disabled="true" tabindex="-1"><span data-lang="es">Pre-guardar →</span><span data-lang="en">Pre-save →</span></a></span></span><span class="track-state"><span data-lang="es">Disponible el 11 de diciembre de 2026</span><span data-lang="en">Available 11 December 2026</span></span></div>
-          <div class="track" data-spotify-url="" data-release-date="2026-10-09"><span class="track-no">02</span><span class="track-main"><img class="track-cover" src="assets/covers/boreal.webp" alt="" width="96" height="96" loading="lazy"><span class="track-copy"><span class="track-name">Boreal</span><a class="hyperfollow" data-hyperfollow-url="https://distrokid.com/hyperfollow/carlyyeah/boreal" aria-disabled="true" tabindex="-1"><span data-lang="es">Pre-guardar →</span><span data-lang="en">Pre-save →</span></a></span></span><span class="track-state"><span data-lang="es">Disponible 9 de octubre de 2026</span><span data-lang="en">Available 9 October 2026</span></span></div>
-          <div class="track" data-spotify-url="" data-release-date="2026-10-30"><span class="track-no">03</span><span class="track-main"><img class="track-cover" src="assets/covers/no-reason-why.webp" alt="" width="96" height="96" loading="lazy"><span class="track-copy"><span class="track-name">No Reason Why</span><a class="hyperfollow" data-hyperfollow-url="https://distrokid.com/hyperfollow/carlyyeah/no-reason-why" aria-disabled="true" tabindex="-1"><span data-lang="es">Pre-guardar →</span><span data-lang="en">Pre-save →</span></a></span></span><span class="track-state"><span data-lang="es">Disponible el 30 de octubre de 2026</span><span data-lang="en">Available 30 October 2026</span></span></div>
-          <div class="track" data-spotify-url="" data-release-date="2026-12-11"><span class="track-no">04</span><span class="track-main"><img class="track-cover" src="assets/covers/let-me-be.webp" alt="" width="96" height="96" loading="lazy"><span class="track-copy"><span class="track-name">Let Me Be</span><a class="hyperfollow" data-hyperfollow-url="https://distrokid.com/hyperfollow/carlyyeah/still-looking-up" aria-disabled="true" tabindex="-1"><span data-lang="es">Pre-guardar →</span><span data-lang="en">Pre-save →</span></a></span></span><span class="track-state"><span data-lang="es">Disponible el 11 de diciembre de 2026</span><span data-lang="en">Available 11 December 2026</span></span></div>
-          <div class="track" data-spotify-url="" data-release-date="2026-11-20"><span class="track-no">05</span><span class="track-main"><img class="track-cover" src="assets/covers/this-is-my-stop.webp" alt="" width="96" height="96" loading="lazy"><span class="track-copy"><span class="track-name">This Is My Stop</span><a class="hyperfollow" data-hyperfollow-url="https://distrokid.com/hyperfollow/carlyyeah/this-is-my-stop" aria-disabled="true" tabindex="-1"><span data-lang="es">Pre-guardar →</span><span data-lang="en">Pre-save →</span></a></span></span><span class="track-state"><span data-lang="es">Disponible el 20 de noviembre de 2026</span><span data-lang="en">Available 20 November 2026</span></span></div>
-          <div class="track" data-spotify-url="" data-release-date="2026-12-11"><span class="track-no">06</span><span class="track-main"><img class="track-cover" src="assets/covers/when-we-let-go.webp" alt="" width="96" height="96" loading="lazy"><span class="track-copy"><span class="track-name">When We Let Go</span><a class="hyperfollow" data-hyperfollow-url="https://distrokid.com/hyperfollow/carlyyeah/still-looking-up" aria-disabled="true" tabindex="-1"><span data-lang="es">Pre-guardar →</span><span data-lang="en">Pre-save →</span></a></span></span><span class="track-state"><span data-lang="es">Disponible el 11 de diciembre de 2026</span><span data-lang="en">Available 11 December 2026</span></span></div>
+          <div class="track" data-spotify-url="" data-release-date="2026-12-11"><span class="track-no">01</span><span class="track-main"><img class="track-cover" src="assets/covers/what-the-hell.webp" alt="" width="96" height="96" loading="lazy"><span class="track-copy"><span class="track-name">What the Hell I Can Do (After Summer)</span><span class="track-actions"><a class="hyperfollow track-action" data-hyperfollow-url="https://distrokid.com/hyperfollow/carlyyeah/still-looking-up" aria-disabled="true" tabindex="-1"><span data-lang="es">Pre-guardar →</span><span data-lang="en">Pre-save →</span></a><a class="listen-link track-action" data-listen-url="" aria-disabled="true" tabindex="-1"><span data-lang="es">Escuchar →</span><span data-lang="en">Listen →</span></a></span></span></span><span class="track-state"><span data-lang="es">Disponible el 11 de diciembre de 2026</span><span data-lang="en">Available 11 December 2026</span></span></div>
+          <div class="track" data-spotify-url="" data-release-date="2026-10-09"><span class="track-no">02</span><span class="track-main"><img class="track-cover" src="assets/covers/boreal.webp" alt="" width="96" height="96" loading="lazy"><span class="track-copy"><span class="track-name">Boreal</span><span class="track-actions"><a class="hyperfollow track-action" data-hyperfollow-url="https://distrokid.com/hyperfollow/carlyyeah/boreal" aria-disabled="true" tabindex="-1"><span data-lang="es">Pre-guardar →</span><span data-lang="en">Pre-save →</span></a><a class="listen-link track-action" data-listen-url="" aria-disabled="true" tabindex="-1"><span data-lang="es">Escuchar →</span><span data-lang="en">Listen →</span></a></span></span></span><span class="track-state"><span data-lang="es">Disponible 9 de octubre de 2026</span><span data-lang="en">Available 9 October 2026</span></span></div>
+          <div class="track" data-spotify-url="" data-release-date="2026-10-30"><span class="track-no">03</span><span class="track-main"><img class="track-cover" src="assets/covers/no-reason-why.webp" alt="" width="96" height="96" loading="lazy"><span class="track-copy"><span class="track-name">No Reason Why</span><span class="track-actions"><a class="hyperfollow track-action" data-hyperfollow-url="https://distrokid.com/hyperfollow/carlyyeah/no-reason-why" aria-disabled="true" tabindex="-1"><span data-lang="es">Pre-guardar →</span><span data-lang="en">Pre-save →</span></a><a class="listen-link track-action" data-listen-url="" aria-disabled="true" tabindex="-1"><span data-lang="es">Escuchar →</span><span data-lang="en">Listen →</span></a></span></span></span><span class="track-state"><span data-lang="es">Disponible el 30 de octubre de 2026</span><span data-lang="en">Available 30 October 2026</span></span></div>
+          <div class="track" data-spotify-url="" data-release-date="2026-12-11"><span class="track-no">04</span><span class="track-main"><img class="track-cover" src="assets/covers/let-me-be.webp" alt="" width="96" height="96" loading="lazy"><span class="track-copy"><span class="track-name">Let Me Be</span><span class="track-actions"><a class="hyperfollow track-action" data-hyperfollow-url="https://distrokid.com/hyperfollow/carlyyeah/still-looking-up" aria-disabled="true" tabindex="-1"><span data-lang="es">Pre-guardar →</span><span data-lang="en">Pre-save →</span></a><a class="listen-link track-action" data-listen-url="" aria-disabled="true" tabindex="-1"><span data-lang="es">Escuchar →</span><span data-lang="en">Listen →</span></a></span></span></span><span class="track-state"><span data-lang="es">Disponible el 11 de diciembre de 2026</span><span data-lang="en">Available 11 December 2026</span></span></div>
+          <div class="track" data-spotify-url="" data-release-date="2026-11-20"><span class="track-no">05</span><span class="track-main"><img class="track-cover" src="assets/covers/this-is-my-stop.webp" alt="" width="96" height="96" loading="lazy"><span class="track-copy"><span class="track-name">This Is My Stop</span><span class="track-actions"><a class="hyperfollow track-action" data-hyperfollow-url="https://distrokid.com/hyperfollow/carlyyeah/this-is-my-stop" aria-disabled="true" tabindex="-1"><span data-lang="es">Pre-guardar →</span><span data-lang="en">Pre-save →</span></a><a class="listen-link track-action" data-listen-url="" aria-disabled="true" tabindex="-1"><span data-lang="es">Escuchar →</span><span data-lang="en">Listen →</span></a></span></span></span><span class="track-state"><span data-lang="es">Disponible el 20 de noviembre de 2026</span><span data-lang="en">Available 20 November 2026</span></span></div>
+          <div class="track" data-spotify-url="" data-release-date="2026-12-11"><span class="track-no">06</span><span class="track-main"><img class="track-cover" src="assets/covers/when-we-let-go.webp" alt="" width="96" height="96" loading="lazy"><span class="track-copy"><span class="track-name">When We Let Go</span><span class="track-actions"><a class="hyperfollow track-action" data-hyperfollow-url="https://distrokid.com/hyperfollow/carlyyeah/still-looking-up" aria-disabled="true" tabindex="-1"><span data-lang="es">Pre-guardar →</span><span data-lang="en">Pre-save →</span></a><a class="listen-link track-action" data-listen-url="" aria-disabled="true" tabindex="-1"><span data-lang="es">Escuchar →</span><span data-lang="en">Listen →</span></a></span></span></span><span class="track-state"><span data-lang="es">Disponible el 11 de diciembre de 2026</span><span data-lang="en">Available 11 December 2026</span></span></div>
         </div>
         <details class="album-credits">
           <summary><span data-lang="es">Créditos del EP</span><span data-lang="en">EP credits</span></summary>
@@ -1222,9 +1223,24 @@
       row.classList.toggle("is-unreleased",!released);
       const state=row.querySelector(".track-state");
       if(state) state.style.display=released ? "none" : "";
+      const listenLink=row.querySelector(".listen-link");
+      if(listenLink){
+        const listenUrl=listenLink.dataset.listenUrl.trim();
+        if(released && listenUrl){
+          listenLink.href=listenUrl;
+          listenLink.target="_blank";
+          listenLink.rel="noopener noreferrer";
+          listenLink.removeAttribute("aria-disabled");
+          listenLink.removeAttribute("tabindex");
+        }else{
+          listenLink.removeAttribute("href");
+          listenLink.setAttribute("aria-disabled","true");
+          listenLink.setAttribute("tabindex","-1");
+        }
+      }
       const link=row.querySelector(".hyperfollow");
       if(link){
-        if(presaveAvailable){
+        if(presaveAvailable && !released){
           link.href=link.dataset.hyperfollowUrl;
           link.target="_blank";
           link.rel="noopener noreferrer";
@@ -1235,8 +1251,7 @@
           link.setAttribute("aria-disabled","true");
           link.setAttribute("tabindex","-1");
         }
-        link.querySelector('[data-lang="es"]').textContent=released ? "Escuchar →" : "Pre-guardar →";
-        link.querySelector('[data-lang="en"]').textContent=released ? "Listen →" : "Pre-save →";
+
       }
     });
   }
@@ -1291,11 +1306,11 @@
     row.setAttribute("role","button");
     row.setAttribute("tabindex","0");
     row.addEventListener("click",event=>{
-      if(event.target.closest(".hyperfollow")) return;
+      if(event.target.closest(".track-action")) return;
       loadSpotify(row);
     });
     row.addEventListener("keydown",event=>{
-      if(event.target.closest(".hyperfollow")) return;
+      if(event.target.closest(".track-action")) return;
       if(event.key==="Enter" || event.key===" "){
         event.preventDefault();
         loadSpotify(row);
