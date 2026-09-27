@@ -883,6 +883,19 @@
       body.readable-mode .release{font-size:12.5px}
     }
 
+  
+    /* Use the full mobile menu width in every header size. */
+    @media(max-width:850px){
+      header .nav-stack{width:100%;min-width:0}
+      header .nav-stack nav{
+        width:100%;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        gap:0;
+        flex-wrap:nowrap;
+      }
+    }
   </style>
 </head>
 <body data-language="es">
