@@ -353,6 +353,37 @@
       font-size:25px;
       line-height:1.45;
     }
+    .hero-grid{gap:36px}
+    .hero-copy{flex:1 1 auto;min-width:0}
+    .news-board{
+      flex:0 0 322px;
+      align-self:flex-start;
+      margin-left:auto;
+      padding:18px 20px 10px;
+      color:#fff;
+      background:rgba(5,5,5,.52);
+      border:1px solid rgba(255,255,255,.5);
+      backdrop-filter:blur(2px);
+      -webkit-backdrop-filter:blur(2px);
+    }
+    .news-board h3{margin:0;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+    .news-entry{padding:15px 0 16px;border-top:1px solid rgba(255,255,255,.38)}
+    .news-entry:first-child{margin-top:13px}
+    .news-meta{display:flex;justify-content:space-between;gap:8px;font-size:10px;line-height:1.4;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
+    .news-meta time{white-space:nowrap}
+    .news-entry h4{margin:8px 0 6px;font-family:"Space Grotesk",sans-serif;font-size:22px;line-height:1.1;letter-spacing:-.03em}
+    .news-entry a{display:inline-block;margin-top:4px;padding:5px 0;border-bottom:1px solid currentColor;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+    .news-entry a:hover{opacity:.75}
+    .news-entry a:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+    body.light-theme .news-board{background:rgba(255,255,255,.78);color:#000;border-color:rgba(0,0,0,.6)}
+    body.light-theme .news-entry{border-top-color:rgba(0,0,0,.35)}
+    body.readable-mode .news-board{flex-basis:360px}
+    body.readable-mode .news-entry h4{font-size:25px}
+    body.readable-mode .news-meta,body.readable-mode .news-entry a{font-size:13px}
+    @media(max-width:1050px) and (min-width:851px){
+      .news-board{flex-basis:270px;padding-inline:15px}
+      .hero-grid{gap:20px}
+    }
 
     /* Content sections */
     section{border-bottom:1px solid var(--line)}
@@ -683,6 +714,10 @@
       .hero-grid{
         min-height:calc(100svh - 106px);
         padding:48px 28px;
+        flex-direction:column;
+        align-items:stretch;
+        justify-content:center;
+        gap:8px;
       }
       .hero-copy{max-width:100%}
       .hero-copy .kicker{margin-bottom:34px;font-size:13px;letter-spacing:.19em}
@@ -698,6 +733,11 @@
         font-size:21px;
         line-height:1.45;
       }
+      .news-board{flex:none;align-self:flex-end;width:min(100%,360px);margin:0;padding:14px 16px 7px}
+      .news-entry{padding:10px 0 11px}
+      .news-entry:first-child{margin-top:9px}
+      .news-entry h4{font-size:20px;margin:5px 0 3px}
+      body.readable-mode .news-board{flex-basis:auto}
 
       .section-grid{
         grid-template-columns:1fr;
@@ -1031,6 +1071,10 @@
         <p data-lang="es">Seis canciones. Una historia que empieza.</p>
         <p data-lang="en">Six songs. A story just beginning.</p>
       </div>
+      <aside class="news-board" aria-labelledby="news-heading">
+        <h3 id="news-heading"><span data-lang="es">Novedades</span><span data-lang="en">News</span></h3>
+        <div id="news-entries" aria-live="polite"></div>
+      </aside>
     </div>
   </section>
 
@@ -1185,6 +1229,7 @@
     document.documentElement.lang=lang;
     buttons.forEach(b=>b.classList.toggle("active",b.dataset.setLang===lang));
     try{localStorage.setItem("carlyYeahLanguage",lang);}catch{}
+    document.dispatchEvent(new Event("carly-language-changed"));
   }
   buttons.forEach(b=>b.addEventListener("click",()=>setLanguage(b.dataset.setLang)));
   function getInitialLanguage(){
@@ -1295,14 +1340,76 @@
     return `${part("year")}-${part("month")}-${part("day")}`;
   }
 
+  function preSaveDateKey(releaseDate){
+    const date=new Date(`${releaseDate}T00:00:00Z`);
+    date.setUTCDate(date.getUTCDate()-7);
+    return date.toISOString().slice(0,10);
+  }
+
+  const newsReleases=[
+    ["boreal","Boreal"],
+    ["no-reason-why","No Reason Why"],
+    ["this-is-my-stop","This Is My Stop"],
+    ["still-looking-up","Still Looking Up"]
+  ].map(([slug,title])=>{
+    const row=releaseRows.find(item=>item.querySelector(".hyperfollow")?.dataset.hyperfollowUrl.endsWith(`/${slug}`));
+    return row ? {title,releaseDate:row.dataset.releaseDate,url:row.querySelector(".hyperfollow").dataset.hyperfollowUrl} : null;
+  }).filter(Boolean);
+  const newsEntries=document.getElementById("news-entries");
+  let renderedNewsKey="";
+
+  function renderNewsBoard(today){
+    const lang=document.body.dataset.language==="en" ? "en" : "es";
+    const key=`${today}-${lang}`;
+    if(renderedNewsKey===key) return;
+    renderedNewsKey=key;
+    const entries=newsReleases.map(item=>{
+      const preSaveDate=preSaveDateKey(item.releaseDate);
+      const phase=today>=item.releaseDate ? "released" : today>=preSaveDate ? "presave" : "upcoming";
+      return {...item,phase,eventDate:phase==="released" ? item.releaseDate : preSaveDate};
+    });
+    const announced=entries.filter(item=>item.phase!=="upcoming")
+      .sort((a,b)=>b.eventDate.localeCompare(a.eventDate));
+    const upcoming=entries.filter(item=>item.phase==="upcoming")
+      .sort((a,b)=>a.releaseDate.localeCompare(b.releaseDate));
+    const visible=[...announced,...upcoming].slice(0,2);
+    const labels={
+      es:{released:"Ya disponible",presave:"Pre-save disponible",upcoming:"Próximo estreno",listen:"Escuchar →",presaveAction:"Pre-guardar →",upcomingAction:"Ver en Música →"},
+      en:{released:"Out now",presave:"Pre-save open",upcoming:"Coming soon",listen:"Listen →",presaveAction:"Pre-save →",upcomingAction:"See in Music →"}
+    }[lang];
+    const dateFormat=new Intl.DateTimeFormat(lang==="es" ? "es-ES" : "en-GB",{day:"numeric",month:"short",year:"numeric",timeZone:"Europe/Madrid"});
+    newsEntries.replaceChildren(...visible.map(item=>{
+      const article=document.createElement("article");
+      article.className="news-entry";
+      const meta=document.createElement("div");
+      meta.className="news-meta";
+      const status=document.createElement("span");
+      status.textContent=labels[item.phase];
+      const date=document.createElement("time");
+      date.dateTime=item.releaseDate;
+      date.textContent=dateFormat.format(new Date(`${item.releaseDate}T12:00:00Z`));
+      meta.append(status,date);
+      const title=document.createElement("h4");
+      title.textContent=item.title;
+      const action=document.createElement("a");
+      action.href=item.phase==="upcoming" ? "#music" : item.url;
+      action.textContent=item.phase==="released" ? labels.listen : item.phase==="presave" ? labels.presaveAction : labels.upcomingAction;
+      if(item.phase!=="upcoming"){
+        action.target="_blank";
+        action.rel="noopener noreferrer";
+      }
+      article.append(meta,title,action);
+      return article;
+    }));
+  }
+  document.addEventListener("carly-language-changed",()=>renderNewsBoard(localDateKey()));
+
   function updateReleaseStates(){
     const today=localDateKey();
     releaseRows.forEach(row=>{
       const releaseDate=row.dataset.releaseDate;
       const released=today>=releaseDate;
-      const presaveDate=new Date(`${releaseDate}T00:00:00Z`);
-      presaveDate.setUTCDate(presaveDate.getUTCDate()-7);
-      const presaveAvailable=today>=presaveDate.toISOString().slice(0,10);
+      const presaveAvailable=today>=preSaveDateKey(releaseDate);
       row.classList.toggle("is-released",released);
       row.classList.toggle("is-unreleased",!released);
       const state=row.querySelector(".track-state");
@@ -1338,6 +1445,7 @@
 
       }
     });
+    renderNewsBoard(today);
   }
 
   updateReleaseStates();
