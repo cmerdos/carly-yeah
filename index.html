@@ -285,6 +285,14 @@
       stroke-linecap:round;
       stroke-linejoin:round;
     }
+    @keyframes instagram-blink{
+      0%,9%,30%,100%{opacity:1;transform:scale(1)}
+      14%{opacity:.6;transform:scale(1.04)}
+      21%{opacity:1;transform:scale(1.1)}
+    }
+    @media(prefers-reduced-motion:no-preference){
+      .instagram-icon svg{transform-origin:center;animation:instagram-blink 3s ease-in-out infinite}
+    }
 
     /* Hero */
     .hero{
@@ -970,7 +978,7 @@
         <a href="#videos"><span data-lang="es">Vídeos</span><span data-lang="en">Videos</span></a>
       </nav>
       <div class="social-links" aria-label="Redes y plataformas">
-        <a class="top-social" href="https://www.instagram.com/carly__yeah/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+        <a class="top-social instagram-icon" href="https://www.instagram.com/carly__yeah/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.25"></circle><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle></svg>
         </a>
         <a class="top-social" href="https://www.facebook.com/share/19WVHpUXk3/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
