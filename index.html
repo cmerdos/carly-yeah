@@ -372,6 +372,7 @@
     .news-meta{display:flex;justify-content:space-between;gap:8px;font-size:10px;line-height:1.4;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
     .news-meta time{white-space:nowrap}
     .news-entry h4{margin:8px 0 6px;font-family:"Space Grotesk",sans-serif;font-size:22px;line-height:1.1;letter-spacing:-.03em}
+    .news-links{display:flex;flex-wrap:wrap;column-gap:16px;row-gap:2px}
     .news-entry a{display:inline-block;margin-top:4px;padding:5px 0;border-bottom:1px solid currentColor;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
     .news-entry a:hover{opacity:.75}
     .news-entry a:focus-visible{outline:2px solid currentColor;outline-offset:3px}
@@ -1356,6 +1357,7 @@
     return row ? {title,releaseDate:row.dataset.releaseDate,url:row.querySelector(".hyperfollow").dataset.hyperfollowUrl} : null;
   }).filter(Boolean);
   const newsEntries=document.getElementById("news-entries");
+  const borealVideoCard=document.querySelector('.video-card[data-video-id="0IA91VPdZaU"]');
   let renderedNewsKey="";
 
   function renderNewsBoard(today){
@@ -1374,8 +1376,8 @@
       .sort((a,b)=>a.releaseDate.localeCompare(b.releaseDate));
     const visible=[...announced,...upcoming].slice(0,2);
     const labels={
-      es:{released:"Ya disponible",presave:"Pre-save disponible",upcoming:"Próximo estreno",listen:"Escuchar →",presaveAction:"Pre-guardar →",upcomingAction:"Ver en Música →"},
-      en:{released:"Out now",presave:"Pre-save open",upcoming:"Coming soon",listen:"Listen →",presaveAction:"Pre-save →",upcomingAction:"See in Music →"}
+      es:{released:"Ya disponible",presave:"Pre-save disponible",upcoming:"Próximo estreno",listen:"Escuchar →",video:"Ver videoclip →",presaveAction:"Pre-guardar →",upcomingAction:"Ver en Música →"},
+      en:{released:"Out now",presave:"Pre-save open",upcoming:"Coming soon",listen:"Listen →",video:"Watch video →",presaveAction:"Pre-save →",upcomingAction:"See in Music →"}
     }[lang];
     const dateFormat=new Intl.DateTimeFormat(lang==="es" ? "es-ES" : "en-GB",{day:"numeric",month:"short",year:"numeric",timeZone:"Europe/Madrid"});
     newsEntries.replaceChildren(...visible.map(item=>{
@@ -1398,7 +1400,21 @@
         action.target="_blank";
         action.rel="noopener noreferrer";
       }
-      article.append(meta,title,action);
+      const links=document.createElement("div");
+      links.className="news-links";
+      links.append(action);
+      if(item.title==="Boreal" && item.phase==="released" && borealVideoCard && Date.now()>=Date.parse(borealVideoCard.dataset.videoRelease)){
+        const videoUrl=borealVideoCard.querySelector(".video-link")?.href;
+        if(videoUrl){
+          const videoLink=document.createElement("a");
+          videoLink.href=videoUrl;
+          videoLink.target="_blank";
+          videoLink.rel="noopener noreferrer";
+          videoLink.textContent=labels.video;
+          links.append(videoLink);
+        }
+      }
+      article.append(meta,title,links);
       return article;
     }));
   }
