@@ -127,6 +127,15 @@
       .footer-logo-slu{height:50px}
       .cookie-banner{left:12px;right:12px;bottom:12px;padding:18px}
     }
+  
+    /* Preserve the logo's original black-and-white artwork on a contrasting base. */
+    footer .footer-logo-slu,
+    body.light-theme footer .footer-logo-slu{
+      filter:none;
+      background:#fff;
+      padding:3px;
+      object-fit:contain;
+    }
   </style>
 </head>
 <body data-language="es">
