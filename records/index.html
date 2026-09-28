@@ -222,13 +222,13 @@
       display:inline-block;margin-top:20px;color:#fff;text-underline-offset:5px;
     }
 
-    .records-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:auto;padding-top:72px}
-    .records-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 20px;background:#fff;color:#000;border:1px solid #fff;font-size:15px;font-weight:700;text-decoration:none;line-height:1.35;transition:opacity .2s ease}
+    .records-actions{display:flex;flex-wrap:nowrap;align-items:stretch;gap:10px;margin-top:auto;padding-top:72px}
+    .records-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 12px;background:#fff;color:#000;border:1px solid #fff;font-size:14px;font-weight:700;text-decoration:none;line-height:1.25;transition:opacity .2s ease}
     .records-actions a:hover{opacity:.82}
     .records-actions a:focus-visible{outline:2px solid #fff;outline-offset:4px}
     body.light-theme .records-actions a{border-color:#111}
     body.light-theme .records-actions a:focus-visible{outline-color:#111}
-    body.readable-mode .records-actions a{font-size:18px}
+    body.readable-mode .records-actions a{font-size:17px}
     footer{border-top:1px solid var(--line);padding:38px 0;text-align:center}
     .footer-logos{display:flex;align-items:center;justify-content:center;gap:18px}
     .footer-logo-main{width:61px;height:61px;border-radius:50%}
@@ -296,7 +296,7 @@
       }
       .nav-separator{font-size:11px}
       .bio-page{padding:66px 0 36px}
-      .records-actions a{flex:1 1 100%;text-align:center}
+      .records-actions a{min-width:0;text-align:center;padding-inline:8px}
       .bio-layout{margin-top:48px;padding-top:34px}
       .bio-copy p{text-align:left;font-size:18px}
       .bio-copy p:first-child{font-size:21px}
