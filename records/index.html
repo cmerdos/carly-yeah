@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Carly Road Records, sello independiente vinculado al proyecto musical Carly Yeah y a sus publicaciones.">
+  <meta name="theme-color" content="#050505">
+  <link rel="canonical" href="https://carlyyeah.es/records/">
+  <link rel="icon" href="../assets/favicon.png" type="image/png" sizes="64x64">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <title>Carly Road Records — Sello independiente</title>
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Carly Road Records">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:url" content="https://carlyyeah.es/records/">
+  <meta property="og:title" content="Carly Road Records">
+  <meta property="og:description" content="Sello independiente vinculado a Carly Yeah.">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Carly Road Records">
+  <meta name="twitter:description" content="Sello independiente vinculado a Carly Yeah.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --black:#050505;
+      --white:#fff;
+      --offwhite:#f7f7f5;
+      --muted:#9b9b98;
+      --line:#292929;
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html{background:var(--black)}
+    body{
+      margin:0;
+      background:var(--black);
+      color:var(--offwhite);
+      font-family:Inter,Arial,sans-serif;
+      line-height:1.7;
+    }
+    a{color:inherit}
+    button{font:inherit}
+    img{max-width:100%}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+
+    [data-lang]{display:none}
+    body[data-language="es"] [data-lang="es"],
+    body[data-language="en"] [data-lang="en"]{display:block}
+    body[data-language="es"] span[data-lang="es"],
+    body[data-language="en"] span[data-lang="en"]{display:inline}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:#fff;
+      color:#111;
+      border-bottom:1px solid #dedede;
+    }
+    .nav{
+      min-height:94px;
+      display:flex;
+      align-items:center;
+      gap:24px;
+    }
+    .brand{display:inline-flex;align-items:center;flex:0 0 auto}
+    .brand img{
+      width:70.4px;
+      height:70.4px;
+      display:block;
+      border-radius:50%;
+      object-fit:cover;
+    }
+    .nav-center{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:0;
+      margin-left:auto;
+    }
+    .main-nav{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:22px;
+      font-size:15px;
+      font-weight:500;
+    }
+    .main-nav a{
+      color:#111;
+      text-decoration:none;
+      padding:8px 0;
+      border-bottom:2px solid transparent;
+      white-space:nowrap;
+    }
+    .main-nav a:hover{opacity:.7}
+    .main-nav a.active{border-bottom-color:#111}
+    .nav-separator{color:#777;opacity:.75}
+
+    .social-links{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:2px;
+      min-height:32px;
+    }
+    .top-social{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:38px;
+      height:38px;
+      color:#111;
+      opacity:.88;
+      transition:opacity .2s ease,transform .2s ease;
+    }
+    .top-social:hover{opacity:1;transform:translateY(-1px)}
+    .social-pending{opacity:.32;cursor:default}
+    .social-pending:hover{opacity:.32;transform:none}
+    .tidal-icon svg{fill:currentColor;stroke:none}
+    .top-social svg{
+      width:25px;
+      height:25px;
+      display:block;
+      fill:none;
+      stroke:currentColor;
+      stroke-width:2;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+    .tools{display:flex;align-items:center;gap:6px;margin-left:8px}
+    .a11y-btn{
+      width:42px;height:42px;display:inline-grid;place-items:center;
+      border:1px solid #bbb;background:#fff;color:#111;cursor:pointer;
+      font-size:20px;font-weight:700;
+    }
+    .a11y-btn[aria-pressed="true"]{background:#111;color:#fff;border-color:#111}
+    .langs{display:flex;border:1px solid #bbb;padding:3px;background:#fff}
+    .lang{border:0;background:#fff;color:#111;padding:8px 10px;cursor:pointer;font-size:13px}
+    .lang.active{background:#111;color:#fff}
+
+    main{min-height:calc(100vh - 94px)}
+    .brand img{width:132px;height:auto;border-radius:0;object-fit:contain;filter:invert(1)}
+    .records-copy{max-width:790px;margin-top:72px;padding-top:38px;border-top:1px solid var(--line)}
+    .records-copy p{margin:0 0 20px;color:#d1d1cd;font-size:20px}
+    .records-copy p:first-child{color:#fff;font-size:24px}
+    body.light-theme .records-copy{border-color:#111}
+    body.light-theme .records-copy p{color:#222}
+    body.light-theme .records-copy p:first-child{color:#000}
+    body.readable-mode .records-copy p{font-size:22px;line-height:1.8}
+    body.readable-mode .records-copy p:first-child{font-size:26px}
+    .bio-page{padding:92px 0 118px}
+    .eyebrow{
+      margin-bottom:20px;color:var(--muted);font-size:13px;font-weight:700;
+      letter-spacing:.17em;text-transform:uppercase;
+    }
+    h1{
+      margin:0;
+      font-family:"Space Grotesk",sans-serif;
+      font-size:clamp(58px,9vw,118px);
+      line-height:.9;
+      letter-spacing:-.06em;
+      text-transform:uppercase;
+    }
+    .subtitle{
+      margin:26px 0 0;
+      max-width:780px;
+      color:#d4d4cf;
+      font-family:"Space Grotesk",sans-serif;
+      font-size:clamp(21px,3vw,31px);
+      line-height:1.25;
+    }
+    .bio-layout{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(260px,360px);
+      gap:70px;
+      align-items:start;
+      margin-top:72px;
+      padding-top:48px;
+      border-top:1px solid var(--line);
+    }
+    .bio-copy{max-width:760px}
+    .bio-copy p{
+      margin:0 0 25px;
+      color:#d1d1cd;
+      font-size:19px;
+      text-align:justify;
+      text-justify:inter-word;
+      hyphens:auto;
+    }
+    .bio-copy p:first-child{
+      color:#fff;
+      font-size:23px;
+      line-height:1.6;
+    }
+    .bio-aside{
+      position:sticky;
+      top:126px;
+      border:1px solid var(--line);
+      padding:24px;
+    }
+    .bio-aside img{
+      width:100%;
+      display:block;
+      margin-bottom:22px;
+    }
+    .bio-aside small{
+      display:block;color:var(--muted);font-size:12px;letter-spacing:.13em;text-transform:uppercase;
+    }
+    .bio-aside strong{
+      display:block;margin-top:8px;font-family:"Space Grotesk",sans-serif;font-size:24px;line-height:1.15;
+    }
+    .bio-aside a{
+      display:inline-block;margin-top:20px;color:#fff;text-underline-offset:5px;
+    }
+
+    footer{border-top:1px solid var(--line);padding:38px 0;text-align:center}
+    .footer-logos{display:flex;align-items:center;justify-content:center;gap:18px}
+    .footer-logo-main{width:61px;height:61px;border-radius:50%}
+    .footer-logo-records{height:61px;width:auto;background:#000;padding:3px;object-fit:contain}
+    .footer-logo-slu{height:61px;width:auto;display:block;background:#fff;padding:3px;object-fit:contain}
+    footer p{margin:10px 0 0;color:#777;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+    .footer-links{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;margin-top:12px}
+    .footer-links a{color:#aaa;font-size:12px;letter-spacing:.08em;text-underline-offset:4px}
+
+    .cookie-banner{
+      position:fixed;left:50%;bottom:18px;z-index:100;transform:translate(-50%,calc(100% + 40px));
+      width:min(720px,calc(100% - 28px));padding:18px 20px;background:#fff;color:#111;
+      border:1px solid #ccc;box-shadow:0 18px 45px rgba(0,0,0,.28);transition:transform .25s ease;
+    }
+    .cookie-banner.show{transform:translate(-50%,0)}
+    .cookie-banner p{margin:0 0 8px;font-size:14px}
+    .cookie-actions{display:flex;gap:8px;margin-top:12px}
+    .cookie-btn{border:1px solid #111;background:#111;color:#fff;padding:9px 14px;cursor:pointer}
+    .cookie-btn.secondary{background:#fff;color:#111}
+
+    body.light-theme{background:#fff;color:#000}
+    body.light-theme main,body.light-theme footer{background:#fff;border-color:#111}
+    body.light-theme .bio-layout,body.light-theme .bio-aside{border-color:#111}
+    body.light-theme .subtitle,body.light-theme .bio-copy p{color:#222}
+    body.light-theme .bio-copy p:first-child{color:#000}
+    body.light-theme .bio-aside a{color:#000}
+    body.light-theme .footer-links a,body.light-theme footer p{color:#222}
+
+    body.readable-mode{line-height:1.82}
+    body.readable-mode .main-nav{font-size:17px}
+    body.readable-mode .subtitle{font-size:clamp(24px,3.3vw,35px)}
+    body.readable-mode .bio-copy p{font-size:21px;line-height:1.8}
+    body.readable-mode .bio-copy p:first-child{font-size:26px}
+
+    @media(max-width:920px){
+      .nav{flex-wrap:wrap;padding:12px 0}
+      .nav-center{order:3;width:100%;margin:0}
+      .main-nav{width:100%;justify-content:center;gap:13px;font-size:14px}
+      .social-links{width:100%;justify-content:center;gap:3px}
+      .tools{margin-left:auto}
+      .bio-layout{grid-template-columns:1fr;gap:42px}
+      .bio-aside{position:static;max-width:430px}
+    }
+    @media(max-width:560px){
+      .wrap{width:min(var(--max),calc(100% - 28px))}
+      .brand img{width:58px;height:58px}
+      .tools{gap:4px}
+      .a11y-btn{width:38px;height:38px}
+      .lang{padding:7px 8px}
+      .main-nav{gap:8px;font-size:12px}
+      .social-links{
+        width:100%;
+        justify-content:space-between;
+        gap:0;
+        padding:2px 0 0;
+      }
+      .top-social{
+        width:min(40.8px,11.3vw);
+        height:min(40.8px,11.3vw);
+        flex:0 0 auto;
+      }
+      .top-social svg{
+        width:min(26.4px,7.4vw);
+        height:min(26.4px,7.4vw);
+      }
+      .nav-separator{font-size:11px}
+      .bio-page{padding:66px 0 84px}
+      .bio-layout{margin-top:48px;padding-top:34px}
+      .bio-copy p{text-align:left;font-size:18px}
+      .bio-copy p:first-child{font-size:21px}
+    }
+  </style>
+</head>
+
+<body data-language="es">
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="./" aria-label="Carly Road Records, inicio del sello">
+      <img src="../assets/carly-road-records.webp" alt="Logo de Carly Road Records">
+    </a>
+
+    <div class="nav-center">
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="../index.html#top"><span data-lang="es">Inicio</span><span data-lang="en">Home</span></a>
+        <span class="nav-separator" aria-hidden="true">|</span>
+        <a href="../index.html#music"><span data-lang="es">Música</span><span data-lang="en">Music</span></a>
+        <span class="nav-separator" aria-hidden="true">|</span>
+        <a href="../index.html#videos"><span data-lang="es">Vídeos</span><span data-lang="en">Videos</span></a>
+        <span class="nav-separator" aria-hidden="true">|</span>
+        <a href="../biografia.html"><span data-lang="es">Biografía</span><span data-lang="en">Biography</span></a>
+      </nav>
+      <div class="social-links" aria-label="Redes y plataformas">
+        <a class="top-social instagram-icon" href="https://www.instagram.com/carly__yeah/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.25"></circle><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+        </a>
+        <a class="top-social" href="https://www.facebook.com/share/14tgfszvmEi/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M13.2 20v-6h2.2l.4-2.7h-2.6V9.6c0-.8.2-1.3 1.4-1.3H16V5.9c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v1.7H8V14h2.1v6"></path></svg>
+        </a>
+        <a class="top-social" href="https://open.spotify.com/intl-es/artist/2PN25GgsuPInyyc3rYwuJ8" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M7 10.2c3.7-1.1 7.8-.8 10.7.7"></path><path d="M7.8 13.3c3-.8 6.4-.6 8.9.7"></path><path d="M8.6 16.2c2.4-.6 5-.4 7 .6"></path></svg>
+        </a>
+        <span class="top-social social-pending" aria-label="Apple Music, próximamente" title="Apple Music · Próximamente">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3.5" width="16" height="17" rx="4"></rect><path d="M14.8 8.2v7.2"></path><path d="M14.8 8.2 10 9.3v7"></path><circle cx="8.7" cy="16.6" r="1.8"></circle><circle cx="13.5" cy="15.6" r="1.8"></circle></svg>
+        </span>
+        <a class="top-social tidal-icon" href="https://tidal.com/artist/86777852/u" target="_blank" rel="noopener" aria-label="TIDAL" title="TIDAL">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 5 3 3-3 3-3-3 3-3Zm-6 3 3 3-3 3-3-3 3-3Zm12 0 3 3-3 3-3-3 3-3Zm-6 6 3 3-3 3-3-3 3-3Z"></path></svg>
+        </a>
+        <a class="top-social youtube-music-icon" href="https://music.youtube.com/channel/UCLtxWGup7mKRD0odO0txAXg?si=HTGb9F9c39FCQErW" target="_blank" rel="noopener" aria-label="YouTube Music" title="YouTube Music">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><circle cx="12" cy="12" r="5.2"></circle><path d="M10.2 8.9 15 12l-4.8 3.1Z" fill="currentColor" stroke="none"></path></svg>
+        </a>
+        <a class="top-social youtube-icon" href="https://youtube.com/@carly_yeah?si=9zmyvIMI6A8kTf5p" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6.5" width="18" height="11" rx="3.5"></rect><path d="M10 9.3 15.2 12 10 14.7Z" fill="currentColor" stroke="none"></path></svg>
+        </a>
+        <span class="top-social social-pending amazon-music-icon" aria-label="Amazon Music, próximamente" title="Amazon Music · Próximamente">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.2 15.8c2.8 1.8 6.4 2 9.5.6"></path>
+            <path d="M15.8 15.9c.9-.1 1.6 0 2.1.2-.2.6-.6 1.2-1.2 1.8"></path>
+            <path d="M8.2 12.7c.4-2.8 1.7-4.3 4.2-4.3 2.8 0 3.8 1.5 3.8 4.1v4.2"></path>
+            <path d="M16.2 14.6c-1.1 1.4-2.4 2.1-3.9 2.1-1.8 0-3-1-3-2.5 0-1.7 1.4-2.7 3.7-2.7h3.2"></path>
+          </svg>
+        </span>
+      </div>
+    </div>
+
+    <div class="tools">
+      <button class="a11y-btn" id="contrast-toggle" type="button" aria-pressed="false" aria-label="Cambiar entre fondo oscuro y fondo blanco" title="Cambiar contraste">◐</button>
+      <button class="a11y-btn" id="vision-toggle" type="button" aria-pressed="false" aria-label="Activar texto ampliado y mayor legibilidad" title="Mejorar legibilidad">A+</button>
+      <div class="langs" role="group" aria-label="Idioma / Language">
+        <button class="lang active" type="button" data-set-lang="es" aria-pressed="true">ES</button>
+        <button class="lang" type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <article class="wrap bio-page">
+    <div class="eyebrow"><span data-lang="es">Sello independiente</span><span data-lang="en">Independent record label</span></div>
+    <h1>Carly Road<br>Records</h1>
+    <div class="records-copy">
+      <div data-lang="es">
+        <p>Carly Road Records es el sello independiente vinculado al proyecto musical Carly Yeah.</p>
+        <p>Su primer trabajo es <em>Still Looking Up</em>, un EP de seis canciones. Este espacio reunirá la información y las próximas publicaciones del sello.</p>
+      </div>
+      <div data-lang="en">
+        <p>Carly Road Records is the independent record label associated with the Carly Yeah music project.</p>
+        <p>Its first release is <em>Still Looking Up</em>, a six-song EP. This space will bring together information and future releases from the label.</p>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-logos">
+      <img class="footer-logo-main" src="../assets/carly-yeah-logo.webp" alt="Carly Yeah">
+      <img class="footer-logo-records" src="../assets/carly-road-records.webp" alt="Carly Road Records">
+      <img class="footer-logo-slu" src="../assets/still-looking-up.webp" alt="Still Looking Up">
+    </div>
+    <p>© 2026 CARLY YEAH | CARLY ROAD Records</p>
+    <div class="footer-links">
+      <a href="../avisos-legales.html"><span data-lang="es">Avisos Legales</span><span data-lang="en">Legal Notices</span></a>
+      <span aria-hidden="true">|</span>
+      <a href="../contacto.html"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-title">
+  <p id="cookie-title"><strong><span data-lang="es">Cookies y contenido externo</span><span data-lang="en">Cookies and external content</span></strong></p>
+  <p data-lang="es">Utilizamos almacenamiento local para recordar tus preferencias.</p>
+  <p data-lang="en">We use local storage to remember your preferences.</p>
+  <div class="cookie-actions">
+    <button class="cookie-btn" id="cookie-accept" type="button"><span data-lang="es">Aceptar</span><span data-lang="en">Accept</span></button>
+    <button class="cookie-btn secondary" id="cookie-reject" type="button"><span data-lang="es">Rechazar</span><span data-lang="en">Reject</span></button>
+  </div>
+</div>
+
+<script>
+  const languageButtons=[...document.querySelectorAll("[data-set-lang]")];
+
+  function setLanguage(lang){
+    document.body.dataset.language=lang;
+    document.documentElement.lang=lang;
+    document.title=lang==="en"
+      ? "Carly Road Records — Independent record label"
+      : "Carly Road Records — Sello independiente";
+
+    document.querySelector('meta[name="description"]').content=lang==="en"
+      ? "Carly Road Records, the independent record label associated with Carly Yeah and its releases."
+      : "Carly Road Records, sello independiente vinculado al proyecto musical Carly Yeah y a sus publicaciones.";
+
+    languageButtons.forEach(button=>{
+      const active=button.dataset.setLang===lang;
+      button.classList.toggle("active",active);
+      button.setAttribute("aria-pressed",String(active));
+    });
+
+    const labels=lang==="en"
+      ? ["Carly Road Records home","Change between dark and light backgrounds","Increase text size and readability"]
+      : ["Inicio de Carly Road Records","Cambiar entre fondo oscuro y fondo blanco","Activar texto ampliado y mayor legibilidad"];
+
+    document.querySelector(".brand").setAttribute("aria-label",labels[0]);
+    document.getElementById("contrast-toggle").setAttribute("aria-label",labels[1]);
+    document.getElementById("vision-toggle").setAttribute("aria-label",labels[2]);
+
+    try{localStorage.setItem("carlyYeahLanguage",lang);}catch{}
+  }
+
+  languageButtons.forEach(button=>button.addEventListener("click",()=>setLanguage(button.dataset.setLang)));
+
+  function getInitialLanguage(){
+    let savedLanguage;
+    try{savedLanguage=localStorage.getItem("carlyYeahLanguage");}catch{}
+    if(savedLanguage==="es" || savedLanguage==="en") return savedLanguage;
+    const browserLanguage=(navigator.languages && navigator.languages[0]) || navigator.language || "en";
+    return /^es(?:-|$)/i.test(browserLanguage) ? "es" : "en";
+  }
+
+  setLanguage(getInitialLanguage());
+
+  const cookieBanner=document.getElementById("cookie-banner");
+  const cookieAccept=document.getElementById("cookie-accept");
+  const cookieReject=document.getElementById("cookie-reject");
+  let consent;
+  try{consent=localStorage.getItem("carlyYeahCookieConsent");}catch{}
+  if(!consent) cookieBanner.classList.add("show");
+  cookieAccept.addEventListener("click",()=>{
+    try{localStorage.setItem("carlyYeahCookieConsent","accepted");}catch{}
+    cookieBanner.classList.remove("show");
+  });
+  cookieReject.addEventListener("click",()=>{
+    try{localStorage.setItem("carlyYeahCookieConsent","rejected");}catch{}
+    cookieBanner.classList.remove("show");
+  });
+
+  const contrastToggle=document.getElementById("contrast-toggle");
+  const visionToggle=document.getElementById("vision-toggle");
+
+  function setContrast(enabled){
+    document.body.classList.toggle("light-theme",enabled);
+    contrastToggle.setAttribute("aria-pressed",String(enabled));
+    try{localStorage.setItem("carlyYeahLightTheme",enabled ? "1" : "0");}catch{}
+  }
+
+  function setReadable(enabled){
+    document.body.classList.toggle("readable-mode",enabled);
+    visionToggle.setAttribute("aria-pressed",String(enabled));
+    try{localStorage.setItem("carlyYeahReadableMode",enabled ? "1" : "0");}catch{}
+  }
+
+  contrastToggle.addEventListener("click",()=>setContrast(!document.body.classList.contains("light-theme")));
+  visionToggle.addEventListener("click",()=>setReadable(!document.body.classList.contains("readable-mode")));
+
+  let light="0", readable="0";
+  try{
+    light=localStorage.getItem("carlyYeahLightTheme") || "0";
+    readable=localStorage.getItem("carlyYeahReadableMode") || "0";
+  }catch{}
+  setContrast(light==="1");
+  setReadable(readable==="1");
+</script>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a13183f17a947f9a3078f8fdbf6d830"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
