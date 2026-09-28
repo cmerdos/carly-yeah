@@ -285,13 +285,14 @@
       stroke-linecap:round;
       stroke-linejoin:round;
     }
-    @keyframes instagram-blink{
+    @keyframes gentle-blink{
       0%,9%,30%,100%{opacity:1;transform:scale(1)}
       14%{opacity:.6;transform:scale(1.04)}
       21%{opacity:1;transform:scale(1.1)}
     }
     @media(prefers-reduced-motion:no-preference){
-      .instagram-icon svg{transform-origin:center;animation:instagram-blink 3s ease-in-out infinite}
+      .instagram-icon svg{transform-origin:center;animation:gentle-blink 3s ease-in-out infinite}
+      .music-nav-link span[data-lang]{transform-origin:center;animation:gentle-blink 3s ease-in-out infinite}
     }
 
     /* Hero */
@@ -554,6 +555,8 @@
     span[data-lang]{display:none}
     body[data-language="es"] span[data-lang="es"],
     body[data-language="en"] span[data-lang="en"]{display:inline}
+    body[data-language="es"] .music-nav-link span[data-lang="es"],
+    body[data-language="en"] .music-nav-link span[data-lang="en"]{display:inline-block}
 
     @media(max-width:850px){
       .wrap{width:100%}
@@ -973,7 +976,7 @@
         <span class="nav-separator" aria-hidden="true">|</span>
         <a href="#bio"><span data-lang="es">Biografía</span><span data-lang="en">Biography</span></a>
         <span class="nav-separator" aria-hidden="true">|</span>
-        <a href="#music"><span data-lang="es">Música</span><span data-lang="en">Music</span></a>
+        <a class="music-nav-link" href="#music"><span data-lang="es">Música</span><span data-lang="en">Music</span></a>
         <span class="nav-separator" aria-hidden="true">|</span>
         <a href="#videos"><span data-lang="es">Vídeos</span><span data-lang="en">Videos</span></a>
       </nav>
