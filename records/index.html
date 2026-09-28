@@ -305,7 +305,8 @@
 </head>
 
 <body data-language="es">
-<header id="top">
+<div id="top" aria-hidden="true"></div>
+<header>
   <div class="wrap nav">
     <a class="brand" href="./" aria-label="Carly Road Records, inicio del sello">
       <img src="../assets/carly-road-records.webp" alt="Logo de Carly Road Records">
@@ -491,6 +492,11 @@
   }catch{}
   setContrast(light==="1");
   setReadable(readable==="1");
+
+  document.querySelector('.records-actions a[href="#top"]').addEventListener("click",event=>{
+    event.preventDefault();
+    window.scrollTo({top:0,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+  });
 </script>
 
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a13183f17a947f9a3078f8fdbf6d830"}'></script><!-- End Cloudflare Web Analytics -->
