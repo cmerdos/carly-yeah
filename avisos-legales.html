@@ -302,10 +302,17 @@
     document.querySelector(".brand").setAttribute("aria-label",labels[0]);
     document.getElementById("contrast-toggle").setAttribute("aria-label",labels[1]);
     document.getElementById("vision-toggle").setAttribute("aria-label",labels[2]);
-    localStorage.setItem("carlyYeahLanguage",lang);
+    try{localStorage.setItem("carlyYeahLanguage",lang);}catch{}
   }
   languageButtons.forEach(button=>button.addEventListener("click",()=>setLanguage(button.dataset.setLang)));
-  setLanguage(localStorage.getItem("carlyYeahLanguage")==="en" ? "en" : "es");
+  function getInitialLanguage(){
+    let savedLanguage;
+    try{savedLanguage=localStorage.getItem("carlyYeahLanguage");}catch{}
+    if(savedLanguage==="es" || savedLanguage==="en") return savedLanguage;
+    const browserLanguage=(navigator.languages && navigator.languages[0]) || navigator.language || "en";
+    return /^es(?:-|$)/i.test(browserLanguage) ? "es" : "en";
+  }
+  setLanguage(getInitialLanguage());
 
   const cookieBanner=document.getElementById("cookie-banner");
   const cookieAccept=document.getElementById("cookie-accept");
