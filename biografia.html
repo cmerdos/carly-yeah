@@ -284,9 +284,21 @@
       .a11y-btn{width:38px;height:38px}
       .lang{padding:7px 8px}
       .main-nav{gap:8px;font-size:12px}
-      .social-links{gap:0}
-      .top-social{width:34px;height:34px}
-      .top-social svg{width:22px;height:22px}
+      .social-links{
+        width:100%;
+        justify-content:space-between;
+        gap:0;
+        padding:2px 0 0;
+      }
+      .top-social{
+        width:min(40.8px,11.3vw);
+        height:min(40.8px,11.3vw);
+        flex:0 0 auto;
+      }
+      .top-social svg{
+        width:min(26.4px,7.4vw);
+        height:min(26.4px,7.4vw);
+      }
       .nav-separator{font-size:11px}
       .bio-page{padding:66px 0 84px}
       .bio-layout{margin-top:48px;padding-top:34px}
