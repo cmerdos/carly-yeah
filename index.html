@@ -755,6 +755,13 @@
       body.readable-mode .news-board{flex-basis:auto;width:100%}
       body.readable-mode .hero-copy h2,
       body.readable-mode .hero-copy p{white-space:normal}
+      .hero[data-news-count="1"] .hero-grid{padding-top:clamp(28px,4svh,48px);gap:clamp(24px,4svh,38px)}
+      .hero[data-news-count="1"] .hero-copy .kicker{font-size:clamp(12px,2.9vw,15px);margin-bottom:20px}
+      .hero[data-news-count="1"] .hero-copy h2{font-size:clamp(27px,7.5vw,50px);margin-bottom:14px}
+      .hero[data-news-count="1"] .hero-copy p{font-size:clamp(12px,3vw,17px)}
+      body.readable-mode .hero[data-news-count="1"] .hero-copy .kicker{font-size:14px}
+      body.readable-mode .hero[data-news-count="1"] .hero-copy h2{font-size:clamp(32px,9vw,50px)}
+      body.readable-mode .hero[data-news-count="1"] .hero-copy p{font-size:clamp(17px,4.7vw,22px)}
 
       .section-grid{
         grid-template-columns:1fr;
@@ -1358,11 +1365,12 @@
     return `${part("year")}-${part("month")}-${part("day")}`;
   }
 
-  function preSaveDateKey(releaseDate){
+  function daysBeforeReleaseKey(releaseDate,days){
     const date=new Date(`${releaseDate}T00:00:00Z`);
-    date.setUTCDate(date.getUTCDate()-7);
+    date.setUTCDate(date.getUTCDate()-days);
     return date.toISOString().slice(0,10);
   }
+  function preSaveDateKey(releaseDate){return daysBeforeReleaseKey(releaseDate,7)}
 
   const newsReleases=[
     ["boreal","Boreal"],
@@ -1385,13 +1393,16 @@
     const entries=newsReleases.map(item=>{
       const preSaveDate=preSaveDateKey(item.releaseDate);
       const phase=today>=item.releaseDate ? "released" : today>=preSaveDate ? "presave" : "upcoming";
-      return {...item,phase,eventDate:phase==="released" ? item.releaseDate : preSaveDate};
+      return {...item,phase};
     });
-    const announced=entries.filter(item=>item.phase!=="upcoming")
-      .sort((a,b)=>b.eventDate.localeCompare(a.eventDate));
-    const upcoming=entries.filter(item=>item.phase==="upcoming")
+    const latestReleased=entries.filter(item=>item.phase==="released")
+      .sort((a,b)=>b.releaseDate.localeCompare(a.releaseDate))[0];
+    const future=entries.filter(item=>item.phase!=="released")
       .sort((a,b)=>a.releaseDate.localeCompare(b.releaseDate));
-    const visible=[...announced,...upcoming].slice(0,2);
+    const nextAnnouncement=future.find(item=>today>=daysBeforeReleaseKey(item.releaseDate,10));
+    // Before the first ten-day window, keep the nearest release as the single news item.
+    const visible=[nextAnnouncement || (!latestReleased ? future[0] : null),latestReleased].filter(Boolean);
+    document.getElementById("top").dataset.newsCount=String(visible.length);
     const labels={
       es:{released:"Ya disponible",presave:"Pre-save disponible",upcoming:"Próximo estreno",listen:"Escuchar →",video:"Ver videoclip →",presaveAction:"Pre-guardar →",upcomingAction:"Ver en Música →"},
       en:{released:"Out now",presave:"Pre-save open",upcoming:"Coming soon",listen:"Listen →",video:"Watch video →",presaveAction:"Pre-save →",upcomingAction:"See in Music →"}
