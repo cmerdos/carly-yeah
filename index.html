@@ -346,6 +346,7 @@
       letter-spacing:-.055em;
       text-transform:uppercase;
     }
+    .hero-copy h2 span{display:block}
     .hero-copy p{
       max-width:610px;
       margin:0 0 44px;
@@ -714,31 +715,36 @@
       }
       .hero-grid{
         min-height:calc(100svh - 106px);
-        padding:48px 28px;
+        padding:24px 28px 30px;
         flex-direction:column;
         align-items:stretch;
-        justify-content:center;
-        gap:8px;
+        justify-content:flex-start;
+        gap:20px;
       }
-      .hero-copy{max-width:100%}
-      .hero-copy .kicker{margin-bottom:34px;font-size:13px;letter-spacing:.19em}
+      .hero-copy{flex:none;max-width:100%}
+      .hero-copy .kicker{margin-bottom:15px;font-size:12px;letter-spacing:.14em;white-space:nowrap}
       .hero-copy h2{
-        max-width:94%;
-        margin-bottom:32px;
-        font-size:clamp(52px,15vw,72px);
-        line-height:.98;
+        max-width:100%;
+        margin-bottom:10px;
+        font-size:clamp(26px,7.2vw,48px);
+        line-height:1.08;
+        white-space:nowrap;
       }
+      .hero-copy h2 span{display:inline}
       .hero-copy p{
-        max-width:76%;
-        margin-bottom:42px;
-        font-size:21px;
-        line-height:1.45;
+        max-width:100%;
+        margin-bottom:0;
+        font-size:clamp(12px,2.9vw,16px);
+        line-height:1.4;
+        white-space:nowrap;
       }
-      .news-board{flex:none;align-self:flex-end;width:min(100%,360px);margin:0;padding:14px 16px 7px}
+      .news-board{flex:none;align-self:flex-start;width:min(84%,330px);margin:0;padding:14px 16px 7px}
       .news-entry{padding:10px 0 11px}
       .news-entry:first-child{margin-top:9px}
       .news-entry h4{font-size:20px;margin:5px 0 3px}
-      body.readable-mode .news-board{flex-basis:auto}
+      body.readable-mode .news-board{flex-basis:auto;width:100%}
+      body.readable-mode .hero-copy h2,
+      body.readable-mode .hero-copy p{white-space:normal}
 
       .section-grid{
         grid-template-columns:1fr;
@@ -910,9 +916,10 @@
       header.header-music .top-social{height:22px}
       header.header-music .top-social svg{width:16px;height:16px}
 
-      .hero-grid{padding-inline:22px}
-      .hero-copy h2{font-size:clamp(48px,14.5vw,64px)}
-      .hero-copy p{max-width:82%;font-size:20px}
+      .hero-grid{padding:18px 22px 26px;gap:16px}
+      .hero-copy .kicker{margin-bottom:12px}
+      .hero-copy h2{font-size:clamp(26px,7.2vw,46px)}
+      .hero-copy p{max-width:100%;font-size:clamp(12px,2.9vw,16px)}
       .section-grid{padding-inline:22px}
       .cookie-banner{left:12px;right:12px;bottom:12px;padding:18px}
       body.readable-mode .hero-copy .kicker{font-size:14px;max-width:100%}
@@ -924,8 +931,8 @@
       body.readable-mode nav{width:100%;justify-content:space-between;gap:0;font-size:clamp(11px,3.65vw,14px)}
       body.readable-mode .top-social{height:clamp(36px,9.5vw,42px)}
       body.readable-mode .top-social svg{width:clamp(24px,7.5vw,31px);height:clamp(24px,7.5vw,31px)}
-      body.readable-mode .hero-copy h2{font-size:clamp(54px,14.5vw,68px);max-width:100%}
-      body.readable-mode .hero-copy p{font-size:clamp(23px,5.9vw,26px);max-width:100%}
+      body.readable-mode .hero-copy h2{font-size:clamp(32px,9vw,50px);max-width:100%}
+      body.readable-mode .hero-copy p{font-size:clamp(17px,4.7vw,22px);max-width:100%}
       body.readable-mode .section-title{font-size:clamp(40px,10.5vw,50px)}
       body.readable-mode .bio p{font-size:clamp(20px,5.15vw,22px)}
       body.readable-mode .bio p:first-of-type{font-size:clamp(24px,6.15vw,27px)}
@@ -1068,7 +1075,7 @@
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <div class="kicker"><span data-lang="es">CARLY YEAH / PRIMER EP</span><span data-lang="en">CARLY YEAH / DEBUT EP</span></div>
-        <h2>Still<br>Looking Up.</h2>
+        <h2><span>Still</span> <span>Looking Up.</span></h2>
         <p data-lang="es">Seis canciones. Una historia que empieza.</p>
         <p data-lang="en">Six songs. A story just beginning.</p>
       </div>
