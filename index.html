@@ -1039,11 +1039,11 @@
       <nav>
         <a href="#top"><span data-lang="es">Inicio</span><span data-lang="en">Home</span></a>
         <span class="nav-separator" aria-hidden="true">|</span>
-        <a href="#bio"><span data-lang="es">Biografía</span><span data-lang="en">Biography</span></a>
-        <span class="nav-separator" aria-hidden="true">|</span>
         <a class="music-nav-link" href="#music"><span data-lang="es">Música</span><span data-lang="en">Music</span></a>
         <span class="nav-separator" aria-hidden="true">|</span>
         <a href="#videos"><span data-lang="es">Vídeos</span><span data-lang="en">Videos</span></a>
+        <span class="nav-separator" aria-hidden="true">|</span>
+        <a href="biografia.html"><span data-lang="es">Biografía</span><span data-lang="en">Biography</span></a>
       </nav>
       <div class="social-links" aria-label="Redes y plataformas">
         <a class="top-social instagram-icon" href="https://www.instagram.com/carly__yeah/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
@@ -1100,30 +1100,6 @@
         <h3 id="news-heading"><span data-lang="es">Novedades</span><span data-lang="en">News</span></h3>
         <div id="news-entries" aria-live="polite"></div>
       </aside>
-    </div>
-  </section>
-
-  <section id="bio">
-    <div class="wrap section-grid">
-      <div class="num"><span data-lang="es">Biografía</span><span data-lang="en">Biography</span></div>
-      <div class="bio">
-        <h2 class="section-title"><span data-lang="es">Detrás de las canciones.</span><span data-lang="en">Behind the songs.</span></h2>
-        <div data-lang="es">
-          <p>Carly Yeah es un proyecto musical independiente nacido de la necesidad de convertir experiencias, recuerdos y preguntas en canciones.</p>
-          <p>Con el rock como punto de partida y una fuerte presencia de sonidos folk, pop y alternativos, sus canciones se mueven entre guitarras, melodías directas y letras que buscan contar historias reconocibles: relaciones, pérdidas, decisiones, nostalgia, esperanza y esos momentos en los que uno intenta averiguar cuál es el siguiente paso.</p>
-          <p>Después de muchos años escribiendo, tocando y entendiendo la música como una parte esencial de su vida, Carly Yeah inicia ahora una nueva etapa en la que esas canciones dejan de quedarse en casa para empezar a encontrar su propio camino.</p>
-          <p>Su primer trabajo, <em>Still Looking Up</em>, reúne seis canciones conectadas por una misma idea: seguir avanzando incluso cuando no todas las respuestas están claras. Temas como <em>Boreal</em>, <em>This Is My Stop</em>, <em>No Reason Why</em>, <em>Let Me Be</em>, <em>When We Let Go</em> o <em>What the Hell (After Summer)</em> exploran distintas formas de mirar hacia atrás, dejar ir y continuar buscando algo más adelante.</p>
-          <p>Carly Yeah es, ante todo, música hecha desde la independencia, sin demasiadas reglas y con una intención sencilla: contar historias de la manera más honesta posible y esperar que, en algún lugar, alguien pueda reconocerse en ellas.</p>
-        </div>
-
-        <div data-lang="en">
-          <p>Carly Yeah is an independent music project born from the need to turn experiences, memories and questions into songs.</p>
-          <p>With rock as its starting point and a strong presence of folk, pop and alternative sounds, the songs move through guitars, direct melodies and lyrics that tell familiar stories: relationships, loss, choices, nostalgia, hope, and those moments when you are trying to work out what comes next.</p>
-          <p>After many years of writing, playing and understanding music as an essential part of life, Carly Yeah begins a new chapter in which those songs stop staying at home and start finding a path of their own.</p>
-          <p>The debut release, <em>Still Looking Up</em>, brings together six songs connected by the same idea: moving forward even when not every answer is clear. Tracks such as <em>Boreal</em>, <em>This Is My Stop</em>, <em>No Reason Why</em>, <em>Let Me Be</em>, <em>When We Let Go</em> and <em>What the Hell (After Summer)</em> explore different ways of looking back, letting go and continuing to search for something further ahead.</p>
-          <p>Above all, Carly Yeah is independent music made without too many rules, with one simple intention: to tell stories as honestly as possible and hope that, somewhere, someone might recognise themselves in them.</p>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -1296,7 +1272,6 @@
   const siteHeader=document.querySelector("header");
   const headerSections=[
     document.getElementById("top"),
-    document.getElementById("bio"),
     document.getElementById("music"),
     document.getElementById("videos")
   ].filter(Boolean);
@@ -1324,7 +1299,7 @@
 
     siteHeader.classList.toggle("header-music",activeId==="music");
     siteHeader.classList.toggle("header-compact",activeId==="videos");
-    siteHeader.classList.toggle("header-medium",activeId==="bio" || activeId==="info");
+    siteHeader.classList.toggle("header-medium",false);
   }
 
   let headerTick=false;
