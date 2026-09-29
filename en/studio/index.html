@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Carly Road Studio: production, recording, mixing, mastering, instrumental performance and programming for Carly Yeah, Marcos del Valle and Mi tío Jimmy.">
+  <meta name="description" content="Carly Road Studio: production, recording, mixing, mastering, editing and instrumental performance for Carly Yeah, Marcos del Valle, Mi tío Jimmy and Good Bye Lenin.">
   <meta name="theme-color" content="#050505">
   <link rel="canonical" href="https://carlyyeah.es/en/studio/">
   <link rel="alternate" hreflang="es" href="https://carlyyeah.es/studio/">
@@ -337,6 +337,11 @@
     .work-card{display:grid;grid-template-columns:minmax(100px,40%) minmax(0,1fr);gap:20px;align-items:start;scroll-margin-top:120px}
     .work-cover{display:block;align-self:start}
     .work-cover img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain}
+    .work-cover-placeholder{display:flex;aspect-ratio:1;align-items:center;justify-content:center;flex-direction:column;gap:6px;border:1px solid var(--line);font-family:"Space Grotesk",Arial,sans-serif;text-align:center;text-decoration:none}
+    .work-cover-placeholder strong{font-size:clamp(28px,4vw,52px);line-height:1}
+    .work-cover-placeholder small{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#aaa;padding:0 8px}
+    body.light-theme .work-cover-placeholder{border-color:#bbb}
+    body.light-theme .work-cover-placeholder small{color:#555}
     .work-card h4{font-family:"Space Grotesk",Arial,sans-serif;font-size:23px;line-height:1.2;margin:6px 0 8px;overflow-wrap:anywhere}
     .work-artist{font-size:17px;margin:0 0 10px}
     .work-meta{font-size:14px;color:#aaa;margin:0 0 12px}
@@ -369,7 +374,7 @@
       "@id": "https://carlyyeah.es/en/studio/#webpage",
       "url": "https://carlyyeah.es/en/studio/",
       "name": "Carly Road Studio | Production, recording, mixing and mastering",
-      "description": "Carly Road Studio: production, recording, mixing, mastering, instrumental performance and programming work for Carly Yeah, Marcos del Valle and Mi tío Jimmy.",
+      "description": "Carly Road Studio: production, recording, mixing, mastering, editing and instrumental performance work for Carly Yeah, Marcos del Valle, Mi tío Jimmy and Good Bye Lenin.",
       "primaryImageOfPage": {
         "@type": "ImageObject",
         "url": "https://carlyyeah.es/assets/carly-yeah-logo.webp",
@@ -395,8 +400,14 @@
             "url": "https://carlyyeah.es/en/studio/#la-chica-de-la-ronda-marcos-del-valle",
             "name": "La chica de la Ronda",
             "datePublished": "2024-09-13",
-            "byArtist": {"@type": "MusicGroup", "name": "Marcos del Valle"},
-            "producer": {"@type": "Person", "name": "Carly Yeah"},
+            "byArtist": {
+              "@type": "MusicGroup",
+              "name": "Marcos del Valle"
+            },
+            "producer": {
+              "@type": "Person",
+              "name": "Carly Yeah"
+            },
             "creditText": "Production, recording, mixing and mastering; instrumental performance and programming: Carly Yeah.",
             "sameAs": "https://open.spotify.com/track/3wTTulap27n3iRMBV22veh"
           }
@@ -410,8 +421,14 @@
             "url": "https://carlyyeah.es/en/studio/#mi-tio-jimmy",
             "name": "Mi tío Jimmy",
             "datePublished": "2024-05-01",
-            "byArtist": {"@type": "MusicGroup", "name": "Mi tío Jimmy"},
-            "producer": {"@type": "Person", "name": "Carly Yeah"},
+            "byArtist": {
+              "@type": "MusicGroup",
+              "name": "Mi tío Jimmy"
+            },
+            "producer": {
+              "@type": "Person",
+              "name": "Carly Yeah"
+            },
             "creditText": "Production, recording, mixing and mastering; instrumental performance and programming: Carly Yeah.",
             "sameAs": "https://open.spotify.com/album/5mGDEP1KH03FmEUthrppl3"
           }
@@ -420,15 +437,21 @@
           "@type": "ListItem",
           "position": 3,
           "item": {
-            "@type": "MusicRecording",
-            "@id": "https://carlyyeah.es/en/studio/#libre-marcos-del-valle",
-            "url": "https://carlyyeah.es/en/studio/#libre-marcos-del-valle",
-            "name": "Libre",
-            "datePublished": "2022-12-23",
-            "byArtist": {"@type": "MusicGroup", "name": "Marcos del Valle"},
-            "producer": {"@type": "Person", "name": "Carly Yeah"},
-            "creditText": "Production, recording, mixing and mastering; instrumental performance and programming: Carly Yeah.",
-            "sameAs": "https://open.spotify.com/album/6iX5BgFI7ctlCY3tmxSvFm"
+            "@type": "MusicAlbum",
+            "@id": "https://carlyyeah.es/en/studio/#ep-good-bye-lenin",
+            "url": "https://carlyyeah.es/en/studio/#ep-good-bye-lenin",
+            "name": "EP",
+            "datePublished": "2023-12-24",
+            "byArtist": {
+              "@type": "MusicGroup",
+              "name": "Good Bye Lenin"
+            },
+            "contributor": {
+              "@type": "Person",
+              "name": "Carly Yeah"
+            },
+            "creditText": "Editing, mixing and mastering; lead electric guitar and acoustic guitar: Carly Yeah.",
+            "sameAs": "https://open.spotify.com/album/4OK5museVUMajWr8YopcKB"
           }
         },
         {
@@ -436,14 +459,20 @@
           "position": 4,
           "item": {
             "@type": "MusicRecording",
-            "@id": "https://carlyyeah.es/en/studio/#lo-mejor-marcos-del-valle",
-            "url": "https://carlyyeah.es/en/studio/#lo-mejor-marcos-del-valle",
-            "name": "Lo Mejor",
-            "datePublished": "2022-11-18",
-            "byArtist": {"@type": "MusicGroup", "name": "Marcos del Valle"},
-            "producer": {"@type": "Person", "name": "Carly Yeah"},
+            "@id": "https://carlyyeah.es/en/studio/#libre-marcos-del-valle",
+            "url": "https://carlyyeah.es/en/studio/#libre-marcos-del-valle",
+            "name": "Libre",
+            "datePublished": "2022-12-23",
+            "byArtist": {
+              "@type": "MusicGroup",
+              "name": "Marcos del Valle"
+            },
+            "producer": {
+              "@type": "Person",
+              "name": "Carly Yeah"
+            },
             "creditText": "Production, recording, mixing and mastering; instrumental performance and programming: Carly Yeah.",
-            "sameAs": "https://open.spotify.com/track/5uRnZYG9haw1lEeF1JmdEi"
+            "sameAs": "https://open.spotify.com/album/6iX5BgFI7ctlCY3tmxSvFm"
           }
         },
         {
@@ -451,14 +480,20 @@
           "position": 5,
           "item": {
             "@type": "MusicRecording",
-            "@id": "https://carlyyeah.es/en/studio/#la-bestia-marcos-del-valle",
-            "url": "https://carlyyeah.es/en/studio/#la-bestia-marcos-del-valle",
-            "name": "La Bestia",
-            "datePublished": "2022-10-21",
-            "byArtist": {"@type": "MusicGroup", "name": "Marcos del Valle"},
-            "producer": {"@type": "Person", "name": "Carly Yeah"},
+            "@id": "https://carlyyeah.es/en/studio/#lo-mejor-marcos-del-valle",
+            "url": "https://carlyyeah.es/en/studio/#lo-mejor-marcos-del-valle",
+            "name": "Lo Mejor",
+            "datePublished": "2022-11-18",
+            "byArtist": {
+              "@type": "MusicGroup",
+              "name": "Marcos del Valle"
+            },
+            "producer": {
+              "@type": "Person",
+              "name": "Carly Yeah"
+            },
             "creditText": "Production, recording, mixing and mastering; instrumental performance and programming: Carly Yeah.",
-            "sameAs": "https://open.spotify.com/track/7LQkfuI91I0cCZ8P8nfVpE"
+            "sameAs": "https://open.spotify.com/track/5uRnZYG9haw1lEeF1JmdEi"
           }
         },
         {
@@ -466,12 +501,39 @@
           "position": 6,
           "item": {
             "@type": "MusicRecording",
+            "@id": "https://carlyyeah.es/en/studio/#la-bestia-marcos-del-valle",
+            "url": "https://carlyyeah.es/en/studio/#la-bestia-marcos-del-valle",
+            "name": "La Bestia",
+            "datePublished": "2022-10-21",
+            "byArtist": {
+              "@type": "MusicGroup",
+              "name": "Marcos del Valle"
+            },
+            "producer": {
+              "@type": "Person",
+              "name": "Carly Yeah"
+            },
+            "creditText": "Production, recording, mixing and mastering; instrumental performance and programming: Carly Yeah.",
+            "sameAs": "https://open.spotify.com/track/7LQkfuI91I0cCZ8P8nfVpE"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "MusicRecording",
             "@id": "https://carlyyeah.es/en/studio/#salvese-quien-pueda-marcos-del-valle",
             "url": "https://carlyyeah.es/en/studio/#salvese-quien-pueda-marcos-del-valle",
             "name": "Sálvese Quien Pueda",
             "datePublished": "2022-09-23",
-            "byArtist": {"@type": "MusicGroup", "name": "Marcos del Valle"},
-            "producer": {"@type": "Person", "name": "Carly Yeah"},
+            "byArtist": {
+              "@type": "MusicGroup",
+              "name": "Marcos del Valle"
+            },
+            "producer": {
+              "@type": "Person",
+              "name": "Carly Yeah"
+            },
             "creditText": "Production, recording, mixing and mastering; instrumental performance and programming: Carly Yeah.",
             "sameAs": "https://open.spotify.com/track/6Qvf1mkB31vfz7mryvNXSC"
           }
@@ -545,6 +607,21 @@
               <p class="work-credit"><strong>Artistic credits</strong><br>Instrumental performance and programming: <strong><em>Carly Yeah</em></strong></p>
             </div>
             <a class="work-listen" href="https://open.spotify.com/album/5mGDEP1KH03FmEUthrppl3" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
+          </div>
+        </article>
+      </div></section>
+      <section class="work-year" aria-labelledby="year-2023"><h3 id="year-2023">2023</h3><div class="work-grid">
+        <article class="work-card" id="ep-good-bye-lenin" aria-labelledby="title-ep-good-bye-lenin">
+          <a class="work-cover spotify-oembed-cover" href="https://open.spotify.com/intl-es/album/4OK5museVUMajWr8YopcKB" data-spotify-url="https://open.spotify.com/album/4OK5museVUMajWr8YopcKB" data-cover-alt="Cover: EP — Good Bye Lenin" target="_blank" rel="noopener noreferrer" aria-label="Listen to EP — Good Bye Lenin on Spotify">
+            <span class="work-cover-placeholder"><strong>EP</strong><small>Good Bye Lenin</small></span>
+          </a>
+          <div><p class="work-meta">EP · <time datetime="2023-12-24">24 December 2023</time></p>
+            <h4 id="title-ep-good-bye-lenin">EP</h4><p class="work-artist">Good Bye Lenin</p>
+            <div class="work-credits">
+              <p class="work-credit"><strong>Technical credits</strong><br>Editing, mixing and mastering: <strong><em>Carly Yeah</em></strong></p>
+              <p class="work-credit"><strong>Artistic credits</strong><br>Lead electric guitar and acoustic guitar: <strong><em>Carly Yeah</em></strong></p>
+            </div>
+            <a class="work-listen" href="https://open.spotify.com/intl-es/album/4OK5museVUMajWr8YopcKB" target="_blank" rel="noopener noreferrer">Listen on Spotify</a>
           </div>
         </article>
       </div></section>
@@ -644,6 +721,23 @@
   cookieReject.addEventListener("click",()=>{
     try{localStorage.setItem("carlyYeahCookieConsent","rejected");}catch{}
     cookieBanner.classList.remove("show");
+  });
+
+  document.querySelectorAll(".spotify-oembed-cover[data-spotify-url]").forEach(async link=>{
+    try{
+      const response=await fetch("https://open.spotify.com/oembed?url="+encodeURIComponent(link.dataset.spotifyUrl));
+      if(!response.ok) return;
+      const data=await response.json();
+      if(!data.thumbnail_url) return;
+      const img=document.createElement("img");
+      img.src=data.thumbnail_url;
+      img.width=640;
+      img.height=640;
+      img.alt=link.dataset.coverAlt || "";
+      img.loading="lazy";
+      img.decoding="async";
+      link.replaceChildren(img);
+    }catch{}
   });
 
   const contrastToggle=document.getElementById("contrast-toggle");
