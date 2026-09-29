@@ -6,6 +6,9 @@
   <meta name="description" content="Carly Road Studio, el estudio donde se han grabado las canciones de Carly Yeah.">
   <meta name="theme-color" content="#050505">
   <link rel="canonical" href="https://carlyyeah.es/studio/">
+  <link rel="alternate" hreflang="es" href="https://carlyyeah.es/studio/">
+  <link rel="alternate" hreflang="en" href="https://carlyyeah.es/en/studio/">
+  <link rel="alternate" hreflang="x-default" href="https://carlyyeah.es/studio/">
   <link rel="icon" href="../assets/favicon.png" type="image/png" sizes="64x64">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <title>Carly Road Studio — Estudio de grabación</title>
@@ -49,11 +52,7 @@
     img{max-width:100%}
     .wrap{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
 
-    [data-lang]{display:none}
-    body[data-language="es"] [data-lang="es"],
-    body[data-language="en"] [data-lang="en"]{display:block}
-    body[data-language="es"] span[data-lang="es"],
-    body[data-language="en"] span[data-lang="en"]{display:inline}
+
 
     header{
       position:sticky;
@@ -311,7 +310,7 @@
     .records-copy a{text-underline-offset:4px}
     @media(max-width:560px){.studio-brand{font-size:21px}.records-copy{margin-top:40px;padding-top:28px}.records-copy p{font-size:18px}.records-copy p:first-child{font-size:21px}}
     @media(max-width:360px){.tools{gap:2px}.a11y-btn{width:32px}.lang{padding:7px 6px}.nav{gap:12px}.studio-brand{font-size:18px}}
-  
+
     /* Official studio logo and three-logo footer. */
     footer .footer-logo-studio,
     body.light-theme footer .footer-logo-studio{
@@ -327,7 +326,8 @@
     .studio-brand img{display:block;width:228.096px;height:auto;border-radius:0;object-fit:contain}
     @media(max-width:560px){.studio-brand img{width:120px;height:auto}.nav{column-gap:10px}}
     @media(max-width:360px){.studio-brand img{width:110px}}
-</style>
+    .langs a.lang{display:inline-block;text-decoration:none;text-align:center}
+  </style>
 </head>
 
 <body data-language="es">
@@ -339,7 +339,7 @@
     <div class="nav-center">
       <nav class="main-nav" aria-label="Navegación principal">
         <span class="nav-separator" aria-hidden="true">|</span>
-        <a href="../index.html"><span data-lang="es">Volver a Carly Yeah</span><span data-lang="en">Back to Carly Yeah</span></a>
+        <a href="../index.html"><span>Volver a Carly Yeah</span></a>
         <span class="nav-separator" aria-hidden="true">|</span>
       </nav>
 
@@ -349,8 +349,8 @@
       <button class="a11y-btn" id="contrast-toggle" type="button" aria-pressed="false" aria-label="Cambiar entre fondo oscuro y fondo blanco" title="Cambiar contraste">◐</button>
       <button class="a11y-btn" id="vision-toggle" type="button" aria-pressed="false" aria-label="Activar texto ampliado y mayor legibilidad" title="Mejorar legibilidad">A+</button>
       <div class="langs" role="group" aria-label="Idioma / Language">
-        <button class="lang active" type="button" data-set-lang="es" aria-pressed="true">ES</button>
-        <button class="lang" type="button" data-set-lang="en" aria-pressed="false">EN</button>
+        <a class="lang active" data-locale-link href="/studio/" lang="es" hreflang="es" aria-label="Español" aria-current="page">ES</a>
+        <a class="lang" data-locale-link href="/en/studio/" lang="en" hreflang="en" aria-label="English">EN</a>
       </div>
     </div>
   </div>
@@ -358,23 +358,19 @@
 
 <main>
   <article class="wrap bio-page">
-    <div class="eyebrow"><span data-lang="es">Estudio de grabación</span><span data-lang="en">Recording studio</span></div>
+    <div class="eyebrow"><span>Estudio de grabación</span></div>
     <h1>Carly Road<br>Studio</h1>
     <div class="records-copy">
-      <div data-lang="es">
+      <div>
         <p>Carly Road Studio es el estudio de grabación donde han tomado forma las canciones de Carly Yeah.</p>
         <p>Un homestudio ligado al proyecto desde su origen, en el que se han grabado las seis canciones de <em>Still Looking Up</em>.</p>
         <p>Carly Yeah es el artista; <a href="../records/">Carly Road Records</a>, el sello independiente; y Carly Road Studio, el espacio de grabación. Tres partes de un mismo proyecto, unidas por las ganas de hacer música y compartirla.</p>
       </div>
-      <div data-lang="en">
-        <p>Carly Road Studio is the recording studio where Carly Yeah’s songs have taken shape.</p>
-        <p>A home studio connected to the project from the beginning, where the six songs on <em>Still Looking Up</em> were recorded.</p>
-        <p>Carly Yeah is the artist; <a href="../records/">Carly Road Records</a>, the independent label; and Carly Road Studio, the recording space. Three parts of the same project, brought together by the desire to make music and share it.</p>
-      </div>
+
     </div>
     <nav class="records-actions" aria-label="Navegación de la página">
-      <a href="#top"><span data-lang="es">Volver arriba</span><span data-lang="en">Back to top</span></a>
-      <a href="../index.html"><span data-lang="es">Volver a Carly Yeah</span><span data-lang="en">Back to Carly Yeah</span></a>
+      <a href="#top"><span>Volver arriba</span></a>
+      <a href="../index.html"><span>Volver a Carly Yeah</span></a>
     </nav>
   </article>
 </main>
@@ -384,69 +380,29 @@
     <div class="footer-logos">
       <img class="footer-logo-main" src="../assets/carly-yeah-logo.webp" alt="Carly Yeah">
       <img class="footer-logo-records" src="../assets/carly-road-records.webp" alt="Carly Road Records"><img class="footer-logo-studio" src="../assets/carly-road-studio.svg" alt="Carly Road Studio">
-      
+
     </div>
     <p class="footer-credit">© 2026 <a href="../index.html">CARLY YEAH</a> | <a href="../records/">CARLY ROAD Records</a> | <a href="../studio/">CARLY ROAD Studio</a></p>
     <div class="footer-links">
-      <a href="../avisos-legales.html"><span data-lang="es">Avisos Legales</span><span data-lang="en">Legal Notices</span></a>
+      <a href="../avisos-legales.html"><span>Avisos Legales</span></a>
       <span aria-hidden="true">|</span>
-      <a href="../contacto.html"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a>
+      <a href="../contacto.html"><span>Contacto</span></a>
     </div>
   </div>
 </footer>
 
 <div class="cookie-banner" id="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-title">
-  <p id="cookie-title"><strong><span data-lang="es">Cookies y contenido externo</span><span data-lang="en">Cookies and external content</span></strong></p>
-  <p data-lang="es">Utilizamos almacenamiento local para recordar tus preferencias.</p>
-  <p data-lang="en">We use local storage to remember your preferences.</p>
+  <p id="cookie-title"><strong><span>Cookies y contenido externo</span></strong></p>
+  <p>Utilizamos almacenamiento local para recordar tus preferencias.</p>
+
   <div class="cookie-actions">
-    <button class="cookie-btn" id="cookie-accept" type="button"><span data-lang="es">Aceptar</span><span data-lang="en">Accept</span></button>
-    <button class="cookie-btn secondary" id="cookie-reject" type="button"><span data-lang="es">Rechazar</span><span data-lang="en">Reject</span></button>
+    <button class="cookie-btn" id="cookie-accept" type="button"><span>Aceptar</span></button>
+    <button class="cookie-btn secondary" id="cookie-reject" type="button"><span>Rechazar</span></button>
   </div>
 </div>
 
 <script>
-  const languageButtons=[...document.querySelectorAll("[data-set-lang]")];
 
-  function setLanguage(lang){
-    document.body.dataset.language=lang;
-    document.documentElement.lang=lang;
-    document.title=lang==="en"
-      ? "Carly Road Studio — Recording studio"
-      : "Carly Road Studio — Estudio de grabación";
-
-    document.querySelector('meta[name="description"]').content=lang==="en"
-      ? "Carly Road Studio, the home studio where Carly Yeah’s songs were recorded."
-      : "Carly Road Studio, el estudio donde se han grabado las canciones de Carly Yeah.";
-
-    languageButtons.forEach(button=>{
-      const active=button.dataset.setLang===lang;
-      button.classList.toggle("active",active);
-      button.setAttribute("aria-pressed",String(active));
-    });
-
-    const labels=lang==="en"
-      ? ["Carly Road Studio home","Change between dark and light backgrounds","Increase text size and readability"]
-      : ["Inicio de Carly Road Studio","Cambiar entre fondo oscuro y fondo blanco","Activar texto ampliado y mayor legibilidad"];
-
-    document.querySelector(".brand").setAttribute("aria-label",labels[0]);
-    document.getElementById("contrast-toggle").setAttribute("aria-label",labels[1]);
-    document.getElementById("vision-toggle").setAttribute("aria-label",labels[2]);
-
-    try{localStorage.setItem("carlyYeahLanguage",lang);}catch{}
-  }
-
-  languageButtons.forEach(button=>button.addEventListener("click",()=>setLanguage(button.dataset.setLang)));
-
-  function getInitialLanguage(){
-    let savedLanguage;
-    try{savedLanguage=localStorage.getItem("carlyYeahLanguage");}catch{}
-    if(savedLanguage==="es" || savedLanguage==="en") return savedLanguage;
-    const browserLanguage=(navigator.languages && navigator.languages[0]) || navigator.language || "en";
-    return /^es(?:-|$)/i.test(browserLanguage) ? "es" : "en";
-  }
-
-  setLanguage(getInitialLanguage());
 
   const cookieBanner=document.getElementById("cookie-banner");
   const cookieAccept=document.getElementById("cookie-accept");
@@ -496,5 +452,6 @@
 </script>
 
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a13183f17a947f9a3078f8fdbf6d830"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/assets/language-links.js" defer></script>
 </body>
 </html>

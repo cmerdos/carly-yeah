@@ -1,29 +1,51 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Carly Road Records, sello independiente vinculado al proyecto musical Carly Yeah y a sus publicaciones.">
+  <meta name="description" content="Official biography of Carly Yeah, an independent rock, folk and alternative pop music project. Discover the origin of Still Looking Up and the stories behind the songs.">
   <meta name="theme-color" content="#050505">
-  <link rel="canonical" href="https://carlyyeah.es/records/">
-  <link rel="alternate" hreflang="es" href="https://carlyyeah.es/records/">
-  <link rel="alternate" hreflang="en" href="https://carlyyeah.es/en/records/">
-  <link rel="alternate" hreflang="x-default" href="https://carlyyeah.es/records/">
-  <link rel="icon" href="../assets/favicon.png" type="image/png" sizes="64x64">
-  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
-  <title>Carly Road Records — Sello independiente</title>
+  <link rel="canonical" href="https://carlyyeah.es/en/biografia.html">
+  <link rel="alternate" hreflang="es" href="https://carlyyeah.es/biografia.html">
+  <link rel="alternate" hreflang="en" href="https://carlyyeah.es/en/biografia.html">
+  <link rel="alternate" hreflang="x-default" href="https://carlyyeah.es/biografia.html">
+  <link rel="icon" href="/assets/favicon.png" type="image/png" sizes="64x64">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <title>Carly Yeah — Biography | Independent music project</title>
 
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Carly Road Records">
-  <meta property="og:locale" content="es_ES">
-  <meta property="og:locale:alternate" content="en_US">
-  <meta property="og:url" content="https://carlyyeah.es/records/">
-  <meta property="og:title" content="Carly Road Records">
-  <meta property="og:description" content="Sello independiente vinculado a Carly Yeah.">
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Carly Yeah">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:url" content="https://carlyyeah.es/en/biografia.html">
+  <meta property="og:title" content="Carly Yeah — Biography | Independent music project">
+  <meta property="og:description" content="Discover the story of Carly Yeah, the debut release Still Looking Up and the stories behind the songs.">
+  <meta property="og:image" content="https://carlyyeah.es/assets/social-preview-v2.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Carly Yeah with the official logo and Still Looking Up title">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Carly Road Records">
-  <meta name="twitter:description" content="Sello independiente vinculado a Carly Yeah.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Carly Yeah — Biography | Independent music project">
+  <meta name="twitter:description" content="Discover the story of Carly Yeah, the debut release Still Looking Up and the stories behind the songs.">
+  <meta name="twitter:image" content="https://carlyyeah.es/assets/social-preview-v2.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "@id": "https://carlyyeah.es/#artist",
+    "name": "Carly Yeah",
+    "url": "https://carlyyeah.es/",
+    "description": "Independent rock, folk, pop and alternative music project.",
+    "image": "https://carlyyeah.es/assets/social-preview-v2.jpg",
+    "sameAs": [
+      "https://www.instagram.com/carly__yeah/",
+      "https://open.spotify.com/artist/2PN25GgsuPInyyc3rYwuJ8",
+      "https://www.youtube.com/@carly_yeah"
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,9 +80,9 @@
       position:sticky;
       top:0;
       z-index:50;
-      background:#000;
-      color:#fff;
-      border-bottom:1px solid #333;
+      background:#fff;
+      color:#111;
+      border-bottom:1px solid #dedede;
     }
     .nav{
       min-height:94px;
@@ -93,16 +115,15 @@
       font-weight:500;
     }
     .main-nav a{
-      color:#fff;
-      font-size:1.2em;
+      color:#111;
       text-decoration:none;
       padding:8px 0;
       border-bottom:2px solid transparent;
       white-space:nowrap;
     }
     .main-nav a:hover{opacity:.7}
-    .main-nav a.active{border-bottom-color:#fff}
-    .nav-separator{color:#bbb;opacity:.85}
+    .main-nav a.active{border-bottom-color:#111}
+    .nav-separator{color:#777;opacity:.75}
 
     .social-links{
       display:flex;
@@ -117,7 +138,7 @@
       justify-content:center;
       width:38px;
       height:38px;
-      color:#fff;
+      color:#111;
       opacity:.88;
       transition:opacity .2s ease,transform .2s ease;
     }
@@ -138,26 +159,16 @@
     .tools{display:flex;align-items:center;gap:6px;margin-left:8px}
     .a11y-btn{
       width:42px;height:42px;display:inline-grid;place-items:center;
-      border:1px solid #aaa;background:#000;color:#fff;cursor:pointer;
+      border:1px solid #bbb;background:#fff;color:#111;cursor:pointer;
       font-size:20px;font-weight:700;
     }
-    .a11y-btn[aria-pressed="true"]{background:#fff;color:#000;border-color:#fff}
-    .langs{display:flex;border:1px solid #aaa;padding:3px;background:#000}
-    .lang{border:0;background:#000;color:#fff;padding:8px 10px;cursor:pointer;font-size:13px}
-    .lang.active{background:#fff;color:#000}
-    header a:focus-visible,header button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+    .a11y-btn[aria-pressed="true"]{background:#111;color:#fff;border-color:#111}
+    .langs{display:flex;border:1px solid #bbb;padding:3px;background:#fff}
+    .lang{border:0;background:#fff;color:#111;padding:8px 10px;cursor:pointer;font-size:13px}
+    .lang.active{background:#111;color:#fff}
 
-    main{min-height:calc(100vh - 94px);display:flex;flex-direction:column}
-    .brand img{width:228.096px;height:auto;border-radius:0;object-fit:contain}
-    .records-copy{max-width:790px;margin-top:72px;padding-top:38px;border-top:1px solid var(--line)}
-    .records-copy p{margin:0 0 20px;color:#d1d1cd;font-size:20px}
-    .records-copy p:first-child{color:#fff;font-size:24px}
-    body.light-theme .records-copy{border-color:#111}
-    body.light-theme .records-copy p{color:#222}
-    body.light-theme .records-copy p:first-child{color:#000}
-    body.readable-mode .records-copy p{font-size:22px;line-height:1.8}
-    body.readable-mode .records-copy p:first-child{font-size:26px}
-    .bio-page{padding:92px 0 48px;flex:1;display:flex;flex-direction:column}
+    main{min-height:calc(100vh - 94px)}
+    .bio-page{padding:92px 0 118px}
     .eyebrow{
       margin-bottom:20px;color:var(--muted);font-size:13px;font-weight:700;
       letter-spacing:.17em;text-transform:uppercase;
@@ -222,13 +233,6 @@
       display:inline-block;margin-top:20px;color:#fff;text-underline-offset:5px;
     }
 
-    .records-actions{display:flex;flex-wrap:nowrap;align-items:stretch;justify-content:center;gap:10px;margin-top:auto;padding-top:72px}
-    .records-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 12px;background:#fff;color:#000;border:1px solid #fff;font-family:Arial,Helvetica,sans-serif;font-size:12.6px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;text-decoration:none;line-height:1.25;transition:opacity .2s ease}
-    .records-actions a:hover{opacity:.82}
-    .records-actions a:focus-visible{outline:2px solid #fff;outline-offset:4px}
-    body.light-theme .records-actions a{border-color:#111}
-    body.light-theme .records-actions a:focus-visible{outline-color:#111}
-    body.readable-mode .records-actions a{font-size:15.3px}
     footer{border-top:1px solid var(--line);padding:38px 0;text-align:center}
     .footer-logos{display:flex;align-items:center;justify-content:center;gap:18px}
     .footer-logo-main{width:61px;height:61px;border-radius:50%}
@@ -277,7 +281,7 @@
     }
     @media(max-width:560px){
       .wrap{width:min(var(--max),calc(100% - 28px))}
-      .brand img{width:100.224px;height:100.224px}
+      .brand img{width:58px;height:58px}
       .tools{gap:4px}
       .a11y-btn{width:38px;height:38px}
       .lang{padding:7px 8px}
@@ -298,8 +302,7 @@
         height:min(26.4px,7.4vw);
       }
       .nav-separator{font-size:11px}
-      .bio-page{padding:66px 0 36px}
-      .records-actions a{min-width:0;text-align:center;padding-inline:8px}
+      .bio-page{padding:66px 0 84px}
       .bio-layout{margin-top:48px;padding-top:34px}
       .bio-copy p{text-align:left;font-size:18px}
       .bio-copy p:first-child{font-size:21px}
@@ -320,31 +323,34 @@
   </style>
 </head>
 
-<body data-language="es">
-<div id="top" aria-hidden="true"></div>
+<body data-language="en">
 <header>
   <div class="wrap nav">
-    <a class="brand" href="./" aria-label="Carly Road Records, inicio del sello">
-      <img src="../assets/carly-road-records.webp" alt="Logo de Carly Road Records">
+    <a class="brand" href="/en/" aria-label="Back to Carly Yeah">
+      <img src="/assets/carly-yeah-logo.webp" alt="Official Carly Yeah logo">
     </a>
 
     <div class="nav-center">
-      <nav class="main-nav" aria-label="Navegación principal">
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="/en/"><span>Home</span></a>
         <span class="nav-separator" aria-hidden="true">|</span>
-        <a href="../index.html"><span>Volver a Carly Yeah</span></a>
+        <a href="/en/#music"><span>Music</span></a>
         <span class="nav-separator" aria-hidden="true">|</span>
+        <a href="/en/#videos"><span>Videos</span></a>
+        <span class="nav-separator" aria-hidden="true">|</span>
+        <a class="active" href="/en/biografia.html" aria-current="page"><span>Biography</span></a>
       </nav>
-      <div class="social-links" aria-label="Redes y plataformas">
-        <a class="top-social instagram-icon" href="https://www.instagram.com/carlyroadrecords?stkn=MW4xeTQweHlyanA4ZA%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+      <div class="social-links" aria-label="Social media and platforms">
+        <a class="top-social instagram-icon" href="https://www.instagram.com/carly__yeah/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.25"></circle><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle></svg>
         </a>
-        <a class="top-social" href="https://www.facebook.com/share/1DqQ1tZShq/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+        <a class="top-social" href="https://www.facebook.com/share/14tgfszvmEi/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M13.2 20v-6h2.2l.4-2.7h-2.6V9.6c0-.8.2-1.3 1.4-1.3H16V5.9c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v1.7H8V14h2.1v6"></path></svg>
         </a>
         <a class="top-social" href="https://open.spotify.com/intl-es/artist/2PN25GgsuPInyyc3rYwuJ8" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M7 10.2c3.7-1.1 7.8-.8 10.7.7"></path><path d="M7.8 13.3c3-.8 6.4-.6 8.9.7"></path><path d="M8.6 16.2c2.4-.6 5-.4 7 .6"></path></svg>
         </a>
-        <span class="top-social social-pending" aria-label="Apple Music, próximamente" title="Apple Music · Próximamente">
+        <span class="top-social social-pending" aria-label="Apple Music, coming soon" title="Apple Music · Coming soon">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3.5" width="16" height="17" rx="4"></rect><path d="M14.8 8.2v7.2"></path><path d="M14.8 8.2 10 9.3v7"></path><circle cx="8.7" cy="16.6" r="1.8"></circle><circle cx="13.5" cy="15.6" r="1.8"></circle></svg>
         </span>
         <a class="top-social tidal-icon" href="https://tidal.com/artist/86777852/u" target="_blank" rel="noopener" aria-label="TIDAL" title="TIDAL">
@@ -356,7 +362,7 @@
         <a class="top-social youtube-icon" href="https://youtube.com/@carly_yeah?si=9zmyvIMI6A8kTf5p" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6.5" width="18" height="11" rx="3.5"></rect><path d="M10 9.3 15.2 12 10 14.7Z" fill="currentColor" stroke="none"></path></svg>
         </a>
-        <span class="top-social social-pending amazon-music-icon" aria-label="Amazon Music, próximamente" title="Amazon Music · Próximamente">
+        <span class="top-social social-pending amazon-music-icon" aria-label="Amazon Music, coming soon" title="Amazon Music · Coming soon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M7.2 15.8c2.8 1.8 6.4 2 9.5.6"></path>
             <path d="M15.8 15.9c.9-.1 1.6 0 2.1.2-.2.6-.6 1.2-1.2 1.8"></path>
@@ -368,11 +374,11 @@
     </div>
 
     <div class="tools">
-      <button class="a11y-btn" id="contrast-toggle" type="button" aria-pressed="false" aria-label="Cambiar entre fondo oscuro y fondo blanco" title="Cambiar contraste">◐</button>
-      <button class="a11y-btn" id="vision-toggle" type="button" aria-pressed="false" aria-label="Activar texto ampliado y mayor legibilidad" title="Mejorar legibilidad">A+</button>
-      <div class="langs" role="group" aria-label="Idioma / Language">
-        <a class="lang active" data-locale-link href="/records/" lang="es" hreflang="es" aria-label="Español" aria-current="page">ES</a>
-        <a class="lang" data-locale-link href="/en/records/" lang="en" hreflang="en" aria-label="English">EN</a>
+      <button class="a11y-btn" id="contrast-toggle" type="button" aria-pressed="false" aria-label="Change between dark and light backgrounds" title="Change contrast">◐</button>
+      <button class="a11y-btn" id="vision-toggle" type="button" aria-pressed="false" aria-label="Increase text size and readability" title="Improve readability">A+</button>
+      <div class="langs" role="group" aria-label="Language">
+        <a class="lang" data-locale-link href="/biografia.html" lang="es" hreflang="es" aria-label="Español">ES</a>
+        <a class="lang active" data-locale-link href="/en/biografia.html" lang="en" hreflang="en" aria-label="English" aria-current="page">EN</a>
       </div>
     </div>
   </div>
@@ -380,45 +386,57 @@
 
 <main>
   <article class="wrap bio-page">
-    <div class="eyebrow"><span>Sello independiente</span></div>
-    <h1>Carly Road<br>Records</h1>
-    <div class="records-copy">
-      <div>
-        <p>Carly Road Records es el sello independiente vinculado al proyecto musical Carly Yeah.</p>
-        <p>Su primer trabajo es <em>Still Looking Up</em>, un EP de seis canciones. Este espacio reunirá la información y las próximas publicaciones del sello.</p>
+    <div class="eyebrow"><span>Official biography</span></div>
+    <h1>Carly Yeah</h1>
+
+    <p class="subtitle">Independent music project · Rock · Folk · Alternative pop</p>
+
+    <div class="bio-layout">
+      <div class="bio-copy">
+
+
+        <div>
+          <p>Carly Yeah is an independent music project born from the need to turn experiences, memories and questions into songs.</p>
+          <p>With rock as its starting point and a strong presence of folk, pop and alternative sounds, the songs move through guitars, direct melodies and lyrics that tell familiar stories: relationships, loss, choices, nostalgia, hope, and those moments when you are trying to work out what comes next.</p>
+          <p>After many years of writing, playing and understanding music as an essential part of life, Carly Yeah begins a new chapter in which those songs stop staying at home and start finding a path of their own.</p>
+          <p>The debut release, <em>Still Looking Up</em>, brings together six songs connected by the same idea: moving forward even when not every answer is clear. Tracks such as <em>Boreal</em>, <em>This Is My Stop</em>, <em>No Reason Why</em>, <em>Let Me Be</em>, <em>When We Let Go</em> and <em>What the Hell (After Summer)</em> explore different ways of looking back, letting go and continuing to search for something further ahead.</p>
+          <p>Above all, Carly Yeah is independent music made without too many rules, with one simple intention: to tell stories as honestly as possible and hope that, somewhere, someone might recognise themselves in them.</p>
+        </div>
       </div>
 
+      <aside class="bio-aside">
+        <img src="/assets/still-looking-up.webp" alt="Still Looking Up — Carly Yeah">
+        <small><span>Debut release</span></small>
+        <strong>Still Looking Up</strong>
+        <a href="/en/#music"><span>Explore the music →</span></a>
+      </aside>
     </div>
-    <nav class="records-actions" aria-label="Navegación de la página">
-      <a href="#top"><span>Volver arriba</span></a>
-      <a href="../index.html"><span>Volver a Carly Yeah</span></a>
-    </nav>
   </article>
 </main>
 
 <footer>
   <div class="wrap">
     <div class="footer-logos">
-      <img class="footer-logo-main" src="../assets/carly-yeah-logo.webp" alt="Carly Yeah">
-      <img class="footer-logo-records" src="../assets/carly-road-records.webp" alt="Carly Road Records"><img class="footer-logo-studio" src="../assets/carly-road-studio.svg" alt="Carly Road Studio">
+      <img class="footer-logo-main" src="/assets/carly-yeah-logo.webp" alt="Carly Yeah">
+      <img class="footer-logo-records" src="/assets/carly-road-records.webp" alt="Carly Road Records"><img class="footer-logo-studio" src="/assets/carly-road-studio.svg" alt="Carly Road Studio">
 
     </div>
-    <p class="footer-credit">© 2026 <a href="../index.html">CARLY YEAH</a> | <a href="./">CARLY ROAD Records</a> | <a href="../studio/">CARLY ROAD Studio</a></p>
+    <p class="footer-credit">© 2026 <a href="/en/">CARLY YEAH</a> | <a href="/en/records/">CARLY ROAD Records</a> | <a href="/en/studio/">CARLY ROAD Studio</a></p>
     <div class="footer-links">
-      <a href="../avisos-legales.html"><span>Avisos Legales</span></a>
+      <a href="/en/avisos-legales.html"><span>Legal Notices</span></a>
       <span aria-hidden="true">|</span>
-      <a href="../contacto.html"><span>Contacto</span></a>
+      <a href="/en/contacto.html"><span>Contact</span></a>
     </div>
   </div>
 </footer>
 
 <div class="cookie-banner" id="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-title">
-  <p id="cookie-title"><strong><span>Cookies y contenido externo</span></strong></p>
-  <p>Utilizamos almacenamiento local para recordar tus preferencias.</p>
+  <p id="cookie-title"><strong><span>Cookies and external content</span></strong></p>
 
+  <p>We use local storage to remember your preferences.</p>
   <div class="cookie-actions">
-    <button class="cookie-btn" id="cookie-accept" type="button"><span>Aceptar</span></button>
-    <button class="cookie-btn secondary" id="cookie-reject" type="button"><span>Rechazar</span></button>
+    <button class="cookie-btn" id="cookie-accept" type="button"><span>Accept</span></button>
+    <button class="cookie-btn secondary" id="cookie-reject" type="button"><span>Reject</span></button>
   </div>
 </div>
 
@@ -465,11 +483,6 @@
   }catch{}
   setContrast(light==="1");
   setReadable(readable==="1");
-
-  document.querySelector('.records-actions a[href="#top"]').addEventListener("click",event=>{
-    event.preventDefault();
-    window.scrollTo({top:0,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
-  });
 </script>
 
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a13183f17a947f9a3078f8fdbf6d830"}'></script><!-- End Cloudflare Web Analytics -->

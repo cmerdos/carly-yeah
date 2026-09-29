@@ -6,6 +6,9 @@
   <meta name="description" content="Biografía oficial de Carly Yeah, proyecto musical independiente de rock, folk, pop y sonidos alternativos. Conoce el origen de Still Looking Up y las historias detrás de sus canciones.">
   <meta name="theme-color" content="#050505">
   <link rel="canonical" href="https://carlyyeah.es/biografia.html">
+  <link rel="alternate" hreflang="es" href="https://carlyyeah.es/biografia.html">
+  <link rel="alternate" hreflang="en" href="https://carlyyeah.es/en/biografia.html">
+  <link rel="alternate" hreflang="x-default" href="https://carlyyeah.es/biografia.html">
   <link rel="icon" href="assets/favicon.png" type="image/png" sizes="64x64">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <title>Carly Yeah — Biografía | Artista y proyecto musical independiente</title>
@@ -71,11 +74,7 @@
     img{max-width:100%}
     .wrap{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
 
-    [data-lang]{display:none}
-    body[data-language="es"] [data-lang="es"],
-    body[data-language="en"] [data-lang="en"]{display:block}
-    body[data-language="es"] span[data-lang="es"],
-    body[data-language="en"] span[data-lang="en"]{display:inline}
+
 
     header{
       position:sticky;
@@ -308,7 +307,7 @@
       .bio-copy p{text-align:left;font-size:18px}
       .bio-copy p:first-child{font-size:21px}
     }
-  
+
     /* Official studio logo and three-logo footer. */
     footer .footer-logo-studio,
     body.light-theme footer .footer-logo-studio{
@@ -320,7 +319,8 @@
       footer .footer-logos img,body.light-theme footer .footer-logos img{height:clamp(31.2px,9.1vw,49.4px);width:auto;min-width:0;max-width:100%;object-fit:contain}
       footer .footer-logos .footer-logo-main{width:clamp(31.2px,9.1vw,49.4px);flex-shrink:0}
     }
-</style>
+    .langs a.lang{display:inline-block;text-decoration:none;text-align:center}
+  </style>
 </head>
 
 <body data-language="es">
@@ -332,13 +332,13 @@
 
     <div class="nav-center">
       <nav class="main-nav" aria-label="Navegación principal">
-        <a href="index.html"><span data-lang="es">Inicio</span><span data-lang="en">Home</span></a>
+        <a href="index.html"><span>Inicio</span></a>
         <span class="nav-separator" aria-hidden="true">|</span>
-        <a href="index.html#music"><span data-lang="es">Música</span><span data-lang="en">Music</span></a>
+        <a href="index.html#music"><span>Música</span></a>
         <span class="nav-separator" aria-hidden="true">|</span>
-        <a href="index.html#videos"><span data-lang="es">Vídeos</span><span data-lang="en">Videos</span></a>
+        <a href="index.html#videos"><span>Vídeos</span></a>
         <span class="nav-separator" aria-hidden="true">|</span>
-        <a class="active" href="biografia.html" aria-current="page"><span data-lang="es">Biografía</span><span data-lang="en">Biography</span></a>
+        <a class="active" href="biografia.html" aria-current="page"><span>Biografía</span></a>
       </nav>
       <div class="social-links" aria-label="Redes y plataformas">
         <a class="top-social instagram-icon" href="https://www.instagram.com/carly__yeah/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
@@ -377,8 +377,8 @@
       <button class="a11y-btn" id="contrast-toggle" type="button" aria-pressed="false" aria-label="Cambiar entre fondo oscuro y fondo blanco" title="Cambiar contraste">◐</button>
       <button class="a11y-btn" id="vision-toggle" type="button" aria-pressed="false" aria-label="Activar texto ampliado y mayor legibilidad" title="Mejorar legibilidad">A+</button>
       <div class="langs" role="group" aria-label="Idioma / Language">
-        <button class="lang active" type="button" data-set-lang="es" aria-pressed="true">ES</button>
-        <button class="lang" type="button" data-set-lang="en" aria-pressed="false">EN</button>
+        <a class="lang active" data-locale-link href="/biografia.html" lang="es" hreflang="es" aria-label="Español" aria-current="page">ES</a>
+        <a class="lang" data-locale-link href="/en/biografia.html" lang="en" hreflang="en" aria-label="English">EN</a>
       </div>
     </div>
   </div>
@@ -386,14 +386,14 @@
 
 <main>
   <article class="wrap bio-page">
-    <div class="eyebrow"><span data-lang="es">Biografía oficial</span><span data-lang="en">Official biography</span></div>
+    <div class="eyebrow"><span>Biografía oficial</span></div>
     <h1>Carly Yeah</h1>
-    <p class="subtitle" data-lang="es">Proyecto musical independiente · Rock · Folk · Pop alternativo</p>
-    <p class="subtitle" data-lang="en">Independent music project · Rock · Folk · Alternative pop</p>
+    <p class="subtitle">Proyecto musical independiente · Rock · Folk · Pop alternativo</p>
+
 
     <div class="bio-layout">
       <div class="bio-copy">
-        <div data-lang="es">
+        <div>
           <p>Carly Yeah es un proyecto musical independiente nacido de la necesidad de convertir experiencias, recuerdos y preguntas en canciones.</p>
           <p>Con el rock como punto de partida y una fuerte presencia de sonidos folk, pop y alternativos, sus canciones se mueven entre guitarras, melodías directas y letras que buscan contar historias reconocibles: relaciones, pérdidas, decisiones, nostalgia, esperanza y esos momentos en los que uno intenta averiguar cuál es el siguiente paso.</p>
           <p>Después de muchos años escribiendo, tocando y entendiendo la música como una parte esencial de su vida, Carly Yeah inicia ahora una nueva etapa en la que esas canciones dejan de quedarse en casa para empezar a encontrar su propio camino.</p>
@@ -401,20 +401,14 @@
           <p>Carly Yeah es, ante todo, música hecha desde la independencia, sin demasiadas reglas y con una intención sencilla: contar historias de la manera más honesta posible y esperar que, en algún lugar, alguien pueda reconocerse en ellas.</p>
         </div>
 
-        <div data-lang="en">
-          <p>Carly Yeah is an independent music project born from the need to turn experiences, memories and questions into songs.</p>
-          <p>With rock as its starting point and a strong presence of folk, pop and alternative sounds, the songs move through guitars, direct melodies and lyrics that tell familiar stories: relationships, loss, choices, nostalgia, hope, and those moments when you are trying to work out what comes next.</p>
-          <p>After many years of writing, playing and understanding music as an essential part of life, Carly Yeah begins a new chapter in which those songs stop staying at home and start finding a path of their own.</p>
-          <p>The debut release, <em>Still Looking Up</em>, brings together six songs connected by the same idea: moving forward even when not every answer is clear. Tracks such as <em>Boreal</em>, <em>This Is My Stop</em>, <em>No Reason Why</em>, <em>Let Me Be</em>, <em>When We Let Go</em> and <em>What the Hell (After Summer)</em> explore different ways of looking back, letting go and continuing to search for something further ahead.</p>
-          <p>Above all, Carly Yeah is independent music made without too many rules, with one simple intention: to tell stories as honestly as possible and hope that, somewhere, someone might recognise themselves in them.</p>
-        </div>
+
       </div>
 
       <aside class="bio-aside">
         <img src="assets/still-looking-up.webp" alt="Still Looking Up — Carly Yeah">
-        <small><span data-lang="es">Primer trabajo</span><span data-lang="en">Debut release</span></small>
+        <small><span>Primer trabajo</span></small>
         <strong>Still Looking Up</strong>
-        <a href="index.html#music"><span data-lang="es">Explorar la música →</span><span data-lang="en">Explore the music →</span></a>
+        <a href="index.html#music"><span>Explorar la música →</span></a>
       </aside>
     </div>
   </article>
@@ -425,69 +419,29 @@
     <div class="footer-logos">
       <img class="footer-logo-main" src="assets/carly-yeah-logo.webp" alt="Carly Yeah">
       <img class="footer-logo-records" src="assets/carly-road-records.webp" alt="Carly Road Records"><img class="footer-logo-studio" src="assets/carly-road-studio.svg" alt="Carly Road Studio">
-      
+
     </div>
     <p class="footer-credit">© 2026 <a href="index.html">CARLY YEAH</a> | <a href="records/">CARLY ROAD Records</a> | <a href="studio/">CARLY ROAD Studio</a></p>
     <div class="footer-links">
-      <a href="avisos-legales.html"><span data-lang="es">Avisos Legales</span><span data-lang="en">Legal Notices</span></a>
+      <a href="avisos-legales.html"><span>Avisos Legales</span></a>
       <span aria-hidden="true">|</span>
-      <a href="contacto.html"><span data-lang="es">Contacto</span><span data-lang="en">Contact</span></a>
+      <a href="contacto.html"><span>Contacto</span></a>
     </div>
   </div>
 </footer>
 
 <div class="cookie-banner" id="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-title">
-  <p id="cookie-title"><strong><span data-lang="es">Cookies y contenido externo</span><span data-lang="en">Cookies and external content</span></strong></p>
-  <p data-lang="es">Utilizamos almacenamiento local para recordar tus preferencias.</p>
-  <p data-lang="en">We use local storage to remember your preferences.</p>
+  <p id="cookie-title"><strong><span>Cookies y contenido externo</span></strong></p>
+  <p>Utilizamos almacenamiento local para recordar tus preferencias.</p>
+
   <div class="cookie-actions">
-    <button class="cookie-btn" id="cookie-accept" type="button"><span data-lang="es">Aceptar</span><span data-lang="en">Accept</span></button>
-    <button class="cookie-btn secondary" id="cookie-reject" type="button"><span data-lang="es">Rechazar</span><span data-lang="en">Reject</span></button>
+    <button class="cookie-btn" id="cookie-accept" type="button"><span>Aceptar</span></button>
+    <button class="cookie-btn secondary" id="cookie-reject" type="button"><span>Rechazar</span></button>
   </div>
 </div>
 
 <script>
-  const languageButtons=[...document.querySelectorAll("[data-set-lang]")];
 
-  function setLanguage(lang){
-    document.body.dataset.language=lang;
-    document.documentElement.lang=lang;
-    document.title=lang==="en"
-      ? "Carly Yeah — Biography | Independent music project"
-      : "Carly Yeah — Biografía | Artista y proyecto musical independiente";
-
-    document.querySelector('meta[name="description"]').content=lang==="en"
-      ? "Official biography of Carly Yeah, an independent rock, folk and alternative pop music project. Discover the origin of Still Looking Up and the stories behind the songs."
-      : "Biografía oficial de Carly Yeah, proyecto musical independiente de rock, folk, pop y sonidos alternativos. Conoce el origen de Still Looking Up y las historias detrás de sus canciones.";
-
-    languageButtons.forEach(button=>{
-      const active=button.dataset.setLang===lang;
-      button.classList.toggle("active",active);
-      button.setAttribute("aria-pressed",String(active));
-    });
-
-    const labels=lang==="en"
-      ? ["Back to Carly Yeah","Change between dark and light backgrounds","Increase text size and readability"]
-      : ["Volver a Carly Yeah","Cambiar entre fondo oscuro y fondo blanco","Activar texto ampliado y mayor legibilidad"];
-
-    document.querySelector(".brand").setAttribute("aria-label",labels[0]);
-    document.getElementById("contrast-toggle").setAttribute("aria-label",labels[1]);
-    document.getElementById("vision-toggle").setAttribute("aria-label",labels[2]);
-
-    try{localStorage.setItem("carlyYeahLanguage",lang);}catch{}
-  }
-
-  languageButtons.forEach(button=>button.addEventListener("click",()=>setLanguage(button.dataset.setLang)));
-
-  function getInitialLanguage(){
-    let savedLanguage;
-    try{savedLanguage=localStorage.getItem("carlyYeahLanguage");}catch{}
-    if(savedLanguage==="es" || savedLanguage==="en") return savedLanguage;
-    const browserLanguage=(navigator.languages && navigator.languages[0]) || navigator.language || "en";
-    return /^es(?:-|$)/i.test(browserLanguage) ? "es" : "en";
-  }
-
-  setLanguage(getInitialLanguage());
 
   const cookieBanner=document.getElementById("cookie-banner");
   const cookieAccept=document.getElementById("cookie-accept");
@@ -532,5 +486,6 @@
 </script>
 
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8a13183f17a947f9a3078f8fdbf6d830"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/assets/language-links.js" defer></script>
 </body>
 </html>
