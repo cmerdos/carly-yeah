@@ -1043,7 +1043,19 @@
     .langs a.lang{display:inline-block;text-decoration:none;text-align:center}
   
     .song-page-cover-link{display:block;flex:0 0 48px}
+    .song-page-link{
+      display:inline-block;
+      transform-origin:left center;
+    }
     .song-page-link:hover{text-decoration:underline;text-underline-offset:4px}
+    @keyframes song-page-pulse{
+      0%,82%,100%{opacity:1;transform:scale(1)}
+      88%{opacity:.45;transform:scale(1.05)}
+      94%{opacity:1;transform:scale(1.10)}
+    }
+    @media(prefers-reduced-motion:no-preference){
+      .song-page-link{animation:song-page-pulse 3s ease-in-out infinite}
+    }
     #track-boreal{scroll-margin-top:138px}
     #track-boreal:target{background:rgba(255,255,255,.045);padding-left:12px;padding-right:12px}
     body.light-theme #track-boreal:target{background:rgba(0,0,0,.055)}
