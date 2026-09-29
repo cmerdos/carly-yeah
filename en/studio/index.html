@@ -329,6 +329,24 @@
     @media(max-width:560px){.studio-brand img{width:120px;height:auto}.nav{column-gap:10px}}
     @media(max-width:360px){.studio-brand img{width:110px}}
     .langs a.lang{display:inline-block;text-decoration:none;text-align:center}
+    .studio-gallery{margin-top:72px;padding-top:40px;border-top:1px solid var(--line)}
+    .studio-gallery h2{font-family:"Space Grotesk",Arial,sans-serif;font-size:clamp(32px,5vw,52px);line-height:1.1;margin:0 0 12px}
+    .studio-gallery-intro{font-size:17px;color:#d1d1cd;margin:0 0 32px}
+    .studio-gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 24px}
+    .studio-gallery figure{min-width:0;margin:0}
+    .studio-gallery img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border:1px solid #333}
+    .studio-gallery figcaption{display:flex;align-items:baseline;gap:14px;margin-top:12px;font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:#d1d1cd}
+    .studio-gallery figcaption span{font-size:11px;color:#888}
+    body.light-theme .studio-gallery{border-color:#bbb}
+    body.light-theme .studio-gallery img{border-color:#ccc}
+    body.light-theme .studio-gallery-intro,body.light-theme .studio-gallery figcaption{color:#222}
+    body.light-theme .studio-gallery figcaption span{color:#555}
+    @media(max-width:560px){
+      .studio-gallery{margin-top:44px;padding-top:30px}
+      .studio-gallery-grid{grid-template-columns:1fr;gap:26px}
+      .studio-gallery-intro{margin-bottom:24px}
+    }
+    body.readable-mode .studio-gallery-intro,body.readable-mode .studio-gallery figcaption{font-size:18px}
   
     .studio-works{margin-top:72px;padding-top:40px;border-top:1px solid var(--line)}
     .studio-works h2{font-family:"Space Grotesk",Arial,sans-serif;font-size:clamp(32px,5vw,52px);line-height:1.1;margin:0 0 16px}
@@ -585,6 +603,16 @@
         <p>Carly Yeah is the artist; <a href="/en/records/">Carly Road Records</a>, the independent label; and Carly Road Studio, the recording space. Three parts of the same project, brought together by the desire to make music and share it.</p>
       </div>
     </div>
+    <section class="studio-gallery" aria-labelledby="studio-gallery-title">
+      <h2 id="studio-gallery-title">Inside the studio</h2>
+      <p class="studio-gallery-intro">A closer look at the studio, from recording to mixing.</p>
+      <div class="studio-gallery-grid">
+        <figure><img src="../../assets/studio-recording.jpeg" width="1448" height="1086" alt="Microphone, monitor and recording equipment at Carly Road Studio" loading="lazy" decoding="async"><figcaption><span>01</span> Recording and monitoring</figcaption></figure>
+        <figure><img src="../../assets/studio-processing.jpeg" width="1448" height="1086" alt="Studio processors and mixing controls" loading="lazy" decoding="async"><figcaption><span>02</span> Processing</figcaption></figure>
+        <figure><img src="../../assets/studio-amplification.jpeg" width="1448" height="1086" alt="Amplifiers, pedals and guitar and bass equipment" loading="lazy" decoding="async"><figcaption><span>03</span> Amplification</figcaption></figure>
+        <figure><img src="../../assets/studio-signal.jpeg" width="1448" height="1086" alt="Studio preamps, transformers and signal equipment" loading="lazy" decoding="async"><figcaption><span>04</span> Signal chain</figcaption></figure>
+      </div>
+    </section>
     <section class="studio-works" aria-labelledby="works-title">
       <h2 id="works-title">Selected work</h2>
       <p class="works-intro">A selection of production, recording, mixing and mastering work from my career, ordered by release date.</p>
