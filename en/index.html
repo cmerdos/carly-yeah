@@ -1043,18 +1043,22 @@
     .langs a.lang{display:inline-block;text-decoration:none;text-align:center}
   
     .song-page-cover-link{display:block;flex:0 0 48px}
-    .song-page-link{
+    .song-page-link,
+    .release-page-link{
       display:inline-block;
       transform-origin:left center;
     }
-    .song-page-link:hover{text-decoration:underline;text-underline-offset:4px}
+    .song-page-link.is-page-active:hover,
+    .release-page-link.is-page-active:hover{text-decoration:underline;text-underline-offset:4px}
+    .delayed-page-link[aria-disabled="true"]{pointer-events:none;cursor:default}
     @keyframes song-page-pulse{
       0%,82%,100%{opacity:1;transform:scale(1)}
       88%{opacity:.45;transform:scale(1.05)}
       94%{opacity:1;transform:scale(1.10)}
     }
     @media(prefers-reduced-motion:no-preference){
-      .song-page-link{animation:song-page-pulse 3s ease-in-out infinite}
+      .song-page-link.is-page-active,
+      .release-page-link.is-page-active{animation:song-page-pulse 3s ease-in-out infinite}
     }
     #track-boreal{scroll-margin-top:138px}
     #track-boreal:target{background:rgba(255,255,255,.045);padding-left:12px;padding-right:12px}
@@ -1162,15 +1166,15 @@
       <div class="num"><span>Music</span></div>
       <div>
         <div class="music-head">
-          <div class="album-title-row"><img class="album-cover" src="/assets/covers/still-looking-up.webp" alt="Still Looking Up" width="96" height="96" loading="lazy"><h2 class="section-title" style="margin:0">Still Looking Up</h2></div>
+          <div class="album-title-row"><a class="song-page-cover-link delayed-page-link" data-page-url="/en/still-looking-up/" data-page-release-date="2026-12-11" aria-disabled="true" tabindex="-1" aria-label="Still Looking Up — official EP page"><img class="album-cover" src="/assets/covers/still-looking-up.webp" alt="Still Looking Up" width="96" height="96" loading="lazy"></a><h2 class="section-title" style="margin:0"><a class="release-page-link delayed-page-link" data-page-url="/en/still-looking-up/" data-page-release-date="2026-12-11" aria-disabled="true" tabindex="-1">Still Looking Up</a></h2></div>
           <div class="release">EP · 6 tracks</div>
         </div>
         <div class="tracklist">
           <div class="track" data-spotify-url="" data-release-date="2026-12-11"><span class="track-no">01</span><span class="track-main"><img class="track-cover" src="/assets/covers/what-the-hell.webp" alt="" width="96" height="96" loading="eager"><span class="track-copy"><span class="track-name">What the Hell (After Summer)</span><span class="track-actions"><a class="hyperfollow track-action" data-hyperfollow-url="https://distrokid.com/hyperfollow/carlyyeah/still-looking-up" aria-disabled="true" tabindex="-1"><span>Pre-save →</span></a><a class="listen-link track-action" data-listen-url="" aria-disabled="true" tabindex="-1"><span>Listen →</span></a></span></span></span><span class="track-state"><span>Available 11 December 2026</span></span></div>
-          <div class="track" id="track-boreal" data-track-slug="boreal" data-spotify-url="" data-release-date="2026-10-09"><span class="track-no">02</span><span class="track-main"><a class="song-page-cover-link" href="/en/boreal/" aria-label="Boreal — official page"><img class="track-cover" src="/assets/covers/boreal.webp" alt="Boreal cover — Carly Yeah" width="96" height="96" loading="eager"></a><span class="track-copy"><a class="track-name song-page-link" href="/en/boreal/">Boreal</a><span class="track-actions"><a class="hyperfollow track-action" data-hyperfollow-url="https://distrokid.com/hyperfollow/carlyyeah/boreal" aria-disabled="true" tabindex="-1"><span>Pre-save →</span></a><a class="listen-link track-action" data-listen-url="https://distrokid.com/hyperfollow/carlyyeah/boreal" aria-disabled="true" tabindex="-1"><span>Listen →</span></a></span></span></span><span class="track-state"><span>Available 9 October 2026</span></span></div>
-          <div class="track" data-spotify-url="" data-release-date="2026-10-30"><span class="track-no">03</span><span class="track-main"><img class="track-cover" src="/assets/covers/no-reason-why.webp" alt="" width="96" height="96" loading="eager"><span class="track-copy"><span class="track-name">No Reason Why</span><span class="track-actions"><a class="hyperfollow track-action" data-hyperfollow-url="https://distrokid.com/hyperfollow/carlyyeah/no-reason-why" aria-disabled="true" tabindex="-1"><span>Pre-save →</span></a><a class="listen-link track-action" data-listen-url="" aria-disabled="true" tabindex="-1"><span>Listen →</span></a></span></span></span><span class="track-state"><span>Available 30 October 2026</span></span></div>
+          <div class="track" id="track-boreal" data-track-slug="boreal" data-spotify-url="" data-release-date="2026-10-09"><span class="track-no">02</span><span class="track-main"><a class="song-page-cover-link" href="/en/boreal/" aria-label="Boreal — official page"><img class="track-cover" src="/assets/covers/boreal.webp" alt="Boreal cover — Carly Yeah" width="96" height="96" loading="eager"></a><span class="track-copy"><a class="track-name song-page-link is-page-active" href="/en/boreal/">Boreal</a><span class="track-actions"><a class="hyperfollow track-action" data-hyperfollow-url="https://distrokid.com/hyperfollow/carlyyeah/boreal" aria-disabled="true" tabindex="-1"><span>Pre-save →</span></a><a class="listen-link track-action" data-listen-url="https://distrokid.com/hyperfollow/carlyyeah/boreal" aria-disabled="true" tabindex="-1"><span>Listen →</span></a></span></span></span><span class="track-state"><span>Available 9 October 2026</span></span></div>
+          <div class="track" id="track-no-reason-why" data-track-slug="no-reason-why" data-spotify-url="" data-release-date="2026-10-30"><span class="track-no">03</span><span class="track-main"><a class="song-page-cover-link delayed-page-link" data-page-url="/en/no-reason-why/" data-page-release-date="2026-10-30" aria-disabled="true" tabindex="-1" aria-label="No Reason Why — official page"><img class="track-cover" src="/assets/covers/no-reason-why.webp" alt="No Reason Why cover — Carly Yeah" width="96" height="96" loading="eager"></a><span class="track-copy"><a class="track-name song-page-link delayed-page-link" data-page-url="/en/no-reason-why/" data-page-release-date="2026-10-30" aria-disabled="true" tabindex="-1">No Reason Why</a><span class="track-actions"><a class="hyperfollow track-action" data-hyperfollow-url="https://distrokid.com/hyperfollow/carlyyeah/no-reason-why" aria-disabled="true" tabindex="-1"><span>Pre-save →</span></a><a class="listen-link track-action" data-listen-url="https://distrokid.com/hyperfollow/carlyyeah/no-reason-why" aria-disabled="true" tabindex="-1"><span>Listen →</span></a></span></span></span><span class="track-state"><span>Available 30 October 2026</span></span></div>
           <div class="track" data-spotify-url="" data-release-date="2026-12-11"><span class="track-no">04</span><span class="track-main"><img class="track-cover" src="/assets/covers/let-me-be.webp" alt="" width="96" height="96" loading="eager"><span class="track-copy"><span class="track-name">Let Me Be</span><span class="track-actions"><a class="hyperfollow track-action" data-hyperfollow-url="https://distrokid.com/hyperfollow/carlyyeah/still-looking-up" aria-disabled="true" tabindex="-1"><span>Pre-save →</span></a><a class="listen-link track-action" data-listen-url="" aria-disabled="true" tabindex="-1"><span>Listen →</span></a></span></span></span><span class="track-state"><span>Available 11 December 2026</span></span></div>
-          <div class="track" data-spotify-url="" data-release-date="2026-11-20"><span class="track-no">05</span><span class="track-main"><img class="track-cover" src="/assets/covers/this-is-my-stop.webp" alt="" width="96" height="96" loading="eager"><span class="track-copy"><span class="track-name">This Is My Stop</span><span class="track-actions"><a class="hyperfollow track-action" data-hyperfollow-url="https://distrokid.com/hyperfollow/carlyyeah/this-is-my-stop" aria-disabled="true" tabindex="-1"><span>Pre-save →</span></a><a class="listen-link track-action" data-listen-url="" aria-disabled="true" tabindex="-1"><span>Listen →</span></a></span></span></span><span class="track-state"><span>Available 20 November 2026</span></span></div>
+          <div class="track" id="track-this-is-my-stop" data-track-slug="this-is-my-stop" data-spotify-url="" data-release-date="2026-11-20"><span class="track-no">05</span><span class="track-main"><a class="song-page-cover-link delayed-page-link" data-page-url="/en/this-is-my-stop/" data-page-release-date="2026-11-20" aria-disabled="true" tabindex="-1" aria-label="This Is My Stop — official page"><img class="track-cover" src="/assets/covers/this-is-my-stop.webp" alt="This Is My Stop cover — Carly Yeah" width="96" height="96" loading="eager"></a><span class="track-copy"><a class="track-name song-page-link delayed-page-link" data-page-url="/en/this-is-my-stop/" data-page-release-date="2026-11-20" aria-disabled="true" tabindex="-1">This Is My Stop</a><span class="track-actions"><a class="hyperfollow track-action" data-hyperfollow-url="https://distrokid.com/hyperfollow/carlyyeah/this-is-my-stop" aria-disabled="true" tabindex="-1"><span>Pre-save →</span></a><a class="listen-link track-action" data-listen-url="https://distrokid.com/hyperfollow/carlyyeah/this-is-my-stop" aria-disabled="true" tabindex="-1"><span>Listen →</span></a></span></span></span><span class="track-state"><span>Available 20 November 2026</span></span></div>
           <div class="track" data-spotify-url="" data-release-date="2026-12-11"><span class="track-no">06</span><span class="track-main"><img class="track-cover" src="/assets/covers/when-we-let-go.webp" alt="" width="96" height="96" loading="eager"><span class="track-copy"><span class="track-name">When We Let Go</span><span class="track-actions"><a class="hyperfollow track-action" data-hyperfollow-url="https://distrokid.com/hyperfollow/carlyyeah/still-looking-up" aria-disabled="true" tabindex="-1"><span>Pre-save →</span></a><a class="listen-link track-action" data-listen-url="" aria-disabled="true" tabindex="-1"><span>Listen →</span></a></span></span></span><span class="track-state"><span>Available 11 December 2026</span></span></div>
         </div>
         <details class="album-credits">
@@ -1385,6 +1389,25 @@
   }
   function preSaveDateKey(releaseDate){return daysBeforeReleaseKey(releaseDate,7)}
 
+  function updateDedicatedPageLinks(today){
+    document.querySelectorAll("[data-page-url][data-page-release-date]").forEach(link=>{
+      const available=today>=daysBeforeReleaseKey(link.dataset.pageReleaseDate,10);
+      if(available){
+        link.href=link.dataset.pageUrl;
+        link.removeAttribute("aria-disabled");
+        link.removeAttribute("tabindex");
+        if(link.classList.contains("song-page-link") || link.classList.contains("release-page-link")){
+          link.classList.add("is-page-active");
+        }
+      }else{
+        link.removeAttribute("href");
+        link.setAttribute("aria-disabled","true");
+        link.setAttribute("tabindex","-1");
+        link.classList.remove("is-page-active");
+      }
+    });
+  }
+
   const newsReleases=[
     ["boreal","Boreal"],
     ["no-reason-why","No Reason Why"],
@@ -1501,6 +1524,7 @@
 
       }
     });
+    updateDedicatedPageLinks(today);
     renderNewsBoard(today);
   }
 
