@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Biografía oficial de Carly Yeah, proyecto musical independiente de rock, folk, pop y sonidos alternativos. Conoce el origen de Still Looking Up y las historias detrás de sus canciones.">
+  <meta name="author" content="Carlos Merino">
+  <meta name="creator" content="Carlos Merino">
+  <meta name="keywords" content="Carly Yeah, Carlos Merino, Carly Road Records, Carly Road Studio, música independiente, rock, folk, pop alternativo">
   <meta name="theme-color" content="#050505">
   <link rel="canonical" href="https://carlyyeah.es/biografia.html">
   <link rel="alternate" hreflang="es" href="https://carlyyeah.es/biografia.html">
@@ -37,6 +40,11 @@
     "url": "https://carlyyeah.es/",
     "description": "Proyecto musical independiente de rock, folk, pop y sonidos alternativos.",
     "image": "https://carlyyeah.es/assets/carly-yeah-logo.webp",
+    "member": {
+      "@type": "Person",
+      "@id": "https://carlyyeah.es/biografia.html#carlos-merino",
+      "name": "Carlos Merino"
+    },
     "sameAs": [
       "https://www.instagram.com/carly__yeah/",
       "https://open.spotify.com/artist/2PN25GgsuPInyyc3rYwuJ8",
@@ -179,8 +187,15 @@
       letter-spacing:-.06em;
       text-transform:uppercase;
     }
+    .identity-note{
+      margin:10px 0 0;
+      color:var(--muted);
+      font-size:14px;
+      font-weight:500;
+      letter-spacing:.02em;
+    }
     .subtitle{
-      margin:26px 0 0;
+      margin:20px 0 0;
       max-width:780px;
       color:#d4d4cf;
       font-family:"Space Grotesk",sans-serif;
@@ -258,12 +273,14 @@
     body.light-theme main,body.light-theme footer{background:#fff;border-color:#111}
     body.light-theme .bio-layout,body.light-theme .bio-aside{border-color:#111}
     body.light-theme .subtitle,body.light-theme .bio-copy p{color:#222}
+    body.light-theme .identity-note{color:#666}
     body.light-theme .bio-copy p:first-child{color:#000}
     body.light-theme .bio-aside a{color:#000}
     body.light-theme .footer-links a,body.light-theme footer p{color:#222}
 
     body.readable-mode{line-height:1.82}
     body.readable-mode .main-nav{font-size:17px}
+    body.readable-mode .identity-note{font-size:16px}
     body.readable-mode .subtitle{font-size:clamp(24px,3.3vw,35px)}
     body.readable-mode .bio-copy p{font-size:21px;line-height:1.8}
     body.readable-mode .bio-copy p:first-child{font-size:26px}
@@ -413,6 +430,7 @@
   <article class="wrap bio-page">
     <div class="eyebrow"><span>Biografía oficial</span></div>
     <h1>Carly Yeah</h1>
+    <p class="identity-note">Carly Yeah (Carlos Merino)</p>
     <p class="subtitle">Proyecto musical independiente · Rock · Folk · Pop alternativo</p>
 
 
