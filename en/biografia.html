@@ -403,27 +403,6 @@
       .bio-layout{grid-template-columns:1fr;gap:42px}
       .bio-aside{position:static;max-width:430px}
     }
-    @media(max-width:430px){
-      .nav{padding-left:18px;padding-right:18px}
-      .a11y-controls{gap:2.7px}
-      .a11y-btn{width:27.9px;height:27.9px;font-size:14.4px}
-      .a11y-text{font-size:10.8px}
-      .langs{padding:1.8px}
-      .lang{padding:6.3px 7.2px;font-size:10.8px}
-      .social-links{width:100%;justify-content:space-between;gap:0;padding-inline:0}
-      .top-social{flex:1 1 0;width:auto;height:40.18px}
-      .top-social svg{width:27.22px;height:27.22px}
-      .main-nav{gap:14.4px;font-size:12.6px}
-      body.readable-mode .nav{padding:12px 10px 10px;gap:10px 7px}
-      body.readable-mode .brand img{width:52px;height:52px;flex-basis:52px}
-      body.readable-mode .a11y-btn{width:34px;height:34px;font-size:17px}
-      body.readable-mode .a11y-text{font-size:13px}
-      body.readable-mode .lang{padding:6px 7px;font-size:12px}
-      body.readable-mode .main-nav{width:100%;justify-content:space-between;gap:0;font-size:clamp(11px,3.65vw,14px)}
-      body.readable-mode .top-social{height:clamp(36px,9.5vw,42px)}
-      body.readable-mode .top-social svg{width:clamp(24px,7.5vw,31px);height:clamp(24px,7.5vw,31px)}
-    }
-
     @media(max-width:850px){
       body.readable-mode .nav{
         overflow:hidden;
@@ -473,6 +452,27 @@
         height:clamp(25px,8vw,34px);
       }
       body.readable-mode .nav-separator{font-size:.95em}
+    }
+
+    @media(max-width:430px){
+      .nav{padding-left:18px;padding-right:18px}
+      .a11y-controls{gap:2.7px}
+      .a11y-btn{width:27.9px;height:27.9px;font-size:14.4px}
+      .a11y-text{font-size:10.8px}
+      .langs{padding:1.8px}
+      .lang{padding:6.3px 7.2px;font-size:10.8px}
+      .social-links{width:100%;justify-content:space-between;gap:0;padding-inline:0}
+      .top-social{flex:1 1 0;width:auto;height:40.18px}
+      .top-social svg{width:27.22px;height:27.22px}
+      .main-nav{gap:14.4px;font-size:12.6px}
+      body.readable-mode .nav{padding:12px 10px 10px;gap:10px 7px}
+      body.readable-mode .brand img{width:52px;height:52px;flex-basis:52px}
+      body.readable-mode .a11y-btn{width:34px;height:34px;font-size:17px}
+      body.readable-mode .a11y-text{font-size:13px}
+      body.readable-mode .lang{padding:6px 7px;font-size:12px}
+      body.readable-mode .main-nav{width:100%;justify-content:space-between;gap:0;font-size:clamp(11px,3.65vw,14px)}
+      body.readable-mode .top-social{height:clamp(36px,9.5vw,42px)}
+      body.readable-mode .top-social svg{width:clamp(24px,7.5vw,31px);height:clamp(24px,7.5vw,31px)}
     }
 
     /* Use the full mobile menu width exactly like the initial index header. */
