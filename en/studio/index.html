@@ -389,16 +389,24 @@
     .contact-submit{justify-self:start;border:1px solid #fff;background:#fff;color:#000;padding:11px 20px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}
     .contact-submit:hover{opacity:.82}
     .contact-submit:focus-visible{outline:2px solid #fff;outline-offset:4px}
-    .contact-direct{margin:22px 0 0;color:#aaa;font-size:14px}
-    .contact-direct a{text-underline-offset:4px}
     body.light-theme .studio-contact{border-color:#bbb}
     body.light-theme .studio-contact-intro{color:#222}
     body.light-theme .contact-field input,body.light-theme .contact-field textarea{background:#fff;color:#000;border-color:#888}
     body.light-theme .contact-field input:focus,body.light-theme .contact-field textarea:focus{outline-color:#000;border-color:#000}
     body.light-theme .contact-submit{background:#000;color:#fff;border-color:#000}
     body.light-theme .contact-submit:focus-visible{outline-color:#000}
-    body.light-theme .contact-direct{color:#555}
     body.readable-mode .studio-contact-intro,body.readable-mode .contact-field input,body.readable-mode .contact-field textarea{font-size:18px}
+    @media(min-width:801px){
+      .studio-contact{max-width:546px;margin-top:50px;padding-top:28px}
+      .studio-contact h2{font-size:clamp(24px,3.5vw,36px);margin-bottom:11px}
+      .studio-contact-intro{font-size:15px;margin-bottom:21px}
+      .studio-contact-form{gap:14px}
+      .contact-field{gap:5px}
+      .contact-field label{font-size:12px}
+      .contact-field input,.contact-field textarea{padding:9px 10px;font-size:14px}
+      .contact-field textarea{min-height:105px}
+      .contact-submit{padding:8px 14px;font-size:12px}
+    }
     @media(max-width:560px){.studio-contact{margin-top:48px;padding-top:32px}.contact-submit{width:100%}}
   </style>
 
@@ -708,6 +716,8 @@
     <div class="nav-center">
       <nav class="main-nav" aria-label="Main navigation">
         <span class="nav-separator" aria-hidden="true">|</span>
+        <a href="#studio-contact"><span>Have a project?</span></a>
+        <span class="nav-separator" aria-hidden="true">|</span>
         <a href="/en/"><span>Back to Carly Yeah</span></a>
         <span class="nav-separator" aria-hidden="true">|</span>
       </nav>
@@ -867,7 +877,6 @@
         <input type="hidden" name="_subject" value="New project from Carly Road Studio">
         <button class="contact-submit" type="submit">Send</button>
       </form>
-      <p class="contact-direct">Direct contact: <a href="mailto:records@carlyyeah.es">records@carlyyeah.es</a></p>
     </section>
     <nav class="records-actions" aria-label="Page navigation">
       <a href="#top"><span>Back to top</span></a>
