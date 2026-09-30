@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://carlyyeah.es/</loc></url>
-  <url><loc>https://carlyyeah.es/biografia.html</loc></url>
+  <url><loc>https://carlyyeah.es/biografia.html</loc><lastmod>2026-09-30</lastmod></url>
   <url><loc>https://carlyyeah.es/boreal/</loc><lastmod>2026-09-29</lastmod></url>
   <url><loc>https://carlyyeah.es/no-reason-why/</loc><lastmod>2026-09-29</lastmod></url>
   <url><loc>https://carlyyeah.es/this-is-my-stop/</loc><lastmod>2026-09-29</lastmod></url>
@@ -9,9 +9,9 @@
   <url><loc>https://carlyyeah.es/contacto.html</loc></url>
   <url><loc>https://carlyyeah.es/avisos-legales.html</loc></url>
   <url><loc>https://carlyyeah.es/records/</loc></url>
-  <url><loc>https://carlyyeah.es/studio/</loc></url>
+  <url><loc>https://carlyyeah.es/studio/</loc><lastmod>2026-09-30</lastmod></url>
   <url><loc>https://carlyyeah.es/en/</loc></url>
-  <url><loc>https://carlyyeah.es/en/biografia.html</loc></url>
+  <url><loc>https://carlyyeah.es/en/biografia.html</loc><lastmod>2026-09-30</lastmod></url>
   <url><loc>https://carlyyeah.es/en/boreal/</loc><lastmod>2026-09-29</lastmod></url>
   <url><loc>https://carlyyeah.es/en/no-reason-why/</loc><lastmod>2026-09-29</lastmod></url>
   <url><loc>https://carlyyeah.es/en/this-is-my-stop/</loc><lastmod>2026-09-29</lastmod></url>
@@ -19,5 +19,5 @@
   <url><loc>https://carlyyeah.es/en/contacto.html</loc></url>
   <url><loc>https://carlyyeah.es/en/avisos-legales.html</loc></url>
   <url><loc>https://carlyyeah.es/en/records/</loc></url>
-  <url><loc>https://carlyyeah.es/en/studio/</loc></url>
+  <url><loc>https://carlyyeah.es/en/studio/</loc><lastmod>2026-09-30</lastmod></url>
 </urlset>
