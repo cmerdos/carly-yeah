@@ -151,15 +151,15 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      gap:2px;
-      min-height:32px;
+      gap:4px;
+      min-height:30px;
     }
     .top-social{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      width:38px;
-      height:38px;
+      width:47.52px;
+      height:47.52px;
       color:#111;
       opacity:.88;
       transition:opacity .2s ease,transform .2s ease;
@@ -169,8 +169,8 @@
     .social-pending:hover{opacity:.32;transform:none}
     .tidal-icon svg{fill:currentColor;stroke:none}
     .top-social svg{
-      width:25px;
-      height:25px;
+      width:31.68px;
+      height:31.68px;
       display:block;
       fill:none;
       stroke:currentColor;
@@ -182,9 +182,12 @@
     .a11y-btn{
       width:42px;height:42px;display:inline-grid;place-items:center;
       border:1px solid #bbb;background:#fff;color:#111;cursor:pointer;
-      font-size:20px;font-weight:700;
+      font-size:20px;font-weight:700;line-height:1;
+      transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease;
     }
+    .a11y-btn:hover{transform:translateY(-1px);border-color:#111}
     .a11y-btn[aria-pressed="true"]{background:#111;color:#fff;border-color:#111}
+    .a11y-text{font-size:15px;letter-spacing:-.03em}
     .langs{display:flex;align-items:stretch;border:1px solid #bbb;padding:4px;gap:0;background:#fff}
     .lang{appearance:none;border:0;background:#fff;color:#111;padding:10px 15px;cursor:pointer;font-size:15px}
     .lang.active{background:#111;color:#fff}
