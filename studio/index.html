@@ -979,6 +979,17 @@
   setContrast(light==="1");
   setReadable(readable==="1");
 
+  function ensureSalveseAnchorPosition(){
+    if(window.location.hash !== "#salvese-quien-pueda-marcos-del-valle") return;
+    const target=document.getElementById("salvese-quien-pueda-marcos-del-valle");
+    if(target) target.scrollIntoView({block:"start",behavior:"auto"});
+  }
+  window.addEventListener("load",()=>{
+    ensureSalveseAnchorPosition();
+    window.setTimeout(ensureSalveseAnchorPosition,300);
+    window.setTimeout(ensureSalveseAnchorPosition,900);
+  });
+
   document.querySelector('.records-actions a[href="#top"]').addEventListener("click",event=>{
     event.preventDefault();
     window.scrollTo({top:0,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
