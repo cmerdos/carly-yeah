@@ -376,6 +376,30 @@
     @media(max-width:800px){.work-grid{grid-template-columns:1fr}.work-card{grid-template-columns:minmax(100px,32%) minmax(0,1fr)}}
     @media(max-width:400px){.work-card{gap:14px}.work-card h4{font-size:20px}.work-credit{font-size:14px}}
       .work-credits strong{font-size:.9em;letter-spacing:.03em}
+
+    .studio-contact{margin-top:72px;padding-top:40px;border-top:1px solid var(--line);max-width:780px}
+    .studio-contact h2{font-family:"Space Grotesk",Arial,sans-serif;font-size:clamp(32px,5vw,52px);line-height:1.1;margin:0 0 16px}
+    .studio-contact-intro{font-size:18px;line-height:1.7;color:#d1d1cd;margin:0 0 30px}
+    .studio-contact-form{display:grid;gap:20px}
+    .contact-field{display:grid;gap:7px}
+    .contact-field label{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+    .contact-field input,.contact-field textarea{width:100%;border:1px solid #555;background:#0a0a0a;color:#fff;border-radius:0;padding:13px 14px;font:inherit;line-height:1.5}
+    .contact-field textarea{min-height:150px;resize:vertical}
+    .contact-field input:focus,.contact-field textarea:focus{outline:2px solid #fff;outline-offset:2px;border-color:#fff}
+    .contact-submit{justify-self:start;border:1px solid #fff;background:#fff;color:#000;padding:11px 20px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}
+    .contact-submit:hover{opacity:.82}
+    .contact-submit:focus-visible{outline:2px solid #fff;outline-offset:4px}
+    .contact-direct{margin:22px 0 0;color:#aaa;font-size:14px}
+    .contact-direct a{text-underline-offset:4px}
+    body.light-theme .studio-contact{border-color:#bbb}
+    body.light-theme .studio-contact-intro{color:#222}
+    body.light-theme .contact-field input,body.light-theme .contact-field textarea{background:#fff;color:#000;border-color:#888}
+    body.light-theme .contact-field input:focus,body.light-theme .contact-field textarea:focus{outline-color:#000;border-color:#000}
+    body.light-theme .contact-submit{background:#000;color:#fff;border-color:#000}
+    body.light-theme .contact-submit:focus-visible{outline-color:#000}
+    body.light-theme .contact-direct{color:#555}
+    body.readable-mode .studio-contact-intro,body.readable-mode .contact-field input,body.readable-mode .contact-field textarea{font-size:18px}
+    @media(max-width:560px){.studio-contact{margin-top:48px;padding-top:32px}.contact-submit{width:100%}}
   </style>
 
   <meta property="og:image" content="https://carlyyeah.es/assets/carly-yeah-logo.webp">
@@ -822,6 +846,28 @@
           </div>
         </article>
       </div></section>
+    </section>
+
+    <section class="studio-contact" id="studio-contact" aria-labelledby="studio-contact-title">
+      <h2 id="studio-contact-title">Have a project?</h2>
+      <p class="studio-contact-intro">Need editing, mixing or mastering? Tell me briefly what you're working on and I'll get back to you.</p>
+      <form class="studio-contact-form" action="https://formspree.io/f/mzezowey" method="POST">
+        <div class="contact-field">
+          <label for="contact-name">Name</label>
+          <input id="contact-name" name="name" type="text" autocomplete="name" required maxlength="120">
+        </div>
+        <div class="contact-field">
+          <label for="contact-email">Contact email</label>
+          <input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254">
+        </div>
+        <div class="contact-field">
+          <label for="contact-message">Tell me briefly about your project</label>
+          <textarea id="contact-message" name="message" required maxlength="2500"></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="New project from Carly Road Studio">
+        <button class="contact-submit" type="submit">Send</button>
+      </form>
+      <p class="contact-direct">Direct contact: <a href="mailto:records@carlyyeah.es">records@carlyyeah.es</a></p>
     </section>
     <nav class="records-actions" aria-label="Page navigation">
       <a href="#top"><span>Back to top</span></a>
