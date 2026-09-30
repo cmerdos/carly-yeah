@@ -94,30 +94,46 @@
       min-height:94px;
       display:flex;
       align-items:center;
-      gap:24px;
+      justify-content:space-between;
+      gap:30px;
+      position:relative;
     }
-    .brand{display:inline-flex;align-items:center;flex:0 0 auto}
+    .brand{display:inline-flex;align-items:center;flex:0 0 auto;min-width:0;color:#111}
     .brand img{
       width:70.4px;
       height:70.4px;
+      flex:0 0 70.4px;
       display:block;
       border-radius:50%;
       object-fit:cover;
     }
-    .nav-center{
+    .nav-right{display:flex;align-items:center;gap:22px}
+    .nav-stack{
       display:flex;
       flex-direction:column;
       align-items:center;
       justify-content:center;
-      gap:0;
-      margin-left:auto;
+      gap:2px;
+    }
+    @media(min-width:921px){
+      .nav-right{margin-left:auto}
+      .nav-stack{
+        position:absolute;
+        left:50%;
+        top:50%;
+        transform:translate(-50%,-50%);
+        width:max-content;
+        max-width:calc(100% - 360px);
+      }
+      .nav-stack .main-nav,
+      .nav-stack .social-links{justify-content:center}
     }
     .main-nav{
       display:flex;
       align-items:center;
       justify-content:center;
-      gap:22px;
-      font-size:15px;
+      gap:30px;
+      font-size:16px;
       font-weight:500;
     }
     .main-nav a{
@@ -162,15 +178,15 @@
       stroke-linecap:round;
       stroke-linejoin:round;
     }
-    .tools{display:flex;align-items:center;gap:6px;margin-left:8px}
+    .a11y-controls{display:flex;align-items:center;gap:6px}
     .a11y-btn{
       width:42px;height:42px;display:inline-grid;place-items:center;
       border:1px solid #bbb;background:#fff;color:#111;cursor:pointer;
       font-size:20px;font-weight:700;
     }
     .a11y-btn[aria-pressed="true"]{background:#111;color:#fff;border-color:#111}
-    .langs{display:flex;border:1px solid #bbb;padding:3px;background:#fff}
-    .lang{border:0;background:#fff;color:#111;padding:8px 10px;cursor:pointer;font-size:13px}
+    .langs{display:flex;align-items:stretch;border:1px solid #bbb;padding:4px;gap:0;background:#fff}
+    .lang{appearance:none;border:0;background:#fff;color:#111;padding:10px 15px;cursor:pointer;font-size:15px}
     .lang.active{background:#111;color:#fff}
 
     main{min-height:calc(100vh - 94px)}
@@ -287,17 +303,18 @@
 
     @media(max-width:920px){
       .nav{flex-wrap:wrap;padding:12px 0}
-      .nav-center{order:3;width:100%;margin:0}
+      .nav-right{display:contents}
+      .nav-stack{order:3;width:100%;margin:0}
       .main-nav{width:100%;justify-content:center;gap:13px;font-size:14px}
       .social-links{width:100%;justify-content:center;gap:3px}
-      .tools{margin-left:auto}
+      .a11y-controls{margin-left:auto}
       .bio-layout{grid-template-columns:1fr;gap:42px}
       .bio-aside{position:static;max-width:430px}
     }
     @media(max-width:560px){
       .wrap{width:min(var(--max),calc(100% - 28px))}
       .brand img{width:58px;height:58px}
-      .tools{gap:4px}
+      .a11y-controls{gap:4px}
       .a11y-btn{width:38px;height:38px}
       .lang{padding:7px 8px}
       .main-nav{gap:8px;font-size:12px}
@@ -370,7 +387,8 @@
       <img src="/assets/carly-yeah-logo.webp" alt="Official Carly Yeah logo">
     </a>
 
-    <div class="nav-center">
+    <div class="nav-right">
+      <div class="nav-stack">
       <nav class="main-nav" aria-label="Main navigation">
         <a href="/en/"><span>Home</span></a>
         <span class="nav-separator" aria-hidden="true">|</span>
@@ -415,9 +433,11 @@
       </div>
     </div>
 
-    <div class="tools">
-      <button class="a11y-btn" id="contrast-toggle" type="button" aria-pressed="false" aria-label="Change between dark and light backgrounds" title="Change contrast">◐</button>
-      <button class="a11y-btn" id="vision-toggle" type="button" aria-pressed="false" aria-label="Increase text size and readability" title="Improve readability">A+</button>
+      </div>
+      <div class="a11y-controls" aria-label="Accessibility">
+        <button class="a11y-btn" id="contrast-toggle" type="button" aria-pressed="false" aria-label="Change between dark and light backgrounds" title="Change contrast">◐</button>
+        <button class="a11y-btn a11y-text" id="vision-toggle" type="button" aria-pressed="false" aria-label="Increase text size and readability" title="Improve readability">A+</button>
+      </div>
       <div class="langs" role="group" aria-label="Language">
         <a class="lang" data-locale-link href="/biografia.html" lang="es" hreflang="es" aria-label="Español">ES</a>
         <a class="lang active" data-locale-link href="/en/biografia.html" lang="en" hreflang="en" aria-label="English" aria-current="page">EN</a>
