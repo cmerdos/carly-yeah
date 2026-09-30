@@ -1397,7 +1397,7 @@
     date.setUTCDate(date.getUTCDate()-days);
     return date.toISOString().slice(0,10);
   }
-  function preSaveDateKey(releaseDate){return daysBeforeReleaseKey(releaseDate,7)}
+  function preSaveDateKey(releaseDate){return daysBeforeReleaseKey(releaseDate,10)}
 
   function updateDedicatedPageLinks(today){
     document.querySelectorAll("[data-page-url][data-page-release-date]").forEach(link=>{
