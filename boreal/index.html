@@ -1305,7 +1305,7 @@
       <div class="boreal-copy-text">
         <h2>Sobre Boreal</h2>
         <p><strong>Boreal</strong> es una de las seis canciones que forman <em>Still Looking Up</em>, el primer trabajo de Carly Yeah. El single se publica el 9 de octubre de 2026 dentro de un proyecto independiente que parte del rock y se mueve entre sonidos folk, pop y alternativos.</p>
-        <p>Esta es la página oficial de la canción. Hasta el lanzamiento puedes acceder aquí al pre-save. Desde el día de publicación se activará el botón Escuchar, que te llevará directamente a Boreal dentro de la sección Música de Carly Yeah y abrirá su multilink oficial.</p>
+        <p>Esta es la página oficial de la canción. Hasta el lanzamiento puedes acceder aquí al pre-save. Desde el día de publicación se activará el botón Escuchar, que abrirá Boreal en YouTube.</p>
         <p>También puedes visitar la <a href="/#videos">sección de vídeos</a> para acceder al videoclip oficial de Boreal cuando esté disponible.</p>
       </div>
     </div>
@@ -1340,8 +1340,7 @@
   const cookieReject=document.getElementById("cookie-reject");
   const listenButton=document.getElementById("boreal-listen");
   const RELEASE_DATE="2026-10-09";
-  const MULTILINK="https://distrokid.com/hyperfollow/carlyyeah/boreal";
-  const MAIN_BOREAL="/#track-boreal";
+  const LISTEN_URL="https://youtu.be/jNGNXT-f7t4?is=5ANLRcjMjC1gMplI";
 
   function setContrast(enabled){
     document.body.classList.toggle("light-theme",enabled);
@@ -1371,7 +1370,9 @@
     const released=localDateKey()>=RELEASE_DATE;
     listenButton.classList.toggle("is-disabled",!released);
     if(released){
-      listenButton.href=MAIN_BOREAL;
+      listenButton.href=LISTEN_URL;
+      listenButton.target="_blank";
+      listenButton.rel="noopener noreferrer";
       listenButton.removeAttribute("aria-disabled");
       listenButton.removeAttribute("tabindex");
     }else{
@@ -1380,13 +1381,6 @@
       listenButton.setAttribute("tabindex","-1");
     }
   }
-  listenButton.addEventListener("click",event=>{
-    if(listenButton.getAttribute("aria-disabled")==="true") return;
-    event.preventDefault();
-    const smartLink=window.open(MULTILINK,"_blank","noopener,noreferrer");
-    window.location.assign(MAIN_BOREAL);
-    if(smartLink) smartLink.opener=null;
-  });
   updateRelease();
   setInterval(updateRelease,60*1000);
   document.addEventListener("visibilitychange",()=>{if(!document.hidden) updateRelease()});

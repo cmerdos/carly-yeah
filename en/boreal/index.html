@@ -1305,7 +1305,7 @@
       <div class="boreal-copy-text">
         <h2>About Boreal</h2>
         <p><strong>Boreal</strong> is one of the six songs on <em>Still Looking Up</em>, the debut release by Carly Yeah. The single is released on 9 October 2026 as part of an independent project rooted in rock, folk, pop and alternative sounds.</p>
-        <p>This is the official page for the song. Until release, the pre-save link is available here. From release day, the Listen button will activate and will take you to Boreal in the music section of the Carly Yeah website while opening its official smart link.</p>
+        <p>This is the official page for the song. Until release, the pre-save link is available here. From release day, the Listen button will activate and open Boreal on YouTube.</p>
         <p>You can also visit the <a href="/en/#videos">videos section</a> for the official Boreal video when it becomes available.</p>
       </div>
     </div>
@@ -1340,8 +1340,7 @@
   const cookieReject=document.getElementById("cookie-reject");
   const listenButton=document.getElementById("boreal-listen");
   const RELEASE_DATE="2026-10-09";
-  const MULTILINK="https://distrokid.com/hyperfollow/carlyyeah/boreal";
-  const MAIN_BOREAL="/en/#track-boreal";
+  const LISTEN_URL="https://youtu.be/jNGNXT-f7t4?is=5ANLRcjMjC1gMplI";
 
   function setContrast(enabled){
     document.body.classList.toggle("light-theme",enabled);
@@ -1371,7 +1370,9 @@
     const released=localDateKey()>=RELEASE_DATE;
     listenButton.classList.toggle("is-disabled",!released);
     if(released){
-      listenButton.href=MAIN_BOREAL;
+      listenButton.href=LISTEN_URL;
+      listenButton.target="_blank";
+      listenButton.rel="noopener noreferrer";
       listenButton.removeAttribute("aria-disabled");
       listenButton.removeAttribute("tabindex");
     }else{
@@ -1380,13 +1381,6 @@
       listenButton.setAttribute("tabindex","-1");
     }
   }
-  listenButton.addEventListener("click",event=>{
-    if(listenButton.getAttribute("aria-disabled")==="true") return;
-    event.preventDefault();
-    const smartLink=window.open(MULTILINK,"_blank","noopener,noreferrer");
-    window.location.assign(MAIN_BOREAL);
-    if(smartLink) smartLink.opener=null;
-  });
   updateRelease();
   setInterval(updateRelease,60*1000);
   document.addEventListener("visibilitychange",()=>{if(!document.hidden) updateRelease()});
