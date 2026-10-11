@@ -1636,8 +1636,47 @@
 
   // Explicit UTC offsets preserve midnight in Europe/Madrid across the DST change.
   const videoCards=[...document.querySelectorAll(".video-card")];
+  const stopVideoSchema={
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "@id": "https://carlyyeah.es/#this-is-my-stop-official-video",
+  "name": "Carly Yeah — This Is My Stop (Videoclip oficial)",
+  "description": "Videoclip oficial de This Is My Stop, de Carly Yeah, canción de su primer EP Still Looking Up.",
+  "thumbnailUrl": [
+    "https://carlyyeah.es/assets/this-is-my-stop-video.jpeg"
+  ],
+  "uploadDate": "2026-11-20T00:00:00+01:00",
+  "embedUrl": "https://www.youtube-nocookie.com/embed/Vi2onMqHU2I",
+  "url": "https://www.youtube.com/watch?v=Vi2onMqHU2I",
+  "inLanguage": "en",
+  "creator": {
+    "@id": "https://carlyyeah.es/#artist",
+    "@type": "MusicGroup",
+    "name": "Carly Yeah"
+  },
+  "isPartOf": {
+    "@type": "WebPage",
+    "@id": "https://carlyyeah.es/"
+  }
+};
+  function updateStopVideoSchema(now){
+    const card=document.querySelector('.video-card[data-video-id="Vi2onMqHU2I"]');
+    const released=card && now>=Date.parse(card.dataset.videoRelease);
+    const existing=document.getElementById("this-is-my-stop-video-schema");
+    if(!released){
+      if(existing) existing.remove();
+      return;
+    }
+    if(existing) return;
+    const schema=document.createElement("script");
+    schema.id="this-is-my-stop-video-schema";
+    schema.type="application/ld+json";
+    schema.textContent=JSON.stringify(stopVideoSchema);
+    document.head.appendChild(schema);
+  }
   function updateVideoStates(){
     const now=Date.now();
+    updateStopVideoSchema(now);
     videoCards.forEach(card=>{
       const released=now>=Date.parse(card.dataset.videoRelease);
       card.classList.toggle("is-released",released);
