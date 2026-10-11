@@ -1463,8 +1463,11 @@
     ["this-is-my-stop","This Is My Stop"],
     ["still-looking-up","Still Looking Up"]
   ].map(([slug,title])=>{
-    const row=releaseRows.find(item=>item.querySelector(".hyperfollow")?.dataset.hyperfollowUrl.endsWith(`/${slug}`));
-    return row ? {title,releaseDate:row.dataset.releaseDate,url:row.querySelector(".hyperfollow").dataset.hyperfollowUrl,listenUrl:row.querySelector(".listen-link")?.dataset.listenUrl} : null;
+    const row=slug==="boreal"
+      ? document.getElementById("track-boreal")
+      : releaseRows.find(item=>item.querySelector(".hyperfollow")?.dataset.hyperfollowUrl.endsWith(`/${slug}`));
+    const hyperfollow=row?.querySelector(".hyperfollow")?.dataset.hyperfollowUrl || "";
+    return row ? {title,releaseDate:row.dataset.releaseDate,url:hyperfollow,listenUrl:row.querySelector(".listen-link")?.dataset.listenUrl} : null;
   }).filter(Boolean);
   const newsEntries=document.getElementById("news-entries");
   const borealVideoCard=document.querySelector('.video-card[data-video-id="0IA91VPdZaU"]');
@@ -1485,8 +1488,8 @@
     const future=entries.filter(item=>item.phase!=="released")
       .sort((a,b)=>a.releaseDate.localeCompare(b.releaseDate));
     const nextAnnouncement=future.find(item=>today>=daysBeforeReleaseKey(item.releaseDate,10));
-    // Before the first ten-day window, keep the nearest release as the single news item.
-    const visible=[nextAnnouncement || (!latestReleased ? future[0] : null),latestReleased].filter(Boolean);
+    // Always show the next release first and the most recent release underneath.
+    const visible=[nextAnnouncement || future[0],latestReleased].filter(Boolean);
     document.getElementById("top").dataset.newsCount=String(visible.length);
     const labels={
       es:{released:"Ya disponible",presave:"Pre-save disponible",upcoming:"Próximo estreno",listen:"Escuchar →",video:"Ver videoclip →",presaveAction:"Pre-guardar →",upcomingAction:"Ver en Música →"},
@@ -1507,9 +1510,9 @@
       const title=document.createElement("h4");
       title.textContent=item.title;
       const action=document.createElement("a");
-      action.href=item.phase==="upcoming" ? "#music" : item.phase==="released" ? (item.listenUrl || item.url) : item.url;
-      action.textContent=item.phase==="released" ? labels.listen : item.phase==="presave" ? labels.presaveAction : labels.upcomingAction;
-      if(item.phase!=="upcoming"){
+      action.href=item.phase==="presave" ? item.url : "#music";
+      action.textContent=item.phase==="presave" ? labels.presaveAction : labels.upcomingAction;
+      if(item.phase==="presave"){
         action.target="_blank";
         action.rel="noopener noreferrer";
       }
