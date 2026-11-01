@@ -1357,8 +1357,7 @@
   const cookieReject=document.getElementById("cookie-reject");
   const listenButton=document.getElementById("release-listen");
   const RELEASE_DATE="2026-10-30";
-  const MULTILINK="https://distrokid.com/hyperfollow/carlyyeah/no-reason-why";
-  const MAIN_RELEASE="/en/#track-no-reason-why";
+  const LISTEN_URL="https://carlyyeah.es/nrw/";
 
   function setContrast(enabled){
     document.body.classList.toggle("light-theme",enabled);
@@ -1388,7 +1387,9 @@
     const released=localDateKey()>=RELEASE_DATE;
     listenButton.classList.toggle("is-disabled",!released);
     if(released){
-      listenButton.href=MAIN_RELEASE;
+      listenButton.href=LISTEN_URL;
+      listenButton.target="_blank";
+      listenButton.rel="noopener noreferrer";
       listenButton.removeAttribute("aria-disabled");
       listenButton.removeAttribute("tabindex");
     }else{
@@ -1397,13 +1398,6 @@
       listenButton.setAttribute("tabindex","-1");
     }
   }
-  listenButton.addEventListener("click",event=>{
-    if(listenButton.getAttribute("aria-disabled")==="true") return;
-    event.preventDefault();
-    const smartLink=window.open(MULTILINK,"_blank","noopener,noreferrer");
-    window.location.assign(MAIN_RELEASE);
-    if(smartLink) smartLink.opener=null;
-  });
   updateRelease();
   setInterval(updateRelease,60*1000);
   document.addEventListener("visibilitychange",()=>{if(!document.hidden) updateRelease()});
