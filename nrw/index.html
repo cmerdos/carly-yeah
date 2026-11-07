@@ -7,6 +7,9 @@
   <title>No Reason Why — Escuchar | Carly Yeah</title>
   <meta name="description" content="Escucha No Reason Why de Carly Yeah en Spotify, YouTube o Apple Music. Elige tu plataforma favorita.">
   <link rel="canonical" href="https://carlyyeah.es/nrw/">
+  <link rel="alternate" hreflang="es" href="https://carlyyeah.es/nrw/">
+  <link rel="alternate" hreflang="en" href="https://carlyyeah.es/en/nrw/">
+  <link rel="alternate" hreflang="x-default" href="https://carlyyeah.es/nrw/">
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <meta property="og:type" content="music.song">
   <meta property="og:site_name" content="Carly Yeah">
@@ -45,10 +48,15 @@
     footer{padding:0 16px 25px;text-align:center;color:#8f8884;font-size:11px;letter-spacing:.10em}
     @media(max-width:360px){main{padding-inline:18px}.platform{min-height:58px}}
     @media(prefers-reduced-motion:reduce){.platform{transition:none}.platform:hover{transform:none}}
+    .language-switch{display:flex;gap:8px;align-self:flex-end;margin-bottom:16px}
+    .language-switch a{display:flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;color:#fff;text-decoration:none;border:1px solid #777;border-radius:6px}
+    .language-switch a[aria-current="page"]{background:#fff;color:#111}
+    .language-switch a:focus-visible{outline:3px solid #fff;outline-offset:4px}
   </style>
 </head>
 <body>
   <main>
+    <div class="language-switch" role="group" aria-label="Idioma / Language"><a data-locale-link href="/nrw/" lang="es" hreflang="es" aria-label="Español" aria-current="page">ES</a><a data-locale-link href="/en/nrw/" lang="en" hreflang="en" aria-label="English">EN</a></div>
     <a class="brand" href="https://carlyyeah.es/" aria-label="Web oficial de Carly Yeah">
       <img src="/assets/carly-yeah-logo.webp" alt="Carly Yeah" width="62" height="62">
     </a>
@@ -74,5 +82,6 @@
     <a class="back" href="https://carlyyeah.es/no-reason-why/">Conoce la historia de esta canción</a>
   </main>
   <footer>© 2026 CARLY YEAH · CARLY ROAD RECORDS</footer>
+<script src="/assets/language-links.js" defer></script>
 </body>
 </html>
