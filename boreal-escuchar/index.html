@@ -7,9 +7,6 @@
   <title>Boreal — Escuchar | Carly Yeah</title>
   <meta name="description" content="Escucha Boreal de Carly Yeah en Spotify, YouTube o Apple Music. Elige tu plataforma favorita.">
   <link rel="canonical" href="https://carlyyeah.es/boreal-escuchar/">
-  <link rel="alternate" hreflang="es" href="https://carlyyeah.es/boreal-escuchar/">
-  <link rel="alternate" hreflang="en" href="https://carlyyeah.es/en/boreal-escuchar/">
-  <link rel="alternate" hreflang="x-default" href="https://carlyyeah.es/boreal-escuchar/">
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <meta property="og:type" content="music.song">
   <meta property="og:site_name" content="Carly Yeah">
@@ -49,14 +46,14 @@
     @media(max-width:360px){main{padding-inline:18px}.platform{min-height:58px}}
     @media(prefers-reduced-motion:reduce){.platform{transition:none}.platform:hover{transform:none}}
     .language-switch{display:flex;gap:8px;align-self:flex-end;margin-bottom:16px}
-    .language-switch a{display:flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;color:#fff;text-decoration:none;border:1px solid #777;border-radius:6px}
-    .language-switch a[aria-current="page"]{background:#fff;color:#111}
-    .language-switch a:focus-visible{outline:3px solid #fff;outline-offset:4px}
+    .language-switch button{font:inherit;cursor:pointer;min-width:44px;min-height:44px;background:transparent;color:#fff;border:1px solid #777;border-radius:6px}
+    .language-switch button[aria-pressed="true"]{background:#fff;color:#111}
+    .language-switch button:focus-visible{outline:3px solid #fff;outline-offset:4px}
   </style>
 </head>
-<body>
+<body data-story="boreal">
   <main>
-    <div class="language-switch" role="group" aria-label="Idioma / Language"><a data-locale-link href="/boreal-escuchar/" lang="es" hreflang="es" aria-label="Español" aria-current="page">ES</a><a data-locale-link href="/en/boreal-escuchar/" lang="en" hreflang="en" aria-label="English">EN</a></div>
+    <div class="language-switch" role="group" aria-label="Idioma / Language"><button type="button" data-language="es" lang="es" aria-label="Español" aria-pressed="true">ES</button><button type="button" data-language="en" lang="en" aria-label="English" aria-pressed="false">EN</button></div>
     <a class="brand" href="https://carlyyeah.es/" aria-label="Web oficial de Carly Yeah">
       <img src="/assets/carly-yeah-logo.webp" alt="Carly Yeah" width="62" height="62">
     </a>
@@ -82,6 +79,7 @@
     <a class="back" href="https://carlyyeah.es/boreal/">Conoce la historia de esta canción</a>
   </main>
   <footer>© 2026 CARLY YEAH · CARLY ROAD RECORDS</footer>
-<script src="/assets/language-links.js" defer></script>
+<script type="application/json" id="listen-translations">{"Boreal — Escuchar | Carly Yeah": "Boreal — Listen | Carly Yeah", "Escucha Boreal de Carly Yeah en Spotify, YouTube o Apple Music. Elige tu plataforma favorita.": "Listen to Boreal by Carly Yeah on Spotify, YouTube or Apple Music. Choose your favourite platform.", "Escucha el single en Spotify, YouTube o Apple Music.": "Listen to the single on Spotify, YouTube or Apple Music.", "Portada de Boreal, de Carly Yeah": "Boreal cover by Carly Yeah", "Elige dónde escuchar el nuevo single.": "Choose where to listen to the new single.", "Web oficial de Carly Yeah": "Carly Yeah official website", "Portada oficial de Boreal": "Official Boreal cover", "Nuevo single · 2026": "New single · 2026", "Elige dónde quieres escucharlo": "Choose where to listen", "Plataformas para escuchar Boreal": "Platforms to listen to Boreal", "Conoce la historia de esta canción": "Discover the story behind this song", "Escuchar Boreal en Spotify": "Listen to Boreal on Spotify", "Escuchar Boreal en YouTube": "Listen to Boreal on YouTube", "Escuchar Boreal en Apple Music": "Listen to Boreal on Apple Music"}</script>
+<script src="/assets/listen-language.js" defer></script>
 </body>
 </html>

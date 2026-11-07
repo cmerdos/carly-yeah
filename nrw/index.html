@@ -7,9 +7,6 @@
   <title>No Reason Why — Escuchar | Carly Yeah</title>
   <meta name="description" content="Escucha No Reason Why de Carly Yeah en Spotify, YouTube o Apple Music. Elige tu plataforma favorita.">
   <link rel="canonical" href="https://carlyyeah.es/nrw/">
-  <link rel="alternate" hreflang="es" href="https://carlyyeah.es/nrw/">
-  <link rel="alternate" hreflang="en" href="https://carlyyeah.es/en/nrw/">
-  <link rel="alternate" hreflang="x-default" href="https://carlyyeah.es/nrw/">
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <meta property="og:type" content="music.song">
   <meta property="og:site_name" content="Carly Yeah">
@@ -49,14 +46,14 @@
     @media(max-width:360px){main{padding-inline:18px}.platform{min-height:58px}}
     @media(prefers-reduced-motion:reduce){.platform{transition:none}.platform:hover{transform:none}}
     .language-switch{display:flex;gap:8px;align-self:flex-end;margin-bottom:16px}
-    .language-switch a{display:flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;color:#fff;text-decoration:none;border:1px solid #777;border-radius:6px}
-    .language-switch a[aria-current="page"]{background:#fff;color:#111}
-    .language-switch a:focus-visible{outline:3px solid #fff;outline-offset:4px}
+    .language-switch button{font:inherit;cursor:pointer;min-width:44px;min-height:44px;background:transparent;color:#fff;border:1px solid #777;border-radius:6px}
+    .language-switch button[aria-pressed="true"]{background:#fff;color:#111}
+    .language-switch button:focus-visible{outline:3px solid #fff;outline-offset:4px}
   </style>
 </head>
-<body>
+<body data-story="no-reason-why">
   <main>
-    <div class="language-switch" role="group" aria-label="Idioma / Language"><a data-locale-link href="/nrw/" lang="es" hreflang="es" aria-label="Español" aria-current="page">ES</a><a data-locale-link href="/en/nrw/" lang="en" hreflang="en" aria-label="English">EN</a></div>
+    <div class="language-switch" role="group" aria-label="Idioma / Language"><button type="button" data-language="es" lang="es" aria-label="Español" aria-pressed="true">ES</button><button type="button" data-language="en" lang="en" aria-label="English" aria-pressed="false">EN</button></div>
     <a class="brand" href="https://carlyyeah.es/" aria-label="Web oficial de Carly Yeah">
       <img src="/assets/carly-yeah-logo.webp" alt="Carly Yeah" width="62" height="62">
     </a>
@@ -82,6 +79,7 @@
     <a class="back" href="https://carlyyeah.es/no-reason-why/">Conoce la historia de esta canción</a>
   </main>
   <footer>© 2026 CARLY YEAH · CARLY ROAD RECORDS</footer>
-<script src="/assets/language-links.js" defer></script>
+<script type="application/json" id="listen-translations">{"No Reason Why — Escuchar | Carly Yeah": "No Reason Why — Listen | Carly Yeah", "Escucha No Reason Why de Carly Yeah en Spotify, YouTube o Apple Music. Elige tu plataforma favorita.": "Listen to No Reason Why by Carly Yeah on Spotify, YouTube or Apple Music. Choose your favourite platform.", "Escucha el single en Spotify, YouTube o Apple Music.": "Listen to the single on Spotify, YouTube or Apple Music.", "Portada de No Reason Why, de Carly Yeah": "No Reason Why cover by Carly Yeah", "Elige dónde escuchar el nuevo single.": "Choose where to listen to the new single.", "Web oficial de Carly Yeah": "Carly Yeah official website", "Portada oficial de No Reason Why": "Official No Reason Why cover", "Nuevo single · 2026": "New single · 2026", "Elige dónde quieres escucharlo": "Choose where to listen", "Plataformas para escuchar No Reason Why": "Platforms to listen to No Reason Why", "Conoce la historia de esta canción": "Discover the story behind this song", "Escuchar No Reason Why en Spotify": "Listen to No Reason Why on Spotify", "Escuchar No Reason Why en YouTube": "Listen to No Reason Why on YouTube", "Escuchar No Reason Why en Apple Music": "Listen to No Reason Why on Apple Music"}</script>
+<script src="/assets/listen-language.js" defer></script>
 </body>
 </html>
