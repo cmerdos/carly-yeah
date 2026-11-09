@@ -19,6 +19,13 @@
       url.search = window.location.search;
       url.searchParams.delete("lang");
       url.hash = window.location.hash;
+      // Studio's contact section has a different ID in each language.
+      const studioPath = /^\/(?:en\/)?studio\/(?:index\.html)?$/;
+      if (url.origin === current.origin &&
+          studioPath.test(current.pathname) && studioPath.test(url.pathname) &&
+          (url.hash === "#contacto-estudio" || url.hash === "#studio-contact")) {
+        url.hash = url.pathname.startsWith("/en/") ? "#studio-contact" : "#contacto-estudio";
+      }
       link.href = url.href;
     };
     update();
